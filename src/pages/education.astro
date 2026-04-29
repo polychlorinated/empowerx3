@@ -1,0 +1,126 @@
+---
+export const prerender = true;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Cellular & Mitochondrial Health Education — EmpowerX3"
+  description="Learn how optimizing your cells and mitochondria is like rebuilding a classic engine — and why it's the foundation of every EmpowerX3 program."
+>
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="bg-gradient-to-br from-gray-900 to-brand-900 text-white py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-brand-300 font-semibold text-sm uppercase tracking-widest mb-3">The Science</p>
+      <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6 max-w-3xl">
+        First, We Clean the Car Up and Rebuild the Engine
+      </h1>
+      <p class="text-brand-100 text-xl max-w-2xl leading-relaxed">
+        Before you put high-octane fuel in a classic car, you flush out the old sludge, replace the
+        gaskets, and rebuild the engine block. In the body, that means working from the cell outward.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Cell 101 ──────────────────────────────────────────────────── -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="font-heading font-bold text-3xl text-gray-900 mb-6">
+            Why Cellular Health Is the Foundation of Everything
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Your body contains roughly 37 trillion cells. Each one is a precision machine — and each one
+            runs on ATP, the fuel your mitochondria produce. When that production drops, every system
+            downstream suffers: brain fog, fatigue, slow recovery, weight gain, immune dysfunction.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Most people treat the symptoms. We go after the fuel system.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            A classic car with a seized engine doesn't need a new paint job — it needs to be taken apart,
+            cleaned, and rebuilt with precision parts. That's what cellular optimization does for your body.
+          </p>
+        </div>
+        <div class="space-y-4">
+          {[
+            ['Mitochondrial Function', 'The engine block — where fuel is converted to usable energy (ATP). Dysfunction here = fatigue at the cellular level.'],
+            ['Oxidative Stress', 'Carbon buildup on the pistons. Free radicals damage cell structures; antioxidants are the solvent that cleans them out.'],
+            ['Inflammation', 'A stuck throttle — useful in short bursts, catastrophic when chronic. Cellular protocols reset the default setting.'],
+            ['Autophagy', 'The car\'s self-cleaning cycle. Fasting and specific nutrients trigger cells to break down and recycle damaged components.'],
+          ].map(([term, def]) => (
+            <div class="border border-gray-100 rounded-xl p-5 bg-gray-50">
+              <h3 class="font-heading font-semibold text-gray-900 mb-1">{term}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{def}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Mitochondria Deep-Dive ─────────────────────────────────────── -->
+  <section class="py-20 bg-brand-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-4 text-center">
+        Mitochondria: The V8 You Didn't Know You Had
+      </h2>
+      <p class="text-gray-500 text-center max-w-2xl mx-auto mb-14">
+        A healthy cell contains hundreds to thousands of mitochondria. A degraded one has a fraction of that.
+        Here's how we restore the fleet.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            step: '01',
+            title: 'Flush the Sludge',
+            body: 'Remove the toxins and inflammatory triggers that are gunking up mitochondrial membranes. Diet overhaul, targeted detox protocols, and sleep optimization.',
+          },
+          {
+            step: '02',
+            title: 'Replace the Parts',
+            body: 'Introduce precise micronutrients — CoQ10, NAD+ precursors, magnesium, B-vitamins — that mitochondria require to run the electron transport chain efficiently.',
+          },
+          {
+            step: '03',
+            title: 'Run the Engine',
+            body: 'Zone 2 cardio and resistance training signal cells to grow new mitochondria (mitochondrial biogenesis). More engines = more power output.',
+          },
+        ].map(({ step, title, body }) => (
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-brand-100">
+            <p class="text-brand-300 font-heading font-bold text-5xl mb-4" aria-hidden="true">{step}</p>
+            <h3 class="font-heading font-bold text-xl text-gray-900 mb-3">{title}</h3>
+            <p class="text-gray-600 leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── The Fuel Section ───────────────────────────────────────────── -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-6">
+        High-Octane Fuel for a Rebuilt Engine
+      </h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-8">
+        Once the engine is clean and rebuilt, what you put in the tank matters enormously. A freshly
+        restored classic car running on 87-octane regular will carbon up and knock within a few thousand
+        miles. Your rebuilt cells react the same way to processed food, chronic stress, and poor sleep.
+      </p>
+      <p class="text-gray-600 text-lg leading-relaxed mb-10">
+        EmpowerX3's nutrition and supplementation protocols are precision-mapped to your lab work —
+        not a generic template. Premium fuel for your specific engine configuration.
+      </p>
+      <a
+        href="/solutions"
+        class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors"
+      >
+        See the 12-Week Program &rarr;
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

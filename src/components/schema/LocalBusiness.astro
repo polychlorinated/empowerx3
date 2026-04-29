@@ -1,0 +1,21 @@
+---
+// Injected globally in BaseLayout — do not add to individual pages
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'EmpowerX3',
+  url: 'https://empowerx3.com',
+  logo: 'https://empowerx3.com/logo.png',
+  description:
+    'EmpowerX3 helps clients optimize cellular health and longevity through personalized biohacking programs.',
+  telephone: '',          // TODO: add phone number
+  email: '',              // TODO: add contact email
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'US', // TODO: fill in full address
+  },
+  sameAs: [],             // TODO: add social profile URLs
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

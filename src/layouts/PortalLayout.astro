@@ -1,0 +1,35 @@
+---
+import Head from '@/components/Head.astro';
+import Footer from '@/components/Footer.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head
+      title={title}
+      description="EmpowerX3 client portal — access your program resources and order products."
+      noindex={true}
+    />
+  </head>
+  <body class="min-h-screen flex flex-col bg-gray-50 text-gray-900 antialiased">
+    <header class="bg-brand-700 text-white py-4 px-6">
+      <div class="max-w-5xl mx-auto flex items-center justify-between">
+        <a href="/portal" class="font-heading font-bold text-lg">EmpowerX3 Portal</a>
+        <a href="/portal/logout" class="text-sm text-brand-200 hover:text-white transition-colors">
+          Sign Out
+        </a>
+      </div>
+    </header>
+    <main id="main-content" class="flex-1 max-w-5xl mx-auto w-full px-4 py-8" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

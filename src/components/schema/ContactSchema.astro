@@ -1,0 +1,18 @@
+---
+// Use ONLY on the /contact or /schedule page — never on other pages
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Schedule a Discovery Call – EmpowerX3',
+  url: 'https://empowerx3.com/contact',
+  description:
+    'Book your free 30-minute discovery call with Gary to start your personalized cellular health journey.',
+  contactOption: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    availableLanguage: 'English',
+  },
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

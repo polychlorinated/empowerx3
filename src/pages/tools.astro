@@ -1,0 +1,132 @@
+---
+export const prerender = true;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Biohacking Tools: Exopod & Wolfpack Hiking — EmpowerX3"
+  description="Explore the Exopod recovery chamber and the Wolfpack Hiking Group — the off-road upgrades and convoy that make the journey better."
+>
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-gray-400 font-semibold text-sm uppercase tracking-widest mb-3">Ancillary Tools</p>
+      <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6 max-w-3xl leading-tight">
+        Off-Road Upgrades & the Convoy You Travel With
+      </h1>
+      <p class="text-gray-300 text-xl max-w-2xl leading-relaxed">
+        Every serious road trip needs the right add-ons — a lift kit, skid plates, a winch — and
+        a convoy of people who have your back when the terrain gets rough. EmpowerX3's ancillary
+        tools deliver both.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Exopod ────────────────────────────────────────────────────── -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-sm font-semibold mb-4">
+            Recovery Technology
+          </span>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-6">
+            The Exopod: Your On-Board Recovery System
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Think of the Exopod as the off-road suspension upgrade for your recovery. When you push
+            the body hard — intense training, high stress, illness — you need a system that absorbs
+            the shock and gets you back on the road fast.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            The Exopod combines advanced recovery modalities in a single, accessible session:
+            photobiomodulation, targeted heat/cold cycling, and atmospheric optimization. The result
+            is faster cellular repair, reduced systemic inflammation, and measurably better HRV
+            within 72 hours.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            It's not a luxury — it's a force multiplier. The right suspension means you can take on
+            rougher terrain without destroying the chassis.
+          </p>
+          <ul class="space-y-2 text-gray-700 mb-8">
+            {[
+              'Accelerated muscle and tissue recovery',
+              'Mitochondrial photobiomodulation',
+              'Inflammation reduction — measurable via biomarkers',
+              'Improved sleep architecture post-session',
+              'Available to EmpowerX3 clients through partner facilities',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-brand-500 mt-0.5 shrink-0" aria-hidden="true">&#10003;</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/contact" class="inline-flex items-center px-5 py-2.5 rounded-lg bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors">
+            Ask About Exopod Access
+          </a>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-10 border border-gray-100 text-center">
+          <span class="text-8xl block mb-6" aria-hidden="true">🛸</span>
+          <h3 class="font-heading font-bold text-xl text-gray-900 mb-2">Exopod Sessions</h3>
+          <p class="text-gray-500 text-sm">Available at partner facilities — ask Gary about scheduling during your onboarding call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Wolfpack ──────────────────────────────────────────────────── -->
+  <section class="py-20 bg-brand-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 bg-white rounded-2xl p-10 border border-brand-100 text-center">
+          <span class="text-8xl block mb-6" aria-hidden="true">🐺</span>
+          <h3 class="font-heading font-bold text-xl text-gray-900 mb-2">The Wolfpack</h3>
+          <p class="text-gray-500 text-sm">Monthly hikes. Real terrain. Real accountability. Real community.</p>
+        </div>
+        <div class="order-1 md:order-2">
+          <span class="inline-block px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-sm font-semibold mb-4">
+            Community
+          </span>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-6">
+            Wolfpack Hiking Group: The Convoy That Has Your Back
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            No cross-country road trip is better alone. The best ones have a convoy — other drivers
+            who know the route, share the load, and pull you out when you're stuck in the mud.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            The Wolfpack Hiking Group is EmpowerX3's community component. Monthly group hikes —
+            real terrain, real exertion, real conversation. It's where clients test their rebuilt
+            engines against actual mountains and discover that the protocols work.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            There's something that happens when you summit a trail you couldn't have walked
+            six months ago. Lab numbers become lived experience. The Wolfpack is where
+            the theory meets the trail.
+          </p>
+          <ul class="space-y-2 text-gray-700 mb-8">
+            {[
+              'Monthly guided hikes — beginner to advanced terrain',
+              'Group accountability and peer coaching',
+              'Post-hike recovery review and biometric check-in',
+              'Private community channel for daily support',
+              'Exclusive to active EmpowerX3 clients',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-brand-500 mt-0.5 shrink-0" aria-hidden="true">&#10003;</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/contact" class="inline-flex items-center px-5 py-2.5 rounded-lg bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors">
+            Join the Wolfpack
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

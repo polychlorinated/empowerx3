@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url?: string;
+}
+
+const { title, description, url } = Astro.props;
+const resolvedUrl = url ?? new URL(Astro.url.pathname, 'https://empowerx3.com').href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: resolvedUrl,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'EmpowerX3',
+    url: 'https://empowerx3.com',
+  },
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

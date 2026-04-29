@@ -1,0 +1,54 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-gray-300 mt-auto">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Brand column -->
+      <div>
+        <p class="font-heading font-bold text-white text-lg mb-2">EmpowerX3</p>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Cellular health coaching that gets your engine running at peak performance — for the road ahead.
+        </p>
+      </div>
+
+      <!-- Quick links -->
+      <nav aria-label="Footer navigation">
+        <p class="font-semibold text-white text-sm mb-3 uppercase tracking-wider">Quick Links</p>
+        <ul class="space-y-2 text-sm" role="list">
+          <li><a href="/education" class="hover:text-brand-400 transition-colors">Education</a></li>
+          <li><a href="/solutions" class="hover:text-brand-400 transition-colors">Solutions</a></li>
+          <li><a href="/tools" class="hover:text-brand-400 transition-colors">Tools</a></li>
+          <li><a href="/contact" class="hover:text-brand-400 transition-colors">Schedule a Call</a></li>
+          <li><a href="/portal" class="hover:text-brand-400 transition-colors">Client Portal</a></li>
+        </ul>
+      </nav>
+
+      <!-- Contact / CTA -->
+      <div>
+        <p class="font-semibold text-white text-sm mb-3 uppercase tracking-wider">Ready to Roll?</p>
+        <p class="text-sm text-gray-400 mb-4">
+          Book a free 30-minute discovery call and let's map out your route.
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex items-center px-4 py-2 rounded-lg bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition-colors"
+        >
+          Book a Discovery Call
+        </a>
+      </div>
+
+    </div>
+
+    <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+      <p>&copy; {year} EmpowerX3. All rights reserved.</p>
+      <p>
+        <a href="/portal" class="hover:text-gray-300 transition-colors">Client Portal</a>
+        &nbsp;·&nbsp;
+        <a href="/privacy" class="hover:text-gray-300 transition-colors">Privacy Policy</a>
+      </p>
+    </div>
+  </div>
+</footer>

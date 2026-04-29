@@ -1,0 +1,48 @@
+---
+import Head from '@/components/Head.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import LocalBusiness from '@/components/schema/LocalBusiness.astro';
+import WebPage from '@/components/schema/WebPage.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  og?: {
+    title?: string;
+    description?: string;
+    image?: string;
+    type?: 'website' | 'article';
+  };
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const { title, description, og, canonical, noindex } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head
+      title={title}
+      description={description}
+      og={og}
+      canonical={canonical}
+      noindex={noindex}
+    />
+    <!-- Global schema: LocalBusiness on every page -->
+    <LocalBusiness />
+    <!-- Page-level schema -->
+    <WebPage title={title} description={description} />
+    <!-- Optional page-specific schema (e.g. ContactSchema) -->
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen flex flex-col bg-white text-gray-900 antialiased">
+    <Header />
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

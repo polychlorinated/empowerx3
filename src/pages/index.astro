@@ -1,0 +1,158 @@
+---
+// SSG: built at deploy time via WPGraphQL
+export const prerender = true;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// Attempt to pull hero content from WP; fall back to static copy if WP is unavailable at build
+// import { getPageBySlug } from '@/lib/queries/pages';
+// const page = await getPageBySlug('/');
+---
+
+<BaseLayout
+  title="EmpowerX3 — Cellular Health & Biohacking Coaching"
+  description="Discover how Gary's biohacking programs restore cellular energy, reduce inflammation, and prepare your body for the road ahead — wherever life takes you."
+>
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="relative bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+      <div class="max-w-3xl">
+        <p class="text-brand-300 font-semibold text-sm uppercase tracking-widest mb-4">
+          Biohacking · Cellular Health · Longevity
+        </p>
+        <h1 class="font-heading font-bold text-4xl md:text-6xl leading-tight mb-6">
+          Your Body Is a Classic Car.<br />
+          <span class="text-accent-400">Let's Get It Road-Trip Ready.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-brand-100 leading-relaxed mb-8 max-w-2xl">
+          Imagine pulling a 1969 Mustang out of a garage where it's sat for 30 years — engine seized,
+          tires flat, tank empty. That's how most of us arrive at midlife. EmpowerX3 is the full restoration
+          shop that gets your cellular engine running at peak performance for the cross-country adventure ahead.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-accent-500 text-white font-semibold text-lg hover:bg-accent-600 transition-colors"
+          >
+            Book a Free Discovery Call
+          </a>
+          <a
+            href="/education"
+            class="inline-flex items-center justify-center px-6 py-3 rounded-xl border-2 border-brand-400 text-brand-100 font-semibold text-lg hover:bg-brand-700 transition-colors"
+          >
+            Learn the Science
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Gary's Story ──────────────────────────────────────────────── -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-6">
+            Gary Found the Car in the Garage. Then He Drove It Across the Country.
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            At 50, Gary was running on fumes — chronic fatigue, brain fog, and a body that felt decades
+            older than it should. Conventional medicine had no answers. So he went looking.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            He discovered that most of what we call "aging" is actually cellular dysfunction — mitochondria
+            that have gone offline, inflammation that's corroding the parts, and nutrient deficiencies that
+            leave the tank running on empty. The car wasn't broken beyond repair. It just needed the right mechanic.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Gary became that mechanic — certified in biohacking, cellular nutrition, and longevity protocols.
+            Today he helps clients discover their own classic car, restore it, and hit the open road.
+          </p>
+          <a href="/solutions" class="inline-flex items-center font-semibold text-brand-600 hover:text-brand-800 transition-colors">
+            See Gary's Programs &rarr;
+          </a>
+        </div>
+        <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100">
+          <blockquote class="text-gray-700 text-lg italic leading-relaxed mb-6">
+            "I went from running out of gas at 2pm every day to completing a 14-mile mountain hike —
+            at 55. The engine doesn't just run. It <em>purrs</em>."
+          </blockquote>
+          <p class="font-semibold text-brand-700">— Gary, Founder of EmpowerX3</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3 Pillars ─────────────────────────────────────────────────── -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+          Three Things Every Classic Car Needs
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">
+          Great cellular health isn't complicated — but it has to be done in the right order.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: '🔧',
+            title: 'Engine Rebuild',
+            subtitle: 'Cellular & Mitochondrial Health',
+            body: 'Restore the power plants inside every cell. When mitochondria run clean, everything else follows — energy, cognition, metabolism.',
+            href: '/education',
+            cta: 'Learn the Biology',
+          },
+          {
+            icon: '⛽',
+            title: 'High-Octane Fuel',
+            subtitle: 'Nutrition & Supplementation',
+            body: 'You can\'t run a performance engine on regular unleaded. We identify your specific deficiencies and dial in the exact nutrient mix.',
+            href: '/solutions',
+            cta: 'See the Programs',
+          },
+          {
+            icon: '🛞',
+            title: 'Right Tires for the Route',
+            subtitle: 'Custom Plans for Your Goals',
+            body: 'Mountain roads need different tires than coastal highways. Your health goals — weight loss, recovery, longevity — shape every protocol.',
+            href: '/solutions',
+            cta: 'Find Your Plan',
+          },
+        ].map(({ icon, title, subtitle, body, href, cta }) => (
+          <article class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+            <span class="text-4xl mb-4 block" aria-hidden="true">{icon}</span>
+            <h3 class="font-heading font-bold text-xl text-gray-900 mb-1">{title}</h3>
+            <p class="text-brand-600 text-sm font-medium mb-3">{subtitle}</p>
+            <p class="text-gray-600 leading-relaxed mb-5">{body}</p>
+            <a href={href} class="font-semibold text-brand-600 hover:text-brand-800 text-sm transition-colors">
+              {cta} &rarr;
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA Banner ─────────────────────────────────────────────────── -->
+  <section class="bg-brand-700 text-white py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4">
+        Ready to Pull Your Car Out of the Garage?
+      </h2>
+      <p class="text-brand-200 text-lg mb-8">
+        Book a free 30-minute discovery call. No pressure, no pitch — just an honest look at where your engine is and what it needs.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-8 py-4 rounded-xl bg-accent-500 text-white font-bold text-lg hover:bg-accent-600 transition-colors"
+      >
+        Book My Free Call
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

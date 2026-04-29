@@ -1,0 +1,24 @@
+---
+export const prerender = true;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found — EmpowerX3"
+  description="The page you're looking for doesn't exist. Head back to EmpowerX3's homepage."
+  noindex={true}
+>
+  <section class="py-32 text-center px-4">
+    <p class="text-brand-600 font-bold text-6xl mb-4" aria-hidden="true">404</p>
+    <h1 class="font-heading font-bold text-3xl text-gray-900 mb-4">
+      Looks Like This Road Doesn't Exist
+    </h1>
+    <p class="text-gray-500 mb-8 max-w-md mx-auto">
+      The page you're looking for has taken a wrong turn. Let's get you back on the route.
+    </p>
+    <a href="/" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors">
+      Back to Home
+    </a>
+  </section>
+</BaseLayout>

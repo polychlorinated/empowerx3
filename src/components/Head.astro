@@ -1,0 +1,67 @@
+---
+interface Props {
+  /** Max 60 characters */
+  title: string;
+  /** Max 155 characters */
+  description: string;
+  og?: {
+    title?: string;
+    description?: string;
+    image?: string;
+    type?: 'website' | 'article';
+  };
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  og,
+  canonical,
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = 'https://empowerx3.com';
+const resolvedCanonical = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
+const ogTitle = og?.title ?? title;
+const ogDesc = og?.description ?? description;
+const ogImage = og?.image ?? `${siteUrl}/og-default.jpg`;
+const ogType = og?.type ?? 'website';
+
+// Warn at build time if limits are breached (dev only)
+if (import.meta.env.DEV) {
+  if (title.length > 60) console.warn(`[Head] Title exceeds 60 chars (${title.length}): "${title}"`);
+  if (description.length > 155) console.warn(`[Head] Description exceeds 155 chars (${description.length})`);
+}
+---
+
+<!-- Primary -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={resolvedCanonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={resolvedCanonical} />
+<meta property="og:title" content={ogTitle} />
+<meta property="og:description" content={ogDesc} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content="EmpowerX3" />
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={ogTitle} />
+<meta name="twitter:description" content={ogDesc} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Preconnect to external origins -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://wp.empowerx3.com" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

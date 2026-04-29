@@ -1,0 +1,63 @@
+---
+const nav = [
+  { label: 'Home',      href: '/' },
+  { label: 'Education', href: '/education' },
+  { label: 'Solutions', href: '/solutions' },
+  { label: 'Tools',     href: '/tools' },
+  { label: 'Contact',   href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Brand -->
+      <a href="/" class="flex items-center gap-2 font-heading font-bold text-xl text-brand-700" aria-label="EmpowerX3 home">
+        <span class="text-2xl" aria-hidden="true">⚡</span>
+        EmpowerX3
+      </a>
+
+      <!-- Desktop nav -->
+      <nav aria-label="Primary navigation">
+        <ul class="hidden md:flex items-center gap-1" role="list">
+          {nav.map(({ label, href }) => {
+            const isActive = href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+            return (
+              <li>
+                <a
+                  href={href}
+                  class:list={[
+                    'px-3 py-2 rounded-md text-sm font-medium transition-colors',
+                    isActive
+                      ? 'text-brand-700 bg-brand-50'
+                      : 'text-gray-600 hover:text-brand-700 hover:bg-gray-50',
+                  ]}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <a
+        href="/contact"
+        class="hidden md:inline-flex items-center px-4 py-2 rounded-lg bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition-colors"
+      >
+        Book a Call
+      </a>
+
+      <!-- Mobile menu toggle (no-JS fallback: link to contact) -->
+      <a href="/contact" class="md:hidden text-brand-600 font-medium text-sm">
+        Book a Call
+      </a>
+
+    </div>
+  </div>
+</header>
