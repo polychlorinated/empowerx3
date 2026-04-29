@@ -29,7 +29,7 @@ const therapies = [
     subtitle: 'Terahertz Frequency for Cellular Network & ATP Production',
     feel: 'A deep, penetrating warmth from the inside out — clients describe it as a "cellular massage."',
     benefits: [
-      'Stimulates ATP production — your cells\' primary energy currency. More ATP = better function, repair, and vitality.',
+      "Stimulates ATP production — your cells' primary energy currency. More ATP = better function, repair, and vitality.",
       'Releases muscle tension and stiffness without the extreme heat of traditional saunas.',
       'Improves cellular communication, supporting coordinated repair throughout the body.',
     ],
@@ -59,7 +59,7 @@ const therapies = [
     feel: 'Like a professional lymphatic massage — without the hands.',
     benefits: [
       'Moves stagnant fluids and toxins, reducing bloating and improving overall mobility.',
-      'Frequencies tuned to support bioresonance and recalibrate the body\'s internal rhythms.',
+      "Frequencies tuned to support bioresonance and recalibrate the body's internal rhythms.",
     ],
   },
   {
@@ -85,23 +85,23 @@ const therapies = [
 const faqs = [
   {
     q: 'What should I wear during my ExoPod session?',
-    a: 'Minimal clothing or swimwear is recommended — the Photon Glow™ and DeepWave™ therapies need to penetrate the skin directly. If your hair is long, plan to wear it up.',
+    a: "Minimal clothing or swimwear is recommended — the Photon Glow™ and DeepWave™ therapies need to penetrate the skin directly. If your hair is long, plan to wear it up.",
   },
   {
     q: 'How should I prepare for my session?',
-    a: 'Drink plenty of water beforehand. Don\'t come on a full stomach. Expect to relax and absorb the benefits — simplicity is core to the EmpowerX3 experience.',
+    a: "Drink plenty of water beforehand. Don't come on a full stomach. Expect to relax and absorb the benefits — simplicity is core to the EmpowerX3 experience.",
   },
   {
     q: 'How often should I use the ExoPod?',
-    a: '2–3 times per week is recommended for significant weight loss and long-term anti-aging results. If you\'re in our 90-Day coaching program, you can combine coaching calls with your ExoPod visits.',
+    a: "2–3 times per week is recommended for significant weight loss and long-term anti-aging results. If you're in our 90-Day coaching program, you can combine coaching calls with your ExoPod visits.",
   },
   {
     q: 'Is the ExoPod safe?',
-    a: 'Yes. The ExoPod uses non-invasive, non-ionizing frequencies. The O3 Cleanse™ system ensures the pod is 99.9% sanitized between every client.',
+    a: "Yes. The ExoPod uses non-invasive, non-ionizing frequencies. The O3 Cleanse™ system ensures the pod is 99.9% sanitized between every client.",
   },
   {
     q: 'What results can I expect, and when?',
-    a: 'Within a week: immediate relaxation and stress relief. After a few weeks: improved skin tone, texture, and weight loss benefits. Every body is unique — that\'s why we track your results throughout.',
+    a: "Within a week: immediate relaxation and stress relief. After a few weeks: improved skin tone, texture, and weight loss benefits. Every body is unique — that's why we track your results throughout.",
   },
 ];
 ---
@@ -137,13 +137,16 @@ const faqs = [
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="bg-gradient-to-br from-gray-900 to-brand-900 text-white py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-gray-400 font-semibold text-sm uppercase tracking-widest mb-3">Lakeway · Bee Cave · Austin · Westlake Hills</p>
-      <h1 class="font-heading font-bold text-4xl md:text-5xl mb-4 max-w-3xl leading-tight">
+  <section class="relative bg-stone-950 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <p class="text-stone-500 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Lakeway · Bee Cave · Austin · Westlake Hills</p>
+      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-4 max-w-3xl leading-tight text-cream-100">
         Biohacking Tools & Programs
       </h1>
-      <p class="text-gray-300 text-lg max-w-2xl leading-relaxed">
+      <p class="text-stone-300 text-lg max-w-2xl leading-relaxed">
         Three pillars that accelerate your transformation: the ExoPod for cellular recovery,
         the Wolfpack for accountability in the field, and precision nutrition built from your own genetic data.
       </p>
@@ -151,9 +154,9 @@ const faqs = [
   </section>
 
   <!-- ─── In-Page Nav ───────────────────────────────────────────────── -->
-  <nav aria-label="Page sections" class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+  <nav aria-label="Page sections" class="sticky top-16 z-40 bg-stone-950/95 backdrop-blur-sm border-b border-stone-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <ul class="flex overflow-x-auto gap-0 scrollbar-hide" role="list">
+      <ul class="flex overflow-x-auto gap-0" role="list">
         {[
           { label: 'ExoPod',                  href: '#exopod'    },
           { label: 'Wolfpack',                href: '#wolfpack'  },
@@ -162,7 +165,7 @@ const faqs = [
           <li>
             <a
               href={href}
-              class="block px-5 py-4 text-sm font-semibold text-gray-600 hover:text-brand-700 hover:border-b-2 hover:border-brand-600 whitespace-nowrap transition-colors"
+              class="block px-5 py-4 text-sm font-semibold text-stone-400 hover:text-gold-400 hover:border-b-2 hover:border-gold-500 whitespace-nowrap transition-colors"
             >
               {label}
             </a>
@@ -175,16 +178,16 @@ const faqs = [
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- EXOPOD SECTION                                                  -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section id="exopod" class="scroll-mt-32 pt-20 pb-4 bg-white">
+  <section id="exopod" class="scroll-mt-32 pt-20 pb-4 bg-stone-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-4 mb-2">
         <span class="text-4xl" aria-hidden="true">🛸</span>
         <div>
-          <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900">The ExoPod</h2>
-          <p class="text-accent-500 font-semibold">10 Therapies · One Session · 30 Minutes · No Downtime</p>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100">The ExoPod</h2>
+          <p class="text-gold-400 font-semibold">10 Therapies · One Session · 30 Minutes · No Downtime</p>
         </div>
       </div>
-      <p class="text-gray-600 max-w-3xl leading-relaxed mt-4 mb-2">
+      <p class="text-stone-400 max-w-3xl leading-relaxed mt-4 mb-2">
         A clinical-grade biohacking tool delivering 10 advanced cellular therapies in a single session.
         Inflammation, slow recovery, and premature aging aren't character flaws — they're cellular problems
         that require cellular solutions.
@@ -193,19 +196,19 @@ const faqs = [
   </section>
 
   <!-- Location bar -->
-  <div class="bg-brand-700 text-white py-4">
+  <div class="bg-brand-800 border-y border-brand-700 py-4">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="font-medium text-sm">📍 2300 Lohmans Spur #116 · Lakeway, TX 78734 · At Lohman's Crossing</p>
-      <a href="/contact" class="text-brand-200 hover:text-white text-sm font-semibold transition-colors shrink-0">
+      <p class="font-medium text-sm text-brand-200">📍 2300 Lohmans Spur #116 · Lakeway, TX 78734 · At Lohman's Crossing</p>
+      <a href="/contact" class="text-gold-400 hover:text-gold-300 text-sm font-semibold transition-colors shrink-0">
         Book a Session &rarr;
       </a>
     </div>
   </div>
 
   <!-- Benefits timeline -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-stone-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="font-heading font-bold text-2xl text-gray-900 mb-10 text-center">What to Expect — and When</h3>
+      <h3 class="font-heading font-bold text-2xl text-cream-100 mb-10 text-center">What to Expect — and When</h3>
       <div class="grid md:grid-cols-3 gap-6">
         {[
           {
@@ -224,13 +227,13 @@ const faqs = [
             bullets: ['Comprehensive cellular renewal', 'Resilient skin and anti-aging effects', 'Optimized hormonal and nervous system balance', 'Sustainable weight management', 'Lasting vitality and body-mind alignment'],
           },
         ].map(({ phase, timeline, bullets }) => (
-          <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100">
-            <p class="text-brand-600 font-bold text-xs uppercase tracking-widest mb-0.5">{phase}</p>
-            <p class="font-heading font-semibold text-gray-900 text-lg mb-4">{timeline}</p>
+          <div class="bg-stone-900 rounded-2xl p-6 border border-stone-800">
+            <p class="text-brand-400 font-bold text-xs uppercase tracking-widest mb-0.5">{phase}</p>
+            <p class="font-heading font-semibold text-cream-100 text-lg mb-4">{timeline}</p>
             <ul class="space-y-2">
               {bullets.map((b) => (
-                <li class="flex items-start gap-2 text-sm text-gray-700">
-                  <span class="text-brand-500 shrink-0 mt-0.5" aria-hidden="true">✓</span>
+                <li class="flex items-start gap-2 text-sm text-stone-400">
+                  <span class="text-brand-400 shrink-0 mt-0.5" aria-hidden="true">✓</span>
                   {b}
                 </li>
               ))}
@@ -242,31 +245,35 @@ const faqs = [
   </section>
 
   <!-- Case Studies -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-16 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="font-heading font-bold text-2xl text-gray-900 mb-8 text-center">Real Client Results</h3>
+      <h3 class="font-heading font-bold text-2xl text-cream-100 mb-8 text-center">Real Client Results</h3>
       <div class="grid md:grid-cols-2 gap-6">
-        <article class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-          <p class="text-accent-500 font-bold text-2xl mb-1">6 Inches Lost</p>
-          <p class="text-gray-400 text-sm mb-4">4 sessions · Postpartum</p>
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+        <article class="bg-stone-800 rounded-2xl p-8 border border-stone-700">
+          <p class="text-gold-400 font-bold text-2xl mb-1">6 Inches Lost</p>
+          <p class="text-stone-500 text-sm mb-4">4 sessions · Postpartum</p>
+          <p class="text-stone-400 text-sm leading-relaxed mb-4">
             Ava is a busy 34-year-old mother who wanted to shed pregnancy weight naturally and efficiently.
           </p>
           <ul class="space-y-2">
             {['Lost 6 inches overall in just 4 sessions', 'Reduced bloating and tightened loose skin', 'More confident and energized throughout the day'].map((r) => (
-              <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-brand-500 shrink-0" aria-hidden="true">✓</span>{r}</li>
+              <li class="flex items-start gap-2 text-sm text-stone-300">
+                <span class="text-brand-400 shrink-0" aria-hidden="true">✓</span>{r}
+              </li>
             ))}
           </ul>
         </article>
-        <article class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-          <p class="text-accent-500 font-bold text-2xl mb-1">7 Inches Lost</p>
-          <p class="text-gray-400 text-sm mb-4">5 sessions · Athletic Performance</p>
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+        <article class="bg-stone-800 rounded-2xl p-8 border border-stone-700">
+          <p class="text-gold-400 font-bold text-2xl mb-1">7 Inches Lost</p>
+          <p class="text-stone-500 text-sm mb-4">5 sessions · Athletic Performance</p>
+          <p class="text-stone-400 text-sm leading-relaxed mb-4">
             Michael, 42, is an intense weightlifter battling stubborn fat and slow recovery despite heavy training.
           </p>
           <ul class="space-y-2">
             {['Lost 7 inches across his midsection', 'Improved muscle recovery and reduced soreness', 'Increased energy and circulation for better performance'].map((r) => (
-              <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-brand-500 shrink-0" aria-hidden="true">✓</span>{r}</li>
+              <li class="flex items-start gap-2 text-sm text-stone-300">
+                <span class="text-brand-400 shrink-0" aria-hidden="true">✓</span>{r}
+              </li>
             ))}
           </ul>
         </article>
@@ -275,39 +282,39 @@ const faqs = [
   </section>
 
   <!-- 10 Therapies Accordion -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-stone-950">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2 text-center">
+      <h3 class="font-heading font-bold text-2xl text-cream-100 mb-2 text-center">
         10 Cellular Therapies. One Session.
       </h3>
-      <p class="text-gray-500 text-center text-sm mb-8">
+      <p class="text-stone-500 text-center text-sm mb-8">
         Every modality targets specific cellular mechanisms. Select a therapy to learn more.
       </p>
       <div class="space-y-2">
         {therapies.map(({ name, subtitle, feel, benefits }, i) => (
-          <details class="group border border-gray-200 rounded-xl overflow-hidden bg-white">
-            <summary class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
+          <details class="group border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-stone-800 transition-colors">
               <div class="flex items-center gap-4 min-w-0">
-                <span class="shrink-0 w-7 h-7 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-xs">
+                <span class="shrink-0 w-7 h-7 rounded-full bg-brand-900 text-brand-400 flex items-center justify-center font-bold text-xs">
                   {i + 1}
                 </span>
                 <div class="min-w-0">
-                  <p class="font-heading font-semibold text-gray-900 text-sm leading-tight">{name}</p>
-                  <p class="text-brand-600 text-xs mt-0.5 truncate">{subtitle}</p>
+                  <p class="font-heading font-semibold text-cream-100 text-sm leading-tight">{name}</p>
+                  <p class="text-brand-500 text-xs mt-0.5 truncate">{subtitle}</p>
                 </div>
               </div>
-              <svg class="chevron shrink-0 w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="accordion-body px-6 pb-5 pt-2 border-t border-gray-100 bg-gray-50">
-              <p class="text-gray-500 text-sm italic mb-3">
-                <strong class="text-gray-700 not-italic">What you feel:</strong> {feel}
+            <div class="accordion-body px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/50">
+              <p class="text-stone-500 text-sm italic mb-3">
+                <strong class="text-stone-300 not-italic">What you feel:</strong> {feel}
               </p>
               <ul class="space-y-2">
                 {benefits.map((b) => (
-                  <li class="flex items-start gap-2 text-sm text-gray-700">
-                    <span class="text-brand-500 shrink-0 mt-0.5" aria-hidden="true">✓</span>
+                  <li class="flex items-start gap-2 text-sm text-stone-400">
+                    <span class="text-brand-400 shrink-0 mt-0.5" aria-hidden="true">✓</span>
                     {b}
                   </li>
                 ))}
@@ -320,28 +327,28 @@ const faqs = [
   </section>
 
   <!-- FAQ Accordion -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-16 bg-stone-900">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="font-heading font-bold text-2xl text-gray-900 mb-8 text-center">
+      <h3 class="font-heading font-bold text-2xl text-cream-100 mb-8 text-center">
         ExoPod FAQ
       </h3>
       <div class="space-y-2">
         {faqs.map(({ q, a }) => (
-          <details class="border border-gray-200 rounded-xl overflow-hidden bg-white">
-            <summary class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
-              <p class="font-heading font-semibold text-gray-900 text-sm">{q}</p>
-              <svg class="chevron shrink-0 w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-950">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-stone-800 transition-colors">
+              <p class="font-heading font-semibold text-cream-100 text-sm">{q}</p>
+              <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="accordion-body px-6 pb-5 pt-2 border-t border-gray-100 bg-gray-50">
-              <p class="text-gray-600 text-sm leading-relaxed">{a}</p>
+            <div class="accordion-body px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
+              <p class="text-stone-400 text-sm leading-relaxed">{a}</p>
             </div>
           </details>
         ))}
       </div>
       <div class="text-center mt-10">
-        <a href="/contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors">
+        <a href="/contact" class="inline-flex items-center px-6 py-3 rounded-lg bg-brand-600 text-cream-100 font-semibold hover:bg-brand-500 transition-colors">
           Book an ExoPod Session
         </a>
       </div>
@@ -351,23 +358,23 @@ const faqs = [
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- WOLFPACK SECTION                                                -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section id="wolfpack" class="scroll-mt-32 py-20 bg-white border-t-4 border-brand-600">
+  <section id="wolfpack" class="scroll-mt-32 py-20 bg-stone-950 border-t-4 border-brand-700">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <div class="flex items-center gap-3 mb-4">
             <span class="text-4xl" aria-hidden="true">🐺</span>
             <div>
-              <h2 class="font-heading font-bold text-3xl text-gray-900">The Wolfpack</h2>
-              <p class="text-brand-600 font-semibold text-sm">Hill Country Hiking Group</p>
+              <h2 class="font-heading font-bold text-3xl text-cream-100">The Wolfpack</h2>
+              <p class="text-brand-400 font-semibold text-sm">Hill Country Hiking Group</p>
             </div>
           </div>
-          <p class="text-gray-600 leading-relaxed mb-4">
+          <p class="text-stone-400 leading-relaxed mb-4">
             Want to explore Hill Country with other guys? The Wolfpack is EmpowerX3's community
             component — monthly group hikes where clients test their rebuilt bodies against real terrain
             and discover that the protocols actually work.
           </p>
-          <p class="text-gray-600 leading-relaxed mb-6">
+          <p class="text-stone-400 leading-relaxed mb-6">
             There's something that happens when you summit a trail you couldn't have walked six months ago.
             Lab numbers become lived experience. Gary organizes hikes to motivate each other as the group
             takes on new challenges together — no judgment, just real support.
@@ -380,21 +387,22 @@ const faqs = [
               'Private community channel for daily connection',
               'Exclusive to active EmpowerX3 clients',
             ].map((item) => (
-              <li class="flex items-start gap-3 text-sm text-gray-700">
-                <span class="text-brand-500 shrink-0 mt-0.5" aria-hidden="true">✓</span>
+              <li class="flex items-start gap-3 text-sm text-stone-300">
+                <span class="text-brand-400 shrink-0 mt-0.5" aria-hidden="true">✓</span>
                 {item}
               </li>
             ))}
           </ul>
-          <a href="/contact" class="inline-flex items-center px-5 py-2.5 rounded-lg bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors">
+          <a href="/contact" class="inline-flex items-center px-5 py-2.5 rounded-lg bg-brand-600 text-cream-100 font-semibold hover:bg-brand-500 transition-colors">
             Join the Wolfpack
           </a>
         </div>
-        <div class="bg-brand-50 rounded-2xl p-10 border border-brand-100 text-center">
+        <div class="bg-stone-900 rounded-2xl p-10 border border-stone-800 text-center relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-600 to-brand-900 rounded-l-2xl" aria-hidden="true"></div>
           <span class="text-8xl block mb-5" aria-hidden="true">🐺</span>
-          <p class="font-heading font-bold text-xl text-gray-900 mb-2">Next Hike</p>
-          <p class="text-gray-500 text-sm mb-4">Date TBD — check the portal or watch for Gary's message.</p>
-          <a href="/portal" class="text-brand-600 hover:underline text-sm font-medium">View in Client Portal &rarr;</a>
+          <p class="font-heading font-bold text-xl text-cream-100 mb-2">Next Hike</p>
+          <p class="text-stone-500 text-sm mb-4">Date TBD — check the portal or watch for Gary's message.</p>
+          <a href="/portal" class="text-brand-400 hover:text-brand-300 text-sm font-medium transition-colors">View in Client Portal &rarr;</a>
         </div>
       </div>
     </div>
@@ -403,16 +411,16 @@ const faqs = [
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- NUTRITION & SUPPLEMENTS SECTION                                 -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section id="nutrition" class="scroll-mt-32 py-20 bg-gray-50 border-t-4 border-accent-500">
+  <section id="nutrition" class="scroll-mt-32 py-20 bg-stone-900 border-t-4 border-gold-600">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-4xl" aria-hidden="true">⚗️</span>
         <div>
-          <h2 class="font-heading font-bold text-3xl text-gray-900">Nutrition & Supplements</h2>
-          <p class="text-accent-600 font-semibold text-sm">Precision Protocols Built from Your Genetic Data</p>
+          <h2 class="font-heading font-bold text-3xl text-cream-100">Nutrition & Supplements</h2>
+          <p class="text-gold-500 font-semibold text-sm">Precision Protocols Built from Your Genetic Data</p>
         </div>
       </div>
-      <p class="text-gray-600 leading-relaxed mb-10 max-w-3xl">
+      <p class="text-stone-400 leading-relaxed mb-10 max-w-3xl">
         Generic supplement stacks and one-size-fits-all diets are why most people fail. Your body
         processes nutrients, responds to stress, and builds muscle differently than anyone else's —
         because your genetics are different. Every EmpowerX3 protocol starts with genetic testing
@@ -424,37 +432,38 @@ const faqs = [
           {
             icon: '🧬',
             title: 'Genetic Testing',
-            body: 'We start with a comprehensive genetic panel that reveals exactly how your body processes specific nutrients, responds to stress hormones, and builds or loses muscle. Your protocol is built from this data — not a template.',
+            body: "We start with a comprehensive genetic panel that reveals exactly how your body processes specific nutrients, responds to stress hormones, and builds or loses muscle. Your protocol is built from this data — not a template.",
           },
           {
             icon: '🌿',
             title: 'Plant Medicine Detox',
-            body: 'Month one begins with a natural plant medicine protocol to clear what isn\'t serving you — environmental toxins, inflammatory compounds, and cellular waste that block everything downstream from working properly.',
+            body: "Month one begins with a natural plant medicine protocol to clear what isn't serving you — environmental toxins, inflammatory compounds, and cellular waste that block everything downstream from working properly.",
           },
           {
             icon: '💊',
             title: 'Personalized Supplement Stack',
-            body: 'Using your genetic data and lab results, Gary builds a supplement routine specific to your deficiencies, sensitivities, and goals. Ordered directly through the client portal — no guesswork, no overlap, no waste.',
+            body: "Using your genetic data and lab results, Gary builds a supplement routine specific to your deficiencies, sensitivities, and goals. Ordered directly through the client portal — no guesswork, no overlap, no waste.",
           },
         ].map(({ icon, title, body }) => (
-          <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+          <div class="bg-stone-800 rounded-2xl p-6 border border-stone-700">
             <span class="text-3xl block mb-3" aria-hidden="true">{icon}</span>
-            <h3 class="font-heading font-bold text-lg text-gray-900 mb-2">{title}</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+            <h3 class="font-heading font-bold text-lg text-cream-100 mb-2">{title}</h3>
+            <p class="text-stone-400 text-sm leading-relaxed">{body}</p>
           </div>
         ))}
       </div>
 
-      <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm max-w-3xl">
-        <h3 class="font-heading font-bold text-xl text-gray-900 mb-4">
+      <div class="bg-stone-800 rounded-2xl p-8 border border-stone-700 max-w-3xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold-500 to-gold-800 rounded-l-2xl" aria-hidden="true"></div>
+        <h3 class="font-heading font-bold text-xl text-cream-100 mb-4 pl-4">
           Why Generic Supplements Don't Work
         </h3>
-        <div class="space-y-3 text-sm text-gray-600 leading-relaxed">
+        <div class="space-y-3 text-sm text-stone-400 leading-relaxed pl-4">
           <p>You've bought the supplements. You've tried the elimination diets. You felt something for a few weeks, then plateaued. That's not a discipline problem — it's an information problem.</p>
           <p>Without knowing how your specific body methylates B-vitamins, processes fatty acids, or handles oxidative stress, you're supplementing blind. Some of what you're taking may be doing nothing. Some may be actively counterproductive for your genotype.</p>
-          <p class="font-medium text-gray-800">EmpowerX3's genetic-based approach eliminates all of that. Every supplement, every dosage, every timing protocol is matched to what your body actually needs.</p>
+          <p class="font-medium text-stone-200">EmpowerX3's genetic-based approach eliminates all of that. Every supplement, every dosage, every timing protocol is matched to what your body actually needs.</p>
         </div>
-        <a href="/contact" class="inline-flex items-center mt-6 px-5 py-2.5 rounded-lg bg-accent-500 text-white font-semibold hover:bg-accent-600 transition-colors">
+        <a href="/contact" class="inline-flex items-center mt-6 ml-4 px-5 py-2.5 rounded-lg bg-gold-500 text-stone-950 font-semibold hover:bg-gold-400 transition-colors">
           Get Your Genetic Protocol
         </a>
       </div>

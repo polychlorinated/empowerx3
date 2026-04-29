@@ -1,6 +1,5 @@
 ---
 export const prerender = true;
-
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
@@ -10,36 +9,35 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="relative bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10" aria-hidden="true"></div>
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+  <section class="relative bg-stone-950 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <!-- Subtle green glow bottom-left -->
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <!-- Gold glow top-right -->
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-900/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36">
       <div class="max-w-3xl">
-        <p class="text-brand-300 font-semibold text-sm uppercase tracking-widest mb-4">
+        <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-5">
           Lakeway, TX · Biohacking · Medical Weight Loss · Life Coaching
         </p>
-        <h1 class="font-heading font-bold text-4xl md:text-6xl leading-tight mb-6">
+        <h1 class="font-heading font-bold text-5xl md:text-7xl leading-tight mb-6 text-cream-100">
           A Biohacking Coach Who Lets Your Body Lead Your Healing
         </h1>
-        <p class="text-lg md:text-xl text-brand-100 leading-relaxed mb-6 max-w-2xl">
+        <p class="text-lg md:text-xl text-stone-300 leading-relaxed mb-5 max-w-2xl">
           Something's off with life. You're wildly successful in one or two areas, but something isn't clicking.
-          Maybe it's your health, your career and family, or even your faith. You've tried keto, bought the supplements,
-          hired the coaches and therapists. You know what you want to change. And you're still stuck.
+          You've tried keto, bought the supplements, hired the coaches. You know what you want to change.
+          And you're still stuck.
         </p>
-        <p class="text-lg text-accent-300 font-semibold mb-8">
-          Guess what: you're not failing. You're just using the wrong tool combination.
-          Give me 90 days and people will be asking you what the secret is — just like they did with me.
+        <p class="text-lg text-gold-400 font-semibold mb-10">
+          You're not failing. You're using the wrong tool combination.
+          Give me 90 days and people will be asking you what the secret is.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href="/contact"
-            class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-accent-500 text-white font-semibold text-lg hover:bg-accent-600 transition-colors"
-          >
+          <a href="/contact" class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-gold-500 text-stone-950 font-semibold text-base hover:bg-gold-400 transition-colors">
             Book a Discovery Call
           </a>
-          <a
-            href="/tools"
-            class="inline-flex items-center justify-center px-6 py-3 rounded-xl border-2 border-brand-400 text-brand-100 font-semibold text-lg hover:bg-brand-700 transition-colors"
-          >
+          <a href="/tools" class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg border border-stone-700 text-stone-300 font-semibold text-base hover:border-brand-500 hover:text-brand-400 transition-colors">
             Explore the ExoPod
           </a>
         </div>
@@ -48,18 +46,18 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Three Pillars ─────────────────────────────────────────────── -->
-  <section class="py-16 bg-white border-b border-gray-100">
+  <section class="py-14 bg-stone-900 border-y border-stone-800">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="grid md:grid-cols-3 gap-px bg-stone-800 rounded-xl overflow-hidden">
         {[
-          { icon: '💪', label: 'Body', desc: 'Discover the physical tools that restore your energy, reduce pain, and reset your biology.' },
-          { icon: '🧠', label: 'Mind', desc: 'Build the mindset behind your power. Connect daily action to your deepest vision.' },
-          { icon: '✨', label: 'Spirit', desc: 'Build unshakeable faith in yourself as you transform — from the inside out.' },
+          { icon: '💪', label: 'Body',   desc: 'Restore your energy, reduce pain, and reset your biology with tools that target the cellular root cause.' },
+          { icon: '🧠', label: 'Mind',   desc: 'Build the mindset behind your power. Connect daily action to your deepest vision and start believing in yourself again.' },
+          { icon: '✨', label: 'Spirit', desc: 'Build unshakeable faith in yourself as you transform — not just physically, but in every area of life.' },
         ].map(({ icon, label, desc }) => (
-          <div class="flex flex-col items-center">
-            <span class="text-4xl mb-3" aria-hidden="true">{icon}</span>
-            <h2 class="font-heading font-bold text-xl text-gray-900 mb-2">{label}</h2>
-            <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+          <div class="flex flex-col items-center text-center px-8 py-10 bg-stone-900">
+            <span class="text-3xl mb-3" aria-hidden="true">{icon}</span>
+            <h2 class="font-heading font-bold text-2xl text-cream-100 mb-2">{label}</h2>
+            <p class="text-stone-400 text-sm leading-relaxed">{desc}</p>
           </div>
         ))}
       </div>
@@ -67,53 +65,53 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Gary's Story ──────────────────────────────────────────────── -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-stone-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <p class="text-brand-600 font-semibold text-sm uppercase tracking-widest mb-3">About Gary Brandt</p>
-          <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-6">
-            Biohacking Life Coach · Medical Weight Loss Coach · Pain & Recovery Center Owner
+          <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-3">About Gary Brandt</p>
+          <h2 class="font-heading font-bold text-4xl md:text-5xl text-cream-100 mb-6 leading-tight">
+            Biohacking Life Coach<br />Medical Weight Loss Coach<br />Pain & Recovery Center Owner
           </h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
+          <p class="text-stone-300 leading-relaxed mb-4">
             After a car accident left me permanently disabled, doctors told me I'd never get my life back.
             I tried fixing my body alone. Then my mind. Then my spirit. Nothing worked until I worked on
             all three at the same time.
           </p>
-          <p class="text-gray-600 leading-relaxed mb-4">
+          <p class="text-stone-300 leading-relaxed mb-4">
             That's when things clicked into place and I saw measurable success in every aspect of my
             life — not just one.
           </p>
-          <p class="text-gray-600 leading-relaxed mb-6">
+          <p class="text-stone-300 leading-relaxed mb-8">
             Everything I teach is something I've physically done, experienced, and personally used.
             No theory. No borrowed expertise. Just a complete system that works because it's complete.
-            You have more control than you think. You just need all three legs of the stool.
           </p>
-          <a href="/solutions" class="inline-flex items-center font-semibold text-brand-600 hover:text-brand-800 transition-colors">
+          <a href="/solutions" class="inline-flex items-center font-semibold text-gold-400 hover:text-gold-300 transition-colors">
             See the 90-Day Program &rarr;
           </a>
         </div>
-        <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100">
-          <blockquote class="text-gray-700 text-lg italic leading-relaxed mb-6">
+        <div class="bg-stone-900 rounded-2xl p-8 border border-stone-800 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold-500 to-brand-600 rounded-l-2xl" aria-hidden="true"></div>
+          <blockquote class="text-stone-300 text-lg italic leading-relaxed mb-6 pl-4">
             "I've lived every failure you've lived. I've done every diet, taken every supplement,
-            believed every promise that didn't deliver. I don't teach theory — I teach what I've personally
-            used to overcome a permanently disabling injury and decades of trauma."
+            believed every promise that didn't deliver. I don't teach theory — I teach what I've
+            personally used to overcome a permanently disabling injury and decades of trauma."
           </blockquote>
-          <p class="font-semibold text-brand-700">— Gary Brandt, Founder of EmpowerX3</p>
+          <p class="font-heading font-semibold text-gold-500 pl-4">— Gary Brandt, Founder of EmpowerX3</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ─── Pain Points ───────────────────────────────────────────────── -->
-  <section class="py-20 bg-gray-50">
+  <section class="py-20 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
-        <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-4 text-center">
+        <h2 class="font-heading font-bold text-4xl md:text-5xl text-cream-100 mb-3 text-center">
           Traditional Treatments Have Left You With More Questions Than Answers
         </h2>
-        <p class="text-gray-500 text-center mb-10">Does your day look like this?</p>
-        <ul class="space-y-4 mb-10">
+        <p class="text-stone-400 text-center mb-10">Does your day look like this?</p>
+        <ul class="space-y-3 mb-10">
           {[
             'Energy crashes that ruin your afternoons and steal your joy',
             'Pain that makes simple movement feel like punishment',
@@ -121,13 +119,13 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             'The quiet shame of being brilliant at everything except the one thing that keeps you alive',
             'Watching your friends struggle and knowing you\'re on the same path',
           ].map((item) => (
-            <li class="flex items-start gap-4 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-              <span class="text-red-400 shrink-0 mt-0.5" aria-hidden="true">✗</span>
-              <span class="text-gray-700">{item}</span>
+            <li class="flex items-start gap-4 bg-stone-800 rounded-xl p-4 border border-stone-700">
+              <span class="text-red-500/70 shrink-0 mt-0.5 font-bold" aria-hidden="true">✗</span>
+              <span class="text-stone-300">{item}</span>
             </li>
           ))}
         </ul>
-        <p class="text-center text-lg font-semibold text-brand-700">
+        <p class="text-center text-lg font-semibold text-gold-400">
           The truth is that <em>you</em> aren't failing. Your current plan is failing <em>you</em>.
         </p>
       </div>
@@ -135,33 +133,32 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── ExoPod Intro ──────────────────────────────────────────────── -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-stone-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="bg-gray-900 rounded-2xl p-10 text-center text-white">
-          <span class="text-7xl block mb-4" aria-hidden="true">🛸</span>
-          <h3 class="font-heading font-bold text-2xl mb-2">The ExoPod</h3>
-          <p class="text-gray-300 text-sm">Lakeway's first all-in-one wellness pod</p>
-          <p class="text-accent-400 font-bold text-lg mt-4">10 Therapies. One Session. Zero Effort.</p>
-          <p class="text-gray-400 text-sm mt-1">No Pills. No Needles. No Downtime.</p>
+        <div class="bg-stone-900 border border-stone-800 rounded-2xl p-10 text-center relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-950/60 to-stone-900" aria-hidden="true"></div>
+          <div class="relative">
+            <span class="text-7xl block mb-4" aria-hidden="true">🛸</span>
+            <h3 class="font-heading font-bold text-2xl text-cream-100 mb-1">The ExoPod</h3>
+            <p class="text-stone-400 text-sm">Lakeway's first all-in-one wellness pod</p>
+            <p class="text-gold-400 font-heading font-bold text-xl mt-4">10 Therapies. One Session. Zero Effort.</p>
+            <p class="text-stone-500 text-sm mt-1">No Pills. No Needles. No Downtime.</p>
+          </div>
         </div>
         <div>
-          <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-6">
+          <h2 class="font-heading font-bold text-4xl md:text-5xl text-cream-100 mb-6 leading-tight">
             Reset Your Biology in 30 Minutes
           </h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Introducing EmpowerX3's signature cellular recovery experience: the ExoPod.
-            This isn't just another wellness device — it's a clinical-grade biohacking tool that delivers
-            10 advanced therapies in one 30-minute session.
+          <p class="text-stone-300 leading-relaxed mb-4">
+            EmpowerX3's signature cellular recovery experience. This isn't just another wellness device —
+            it's a clinical-grade biohacking tool delivering 10 advanced therapies in one 30-minute session.
           </p>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            Inflammation, slow recovery, and premature aging aren't character flaws. They're cellular problems.
-            And cellular problems require cellular solutions. The ExoPod is your reset button.
+          <p class="text-stone-300 leading-relaxed mb-8">
+            Inflammation, slow recovery, and premature aging aren't character flaws. They're cellular problems
+            that require cellular solutions. The ExoPod is your reset button.
           </p>
-          <a
-            href="/tools"
-            class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors"
-          >
+          <a href="/tools" class="inline-flex items-center px-6 py-3 rounded-lg bg-brand-600 text-cream-100 font-semibold hover:bg-brand-500 transition-colors">
             See All 10 Therapies &rarr;
           </a>
         </div>
@@ -170,19 +167,17 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── CTA Banner ─────────────────────────────────────────────────── -->
-  <section class="bg-brand-700 text-white py-16">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4">
-        Ready to Work on All Three at the Same Time?
+  <section class="relative bg-brand-900 border-y border-brand-800 py-16 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl text-cream-100 mb-4">
+        Ready to Work on All Three at Once?
       </h2>
-      <p class="text-brand-200 text-lg mb-3">
+      <p class="text-brand-300 text-lg mb-3">
         Visit us at Lohman's Crossing in Lakeway, TX — or book a discovery call to start remotely.
       </p>
-      <p class="text-brand-300 text-sm mb-8">2300 Lohmans Spur #116 · Lakeway, TX 78734</p>
-      <a
-        href="/contact"
-        class="inline-flex items-center px-8 py-4 rounded-xl bg-accent-500 text-white font-bold text-lg hover:bg-accent-600 transition-colors"
-      >
+      <p class="text-brand-500 text-sm mb-8">2300 Lohmans Spur #116 · Lakeway, TX 78734</p>
+      <a href="/contact" class="inline-flex items-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors">
         Book My Free Discovery Call
       </a>
     </div>

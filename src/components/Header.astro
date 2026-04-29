@@ -10,14 +10,14 @@ const nav = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+<header class="sticky top-0 z-50 bg-stone-950/95 backdrop-blur-sm border-b border-stone-800">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
 
       <!-- Brand -->
-      <a href="/" class="flex items-center gap-2 font-heading font-bold text-xl text-brand-700" aria-label="EmpowerX3 home">
-        <span class="text-2xl" aria-hidden="true">⚡</span>
-        EmpowerX3
+      <a href="/" class="flex items-center gap-2.5 font-heading font-bold text-xl tracking-wide" aria-label="EmpowerX3 home">
+        <img src="/favicon.svg" alt="" width="28" height="28" aria-hidden="true" class="shrink-0" />
+        <span class="text-cream-100">Empower<span class="text-gold-500">X3</span></span>
       </a>
 
       <!-- Desktop nav -->
@@ -30,10 +30,10 @@ const currentPath = Astro.url.pathname;
                 <a
                   href={href}
                   class:list={[
-                    'px-3 py-2 rounded-md text-sm font-medium transition-colors',
+                    'px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors',
                     isActive
-                      ? 'text-brand-700 bg-brand-50'
-                      : 'text-gray-600 hover:text-brand-700 hover:bg-gray-50',
+                      ? 'text-gold-400 bg-stone-800'
+                      : 'text-stone-400 hover:text-cream-100 hover:bg-stone-800',
                   ]}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -48,13 +48,13 @@ const currentPath = Astro.url.pathname;
       <!-- CTA -->
       <a
         href="/contact"
-        class="hidden md:inline-flex items-center px-4 py-2 rounded-lg bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition-colors"
+        class="hidden md:inline-flex items-center px-4 py-2 rounded-lg bg-gold-500 text-stone-950 text-sm font-semibold hover:bg-gold-400 transition-colors"
       >
         Book a Call
       </a>
 
-      <!-- Mobile menu toggle (no-JS fallback: link to contact) -->
-      <a href="/contact" class="md:hidden text-brand-600 font-medium text-sm">
+      <!-- Mobile -->
+      <a href="/contact" class="md:hidden text-gold-500 font-semibold text-sm">
         Book a Call
       </a>
 

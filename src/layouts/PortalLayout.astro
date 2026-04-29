@@ -18,11 +18,14 @@ const { title } = Astro.props;
       noindex={true}
     />
   </head>
-  <body class="min-h-screen flex flex-col bg-gray-50 text-gray-900 antialiased">
-    <header class="bg-brand-700 text-white py-4 px-6">
+  <body class="min-h-screen flex flex-col bg-stone-950 text-cream-100 antialiased">
+    <header class="bg-stone-900 border-b border-stone-800 py-4 px-6">
       <div class="max-w-5xl mx-auto flex items-center justify-between">
-        <a href="/portal" class="font-heading font-bold text-lg">EmpowerX3 Portal</a>
-        <a href="/portal/logout" class="text-sm text-brand-200 hover:text-white transition-colors">
+        <a href="/portal" class="font-heading font-bold text-lg text-cream-100">
+          Empower<span class="text-gold-500">X3</span>
+          <span class="text-stone-500 font-normal text-sm ml-2">Portal</span>
+        </a>
+        <a href="/portal/logout" class="text-sm text-stone-400 hover:text-gold-400 transition-colors">
           Sign Out
         </a>
       </div>

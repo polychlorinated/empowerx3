@@ -13,24 +13,24 @@ const resources = [
 ---
 
 <PortalLayout title="Client Dashboard — EmpowerX3 Portal">
-  <h1 class="font-heading font-bold text-2xl text-gray-900 mb-2">Welcome Back</h1>
-  <p class="text-gray-500 mb-10">Your EmpowerX3 resources and product ordering — all in one place.</p>
+  <h1 class="font-heading font-bold text-2xl text-cream-100 mb-2">Welcome Back</h1>
+  <p class="text-stone-500 mb-10">Your EmpowerX3 resources and product ordering — all in one place.</p>
 
   <!-- Resources -->
   <section aria-labelledby="resources-heading" class="mb-12">
-    <h2 id="resources-heading" class="font-heading font-semibold text-lg text-gray-900 mb-5">
+    <h2 id="resources-heading" class="font-heading font-semibold text-lg text-stone-300 mb-5">
       Program Resources
     </h2>
     <div class="grid sm:grid-cols-2 gap-4">
       {resources.map(({ title, desc, icon, href }) => (
         <a
           href={href}
-          class="flex gap-4 p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-200 transition-all"
+          class="flex gap-4 p-5 bg-stone-900 rounded-xl border border-stone-800 hover:border-brand-700 hover:bg-stone-800 transition-all"
         >
           <span class="text-3xl shrink-0" aria-hidden="true">{icon}</span>
           <div>
-            <p class="font-semibold text-gray-900 text-sm mb-0.5">{title}</p>
-            <p class="text-gray-500 text-xs leading-relaxed">{desc}</p>
+            <p class="font-semibold text-cream-100 text-sm mb-0.5">{title}</p>
+            <p class="text-stone-500 text-xs leading-relaxed">{desc}</p>
           </div>
         </a>
       ))}
@@ -39,19 +39,19 @@ const resources = [
 
   <!-- Product ordering placeholder -->
   <section aria-labelledby="products-heading" class="mb-12">
-    <h2 id="products-heading" class="font-heading font-semibold text-lg text-gray-900 mb-5">
+    <h2 id="products-heading" class="font-heading font-semibold text-lg text-stone-300 mb-5">
       Order Products
     </h2>
-    <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-8 text-center">
+    <div class="bg-stone-900 rounded-xl border border-stone-800 p-8 text-center">
       <span class="text-5xl block mb-4" aria-hidden="true">🛒</span>
-      <p class="text-gray-700 font-medium mb-2">Product catalog coming soon</p>
-      <p class="text-gray-500 text-sm mb-6">
+      <p class="text-cream-100 font-medium mb-2">Product catalog coming soon</p>
+      <p class="text-stone-500 text-sm mb-6">
         Your personalized supplement stack and products will be available for order here.
         In the meantime, contact Gary directly.
       </p>
       <a
         href="mailto:gary@empowerx3.com"
-        class="inline-flex items-center px-4 py-2 rounded-lg bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 transition-colors"
+        class="inline-flex items-center px-4 py-2 rounded-lg bg-gold-500 text-stone-950 font-semibold text-sm hover:bg-gold-400 transition-colors"
       >
         Email Gary to Order
       </a>
@@ -60,13 +60,14 @@ const resources = [
 
   <!-- Wolfpack / upcoming hikes -->
   <section aria-labelledby="wolfpack-heading">
-    <h2 id="wolfpack-heading" class="font-heading font-semibold text-lg text-gray-900 mb-5">
+    <h2 id="wolfpack-heading" class="font-heading font-semibold text-lg text-stone-300 mb-5">
       Wolfpack — Upcoming Hikes
     </h2>
-    <div class="bg-brand-50 rounded-xl border border-brand-100 p-8 text-center">
+    <div class="bg-stone-900 rounded-xl border border-brand-900 p-8 text-center relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-600 to-brand-900 rounded-l-xl" aria-hidden="true"></div>
       <span class="text-5xl block mb-4" aria-hidden="true">🐺</span>
-      <p class="text-gray-700 font-medium mb-2">Next hike date TBD</p>
-      <p class="text-gray-500 text-sm">
+      <p class="text-cream-100 font-medium mb-2">Next hike date TBD</p>
+      <p class="text-stone-500 text-sm">
         Hike announcements will be posted here and sent to the group channel.
         Check back soon or watch for Gary's message.
       </p>

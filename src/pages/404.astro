@@ -9,16 +9,18 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   description="The page you're looking for doesn't exist. Head back to EmpowerX3's homepage."
   noindex={true}
 >
-  <section class="py-32 text-center px-4">
-    <p class="text-brand-600 font-bold text-6xl mb-4" aria-hidden="true">404</p>
-    <h1 class="font-heading font-bold text-3xl text-gray-900 mb-4">
-      Looks Like This Road Doesn't Exist
-    </h1>
-    <p class="text-gray-500 mb-8 max-w-md mx-auto">
-      The page you're looking for has taken a wrong turn. Let's get you back on the route.
-    </p>
-    <a href="/" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors">
-      Back to Home
-    </a>
+  <section class="py-32 text-center px-4 bg-stone-950 min-h-[60vh] flex items-center justify-center">
+    <div class="max-w-md mx-auto">
+      <p class="text-brand-700 font-bold text-7xl mb-4 font-heading" aria-hidden="true">404</p>
+      <h1 class="font-heading font-bold text-3xl text-cream-100 mb-4">
+        Looks Like This Road Doesn't Exist
+      </h1>
+      <p class="text-stone-500 mb-8 max-w-md mx-auto">
+        The page you're looking for has taken a wrong turn. Let's get you back on the route.
+      </p>
+      <a href="/" class="inline-flex items-center px-6 py-3 rounded-lg bg-gold-500 text-stone-950 font-semibold hover:bg-gold-400 transition-colors">
+        Back to Home
+      </a>
+    </div>
   </section>
 </BaseLayout>

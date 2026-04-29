@@ -10,13 +10,16 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="bg-gradient-to-br from-brand-800 to-accent-600 text-white py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-brand-200 font-semibold text-sm uppercase tracking-widest mb-3">Programs</p>
-      <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6 max-w-3xl leading-tight">
+  <section class="relative bg-stone-950 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-900/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Programs</p>
+      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 max-w-3xl leading-tight text-cream-100">
         The 90-Day Biohacking Transformation
       </h1>
-      <p class="text-orange-100 text-xl max-w-2xl leading-relaxed">
+      <p class="text-stone-300 text-xl max-w-2xl leading-relaxed">
         Give Gary 90 days and people will be asking you what the secret is — just like they did with him.
         This is a complete system that works because it's complete: Body, Mind, and Spirit working together.
       </p>
@@ -24,12 +27,12 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Why 90 Days ───────────────────────────────────────────────── -->
-  <section class="py-16 bg-white border-b border-gray-100">
+  <section class="py-16 bg-stone-900 border-b border-stone-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-heading font-bold text-2xl text-gray-900 mb-4">
+      <h2 class="font-heading font-bold text-2xl text-cream-100 mb-4">
         Why Most Programs Fail — and Why This One Doesn't
       </h2>
-      <p class="text-gray-600 leading-relaxed">
+      <p class="text-stone-400 leading-relaxed">
         You've tried keto, bought the supplements, hired the coaches and therapists. Each approach attacked
         one leg of the stool — body, mind, or spirit — while ignoring the other two. Nothing clicked because
         nothing was complete. The 90-Day Program works on all three simultaneously, using your own genetic
@@ -39,9 +42,9 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── 90-Day Structure ──────────────────────────────────────────── -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-stone-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-14 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-14 text-center">
         What the 90 Days Actually Looks Like
       </h2>
       <div class="grid md:grid-cols-3 gap-8 mb-14">
@@ -49,33 +52,33 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           {
             month: 'Month 1',
             title: 'Detox & Genetic Testing',
-            color: 'bg-brand-50 border-brand-200',
-            accent: 'text-brand-700',
-            body: 'We stop the crisis. Natural plant medicine clears out what\'s not serving you. Genetic testing reveals how your body actually processes nutrients, responds to stress, and builds muscle. We get the data and get you stable.',
-            note: 'You can\'t focus on a goal when you\'re in triage mode.',
+            accentBorder: 'border-t-brand-600',
+            accentText: 'text-brand-400',
+            body: "We stop the crisis. Natural plant medicine clears out what's not serving you. Genetic testing reveals how your body actually processes nutrients, responds to stress, and builds muscle. We get the data and get you stable.",
+            note: "You can't focus on a goal when you're in triage mode.",
           },
           {
             month: 'Months 2–3',
             title: 'Build Your Protocol',
-            color: 'bg-accent-50 border-accent-200',
-            accent: 'text-accent-600',
-            body: 'Using your own genetic data, we develop a supplement and diet routine that works for your specific body. We add movement that fits your life. And we do the real work: mindset coaching that connects your daily actions to your vision.',
+            accentBorder: 'border-t-gold-500',
+            accentText: 'text-gold-400',
+            body: "Using your own genetic data, we develop a supplement and diet routine that works for your specific body. We add movement that fits your life. And we do the real work: mindset coaching that connects your daily actions to your vision.",
             note: 'You learn about yourself. You do the work. You believe in yourself.',
           },
           {
             month: 'Throughout',
             title: 'Focused Coaching',
-            color: 'bg-gray-50 border-gray-200',
-            accent: 'text-gray-700',
-            body: 'Weekly sessions for motivation, physical activity, and spiritual growth. Q&A calls where you ask anything. A community of people who\'ve also tried everything and failed — no judgment, just real support.',
+            accentBorder: 'border-t-stone-600',
+            accentText: 'text-stone-400',
+            body: "Weekly sessions for motivation, physical activity, and spiritual growth. Q&A calls where you ask anything. A community of people who've also tried everything and failed — no judgment, just real support.",
             note: 'Gary does the program alongside you, not coaching from the sidelines.',
           },
-        ].map(({ month, title, color, accent, body, note }) => (
-          <div class={`rounded-2xl p-8 border ${color}`}>
-            <p class={`font-bold text-sm uppercase tracking-widest mb-1 ${accent}`}>{month}</p>
-            <h3 class="font-heading font-bold text-xl text-gray-900 mb-4">{title}</h3>
-            <p class="text-gray-600 leading-relaxed text-sm mb-4">{body}</p>
-            <p class="text-gray-500 text-xs italic">{note}</p>
+        ].map(({ month, title, accentBorder, accentText, body, note }) => (
+          <div class={`rounded-2xl p-8 border-t-4 ${accentBorder} bg-stone-900 border border-stone-800 border-t-0`}>
+            <p class={`font-bold text-sm uppercase tracking-widest mb-1 ${accentText}`}>{month}</p>
+            <h3 class="font-heading font-bold text-xl text-cream-100 mb-4">{title}</h3>
+            <p class="text-stone-400 leading-relaxed text-sm mb-4">{body}</p>
+            <p class="text-stone-500 text-xs italic">{note}</p>
           </div>
         ))}
       </div>
@@ -83,7 +86,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       <div class="text-center">
         <a
           href="/contact"
-          class="inline-flex items-center px-8 py-4 rounded-xl bg-brand-600 text-white font-bold text-lg hover:bg-brand-700 transition-colors"
+          class="inline-flex items-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors"
         >
           Start the 90-Day Program
         </a>
@@ -92,27 +95,27 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── What's Included ───────────────────────────────────────────── -->
-  <section class="py-20 bg-gray-50">
+  <section class="py-20 bg-stone-900">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl text-gray-900 mb-10 text-center">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-10 text-center">
         Everything Included in the Program
       </h2>
-      <div class="grid sm:grid-cols-2 gap-4">
+      <div class="grid sm:grid-cols-2 gap-3">
         {[
-          'Comprehensive genetic testing — how your body processes nutrients, stress, and builds muscle',
-          'Natural plant medicine detox protocol to clear what\'s not serving you',
-          'Personalized supplement and diet routine built from your genetic data',
-          'Movement programming that fits your life (not a template)',
-          'Weekly 1-on-1 coaching calls with Gary — motivation, physical activity, and spiritual growth',
-          'Q&A calls where you can ask anything, any time',
-          'Community of people who\'ve tried everything and failed — no judgment, real support',
-          'Optional ExoPod sessions at our Lakeway facility to accelerate cellular recovery',
-          'Access to the EmpowerX3 client portal and resource library',
-          'Wolfpack group hikes through Hill Country to test your progress in the real world',
+          "Comprehensive genetic testing — how your body processes nutrients, stress, and builds muscle",
+          "Natural plant medicine detox protocol to clear what's not serving you",
+          "Personalized supplement and diet routine built from your genetic data",
+          "Movement programming that fits your life (not a template)",
+          "Weekly 1-on-1 coaching calls with Gary — motivation, physical activity, and spiritual growth",
+          "Q&A calls where you can ask anything, any time",
+          "Community of people who've tried everything and failed — no judgment, real support",
+          "Optional ExoPod sessions at our Lakeway facility to accelerate cellular recovery",
+          "Access to the EmpowerX3 client portal and resource library",
+          "Wolfpack group hikes through Hill Country to test your progress in the real world",
         ].map((item) => (
-          <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-            <span class="text-brand-500 shrink-0 mt-0.5" aria-hidden="true">✓</span>
-            <span class="text-gray-700 text-sm">{item}</span>
+          <div class="flex items-start gap-3 bg-stone-800 rounded-xl p-4 border border-stone-700">
+            <span class="text-brand-400 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
+            <span class="text-stone-300 text-sm">{item}</span>
           </div>
         ))}
       </div>
@@ -120,13 +123,13 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Custom Plans ──────────────────────────────────────────────── -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-stone-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14">
-        <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4">
           Tailored to Your Specific Goals
         </h2>
-        <p class="text-gray-500 max-w-2xl mx-auto">
+        <p class="text-stone-400 max-w-2xl mx-auto">
           The 90-day foundation is the same for everyone. What changes is how we apply it to your life.
         </p>
       </div>
@@ -163,20 +166,20 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             ],
           },
         ].map(({ icon, plan, points }) => (
-          <article class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+          <article class="bg-stone-900 rounded-2xl p-8 border border-stone-800">
             <span class="text-4xl block mb-3" aria-hidden="true">{icon}</span>
-            <h3 class="font-heading font-bold text-xl text-gray-900 mb-4">{plan}</h3>
+            <h3 class="font-heading font-bold text-xl text-cream-100 mb-4">{plan}</h3>
             <ul class="space-y-2 mb-6">
               {points.map((p) => (
-                <li class="flex items-start gap-2 text-sm text-gray-700">
-                  <span class="text-brand-500 shrink-0 mt-0.5" aria-hidden="true">✓</span>
+                <li class="flex items-start gap-2 text-sm text-stone-400">
+                  <span class="text-brand-400 shrink-0 mt-0.5" aria-hidden="true">✓</span>
                   {p}
                 </li>
               ))}
             </ul>
             <a
               href="/contact"
-              class="block text-center py-2.5 rounded-lg border-2 border-brand-600 text-brand-600 font-semibold text-sm hover:bg-brand-600 hover:text-white transition-colors"
+              class="block text-center py-2.5 rounded-lg border border-gold-600 text-gold-400 font-semibold text-sm hover:bg-gold-500 hover:text-stone-950 transition-colors"
             >
               Discuss This Plan
             </a>
@@ -187,18 +190,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Gary's Promise ────────────────────────────────────────────── -->
-  <section class="py-20 bg-brand-700 text-white">
-    <div class="max-w-3xl mx-auto px-4 text-center">
+  <section class="relative bg-brand-900 border-y border-brand-800 py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <div class="relative max-w-3xl mx-auto px-4 text-center">
       <p class="text-brand-200 text-lg italic leading-relaxed mb-6">
         "I've lived every failure you've lived. I've done every diet, taken every supplement, believed
         every promise that didn't deliver. I don't teach theory. I teach what I've personally used to
         overcome a permanently disabling injury and decades of trauma. I'm the biohacking life coach
         and medical weight loss coach for you that I was for myself."
       </p>
-      <p class="font-semibold text-brand-200 mb-8">— Gary Brandt, EmpowerX3</p>
+      <p class="font-semibold text-brand-300 mb-10">— Gary Brandt, EmpowerX3</p>
       <a
         href="/contact"
-        class="inline-flex items-center px-8 py-4 rounded-xl bg-accent-500 text-white font-bold text-lg hover:bg-accent-600 transition-colors"
+        class="inline-flex items-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors"
       >
         I Can't Wait to Celebrate Your Transformation
       </a>
