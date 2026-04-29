@@ -1,12 +1,9 @@
 name = "empowerx3"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = "dist"
+
+# pages_build_output_dir is intentionally omitted — this project deploys via
+# Cloudflare Pages Git integration, not wrangler CLI
 
 [vars]
 PORTAL_PASSWORD_HASH = ""
-
-# Add KV namespace bindings here if needed for session storage
-# [[kv_namespaces]]
-# binding = "KV"
-# id = "your-kv-namespace-id"
