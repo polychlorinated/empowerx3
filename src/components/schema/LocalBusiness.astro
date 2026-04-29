@@ -1,5 +1,4 @@
 ---
-// Injected globally in BaseLayout — do not add to individual pages
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
@@ -7,14 +6,24 @@ const schema = {
   url: 'https://empowerx3.com',
   logo: 'https://empowerx3.com/logo.png',
   description:
-    'EmpowerX3 helps clients optimize cellular health and longevity through personalized biohacking programs.',
-  telephone: '',          // TODO: add phone number
-  email: '',              // TODO: add contact email
+    'EmpowerX3 is a biohacking wellness center in Lakeway, TX offering the ExoPod 10-in-1 cellular recovery system and 90-day life transformation coaching.',
+  telephone: '',
+  email: '',
   address: {
     '@type': 'PostalAddress',
-    addressCountry: 'US', // TODO: fill in full address
+    streetAddress: '2300 Lohmans Spur #116',
+    addressLocality: 'Lakeway',
+    addressRegion: 'TX',
+    postalCode: '78734',
+    addressCountry: 'US',
   },
-  sameAs: [],             // TODO: add social profile URLs
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 30.3627,
+    longitude: -97.9822,
+  },
+  areaServed: ['Lakeway', 'Austin', 'Westlake Hills', 'Bee Cave', 'Cedar Park'],
+  sameAs: [],
 };
 ---
 
