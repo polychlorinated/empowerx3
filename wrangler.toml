@@ -1,9 +1,7 @@
 name = "empowerx3"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
-
-# pages_build_output_dir is intentionally omitted — this project deploys via
-# Cloudflare Pages Git integration, not wrangler CLI
+pages_build_output_dir = "dist"
 
 [vars]
 PORTAL_PASSWORD_HASH = ""
