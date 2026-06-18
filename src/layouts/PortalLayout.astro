@@ -4,9 +4,13 @@ import Footer from '@/components/Footer.astro';
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = 'EmpowerX3 client portal — access your program resources and order products.' } = Astro.props;
+
+// Access user from middleware (set in src/middleware/index.ts)
+const user = Astro.locals.user;
 ---
 
 <!doctype html>
@@ -14,25 +18,49 @@ const { title } = Astro.props;
   <head>
     <Head
       title={title}
-      description="EmpowerX3 client portal — access your program resources and order products."
+      description={description}
       noindex={true}
     />
   </head>
   <body class="min-h-screen flex flex-col bg-stone-950 text-cream-100 antialiased">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-gold-500 text-stone-950 font-semibold rounded-lg"
+    >
+      Skip to main content
+    </a>
+
     <header class="bg-stone-900 border-b border-stone-800 py-4 px-6">
-      <div class="max-w-5xl mx-auto flex items-center justify-between">
-        <a href="/portal" class="font-heading font-bold text-lg text-cream-100">
+      <div class="max-w-5xl mx-auto flex items-center justify-between gap-4">
+        <a href="/portal" class="font-heading font-bold text-lg text-cream-100 flex-shrink-0">
           Empower<span class="text-gold-500">X3</span>
           <span class="text-stone-500 font-normal text-sm ml-2">Portal</span>
         </a>
-        <a href="/portal/logout" class="text-sm text-stone-400 hover:text-gold-400 transition-colors">
-          Sign Out
-        </a>
+
+        <nav class="flex items-center gap-4" aria-label="Portal navigation">
+          {user?.authenticated && (
+            <>
+              {user.name && (
+                <span class="text-sm text-stone-400 hidden sm:block">
+                  Signed in as <strong class="text-cream-100">{user.name}</strong>
+                </span>
+              )}
+              <a
+                href="/portal/logout"
+                class="text-sm text-stone-400 hover:text-gold-400 transition-colors whitespace-nowrap"
+              >
+                Sign Out
+              </a>
+            </>
+          )}
+        </nav>
       </div>
     </header>
+
     <main id="main-content" class="flex-1 max-w-5xl mx-auto w-full px-4 py-8" tabindex="-1">
       <slot />
     </main>
+
     <Footer />
   </body>
 </html>
