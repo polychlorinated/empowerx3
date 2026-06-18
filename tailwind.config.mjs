@@ -43,13 +43,28 @@ export default {
         },
       },
       fontFamily: {
-        // Barlow Condensed: strong, athletic, condensed — perfect for biohacking
         heading: ['Barlow Condensed', 'system-ui', 'sans-serif'],
-        // DM Sans: clean, modern, readable — not generic
         sans:    ['DM Sans',          'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gold-shimmer': 'linear-gradient(135deg, #d4a843 0%, #f5d870 50%, #d4a843 100%)',
+        'brand-gradient': 'linear-gradient(135deg, #2d6b2d 0%, #1a5018 100%)',
+      },
+      // Portal-specific utilities
+      animation: {
+        'fade-in': 'fadeIn 0.3s ease-out',
+        'slide-up': 'slideUp 0.4s ease-out',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
       },
     },
   },

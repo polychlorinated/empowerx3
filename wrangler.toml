@@ -5,6 +5,26 @@ compatibility_flags = ["nodejs_compat"]
 
 [assets]
 directory = "dist"
+# Cache static assets for 1 year
+cache_control = "public, max-age=31536000, immutable"
 
 [vars]
+# These will be overridden by Cloudflare Pages environment variables
 PORTAL_PASSWORD_HASH = ""
+
+# Add bindings if needed:
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "empowerx3-db"
+# database_id = "xxx"
+
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "xxx"
+
+# [[r2_buckets]]
+# binding = "UPLOADS"
+# bucket_name = "empowerx3-uploads"
+
+[observability]
+enabled = true
