@@ -14,12 +14,17 @@ export default defineConfig({
   integrations: [tailwind()],
   image: {
     // sharp runs at build time only — correct for Cloudflare Pages where all marketing pages are prerendered
-
     domains: ['wp.empowerx3.com'],
   },
   vite: {
     ssr: {
-      external: ['node:buffer', 'node:path', 'node:stream', 'node:util'],
+      external: [
+        'node:buffer', 
+        'node:path', 
+        'node:stream', 
+        'node:util',
+        'node:crypto'  // Added for login.astro
+      ],
     },
   },
 });
