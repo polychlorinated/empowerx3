@@ -10,7 +10,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="relative bg-stone-950 overflow-hidden">
+  <section class="relative bg-stone-900 overflow-hidden">
     <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
     <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-900/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
@@ -42,7 +42,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── 90-Day Structure ──────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-950">
+  <section class="py-20 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-14 text-center">
         What the 90 Days Actually Looks Like
@@ -74,7 +74,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             note: 'Gary does the program alongside you, not coaching from the sidelines.',
           },
         ].map(({ month, title, accentBorder, accentText, body, note }) => (
-          <div class={`rounded-2xl p-8 border-t-4 ${accentBorder} bg-stone-900 border border-stone-800 border-t-0`}>
+          <div class={`rounded-2xl p-8 border-t-4 ${accentBorder} bg-stone-800 border border-stone-700 border-t-0`}>
             <p class={`font-bold text-sm uppercase tracking-widest mb-1 ${accentText}`}>{month}</p>
             <h3 class="font-heading font-bold text-xl text-cream-100 mb-4">{title}</h3>
             <p class="text-stone-400 leading-relaxed text-sm mb-4">{body}</p>
@@ -95,7 +95,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── What's Included ───────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900">
+  <section class="py-20 bg-stone-800 border-y border-stone-700">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-heading font-bold text-3xl text-cream-100 mb-10 text-center">
         Everything Included in the Program
@@ -113,7 +113,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           "Access to the EmpowerX3 client portal and resource library",
           "Wolfpack group hikes through Hill Country to test your progress in the real world",
         ].map((item) => (
-          <div class="flex items-start gap-3 bg-stone-800 rounded-xl p-4 border border-stone-700">
+          <div class="flex items-start gap-3 bg-stone-700 rounded-xl p-4 border border-stone-600">
             <span class="text-brand-400 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
             <span class="text-stone-300 text-sm">{item}</span>
           </div>
@@ -123,7 +123,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Custom Plans ──────────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-950">
+  <section class="py-20 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14">
         <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4">
@@ -166,7 +166,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             ],
           },
         ].map(({ icon, plan, points }) => (
-          <article class="bg-stone-900 rounded-2xl p-8 border border-stone-800">
+          <article class="bg-stone-800 rounded-2xl p-8 border border-stone-700">
             <span class="text-4xl block mb-3" aria-hidden="true">{icon}</span>
             <h3 class="font-heading font-bold text-xl text-cream-100 mb-4">{plan}</h3>
             <ul class="space-y-2 mb-6">
@@ -190,7 +190,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Gary's Promise ────────────────────────────────────────────── -->
-  <section class="relative bg-brand-900 border-y border-brand-800 py-20 overflow-hidden">
+  <section class="relative bg-brand-800 border-y border-brand-700 py-20 overflow-hidden">
     <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
     <div class="relative max-w-3xl mx-auto px-4 text-center">
       <p class="text-brand-200 text-lg italic leading-relaxed mb-6">

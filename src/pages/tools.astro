@@ -137,7 +137,7 @@ const faqs = [
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="relative bg-stone-950 overflow-hidden">
+  <section class="relative bg-stone-900 overflow-hidden">
     <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
     <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
@@ -153,8 +153,26 @@ const faqs = [
     </div>
   </section>
 
+  <!-- ─── ExoPod Intro Video ───────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-800 border-b border-stone-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="aspect-video w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-stone-700 bg-stone-900">
+        <iframe
+          src="https://www.youtube.com/embed/BMQotgl0TXw"
+          title="ExoPod in Action - EmpowerX3 Biohacking Wellness Center"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          class="w-full h-full"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── In-Page Nav ───────────────────────────────────────────────── -->
-  <nav aria-label="Page sections" class="sticky top-16 z-40 bg-stone-950/95 backdrop-blur-sm border-b border-stone-800">
+  <nav aria-label="Page sections" class="sticky top-16 z-40 bg-stone-900/95 backdrop-blur-sm border-b border-stone-700">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <ul class="flex overflow-x-auto gap-0" role="list">
         {[
@@ -178,7 +196,7 @@ const faqs = [
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- EXOPOD SECTION                                                  -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section id="exopod" class="scroll-mt-32 pt-20 pb-4 bg-stone-950">
+  <section id="exopod" class="scroll-mt-32 pt-20 pb-4 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-4 mb-2">
         <span class="text-4xl" aria-hidden="true">🛸</span>
@@ -206,7 +224,7 @@ const faqs = [
   </div>
 
   <!-- Benefits timeline -->
-  <section class="py-16 bg-stone-950">
+  <section class="py-16 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h3 class="font-heading font-bold text-2xl text-cream-100 mb-10 text-center">What to Expect — and When</h3>
       <div class="grid md:grid-cols-3 gap-6">
@@ -245,44 +263,78 @@ const faqs = [
   </section>
 
   <!-- Case Studies -->
-  <section class="py-16 bg-stone-900">
+  <section class="py-16 bg-stone-800 border-y border-stone-700">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h3 class="font-heading font-bold text-2xl text-cream-100 mb-8 text-center">Real Client Results</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <article class="bg-stone-800 rounded-2xl p-8 border border-stone-700">
-          <p class="text-gold-400 font-bold text-2xl mb-1">6 Inches Lost</p>
-          <p class="text-stone-500 text-sm mb-4">4 sessions · Postpartum</p>
-          <p class="text-stone-400 text-sm leading-relaxed mb-4">
-            Ava is a busy 34-year-old mother who wanted to shed pregnancy weight naturally and efficiently.
-          </p>
-          <ul class="space-y-2">
-            {['Lost 6 inches overall in just 4 sessions', 'Reduced bloating and tightened loose skin', 'More confident and energized throughout the day'].map((r) => (
-              <li class="flex items-start gap-2 text-sm text-stone-300">
-                <span class="text-brand-400 shrink-0" aria-hidden="true">✓</span>{r}
-              </li>
-            ))}
-          </ul>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <!-- Gary's Transformation -->
+        <article class="bg-stone-900 rounded-2xl p-6 border border-stone-700 text-center relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-600 to-brand-900 rounded-l-2xl" aria-hidden="true"></div>
+          <p class="text-brand-400 font-bold text-xs uppercase tracking-widest mb-2">Founder's Journey</p>
+          <img src="/gary-transformation.png" alt="Gary Brandt's transformation - from disabled after car accident to biohacking coach" class="w-full h-auto rounded-xl mb-4" loading="lazy" />
+          <h4 class="font-heading font-bold text-lg text-cream-100 mb-1">Gary Brandt</h4>
+          <p class="text-stone-500 text-xs mb-2">Car Accident → Permanent Disability → Full Recovery</p>
+          <p class="text-stone-400 text-sm leading-relaxed">After a car accident left him permanently disabled, Gary rebuilt his body, mind, and spirit using the exact protocols he now teaches at EmpowerX3.</p>
         </article>
-        <article class="bg-stone-800 rounded-2xl p-8 border border-stone-700">
-          <p class="text-gold-400 font-bold text-2xl mb-1">7 Inches Lost</p>
-          <p class="text-stone-500 text-sm mb-4">5 sessions · Athletic Performance</p>
-          <p class="text-stone-400 text-sm leading-relaxed mb-4">
-            Michael, 42, is an intense weightlifter battling stubborn fat and slow recovery despite heavy training.
-          </p>
-          <ul class="space-y-2">
-            {['Lost 7 inches across his midsection', 'Improved muscle recovery and reduced soreness', 'Increased energy and circulation for better performance'].map((r) => (
-              <li class="flex items-start gap-2 text-sm text-stone-300">
-                <span class="text-brand-400 shrink-0" aria-hidden="true">✓</span>{r}
-              </li>
-            ))}
-          </ul>
+
+        <!-- Ava's Transformation -->
+        <article class="bg-stone-900 rounded-2xl p-6 border border-stone-700 text-center relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold-500 to-gold-800 rounded-l-2xl" aria-hidden="true"></div>
+          <p class="text-gold-400 font-bold text-xs uppercase tracking-widest mb-2">Postpartum Recovery</p>
+          <img src="/SUCCESS-AVA.png" alt="Ava's transformation - 6 inches lost in 4 ExoPod sessions postpartum" class="w-full h-auto rounded-xl mb-4" loading="lazy" />
+          <h4 class="font-heading font-bold text-lg text-cream-100 mb-1">Ava</h4>
+          <p class="text-stone-500 text-xs mb-2">34, Mother · 4 Sessions · Postpartum</p>
+          <p class="text-stone-400 text-sm leading-relaxed">Lost 6 inches overall in just 4 sessions. Reduced bloating and tightened loose skin. More confident and energized throughout the day.</p>
         </article>
+
+        <!-- Michael's Transformation -->
+        <article class="bg-stone-900 rounded-2xl p-6 border border-stone-700 text-center relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-600 to-brand-900 rounded-l-2xl" aria-hidden="true"></div>
+          <p class="text-brand-400 font-bold text-xs uppercase tracking-widest mb-2">Athletic Performance</p>
+          <img src="/SUCCESS-MICHAEL.png" alt="Michael's transformation - 7 inches lost in 5 ExoPod sessions for athletic performance" class="w-full h-auto rounded-xl mb-4" loading="lazy" />
+          <h4 class="font-heading font-bold text-lg text-cream-100 mb-1">Michael</h4>
+          <p class="text-stone-500 text-xs mb-2">42, Weightlifter · 5 Sessions · Athletic Performance</p>
+          <p class="text-stone-400 text-sm leading-relaxed">Lost 7 inches across his midsection. Improved muscle recovery and reduced soreness. Increased energy and circulation for better performance.</p>
+        </article>
+
+        <!-- Daniel's Transformation -->
+        <article class="bg-stone-900 rounded-2xl p-6 border border-stone-700 text-center relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-stone-600 to-stone-800 rounded-l-2xl" aria-hidden="true"></div>
+          <p class="text-stone-400 font-bold text-xs uppercase tracking-widest mb-2">Weight Loss Journey</p>
+          <img src="/SUCCESS-DANIEL.png" alt="Daniel's transformation - ExoPod biohacking results" class="w-full h-auto rounded-xl mb-4" loading="lazy" />
+          <h4 class="font-heading font-bold text-lg text-cream-100 mb-1">Daniel</h4>
+          <p class="text-stone-500 text-xs mb-2">ExoPod Client · Marble Falls, TX</p>
+          <p class="text-stone-400 text-sm leading-relaxed">Significant body recomposition through consistent ExoPod sessions. Cellular optimization led to visible fat loss and improved metabolic health.</p>
+        </article>
+      </div>
+
+      <!-- PDF Downloads -->
+      <div class="bg-stone-900 rounded-2xl p-8 border border-stone-700 max-w-3xl mx-auto">
+        <h4 class="font-heading font-bold text-xl text-cream-100 mb-2 text-center">ExoPod Resources</h4>
+        <p class="text-stone-400 text-center text-sm mb-6">Download detailed case studies and protocol guides</p>
+        <div class="grid md:grid-cols-3 gap-4 text-center">
+          <a href="/ExoPod Case Studies (002).pdf" download class="flex flex-col items-center gap-2 p-5 bg-stone-800 rounded-xl border border-stone-700 hover:border-brand-500 hover:bg-stone-700 transition-colors">
+            <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+            <span class="font-semibold text-cream-100 text-sm">ExoPod Case Studies</span>
+            <span class="text-stone-500 text-xs">PDF • 3 Client Stories</span>
+          </a>
+          <a href="/Deep-dive into key functionality - ExoPod (2).pdf" download class="flex flex-col items-center gap-2 p-5 bg-stone-800 rounded-xl border border-stone-700 hover:border-brand-500 hover:bg-stone-700 transition-colors">
+            <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+            <span class="font-semibold text-cream-100 text-sm">ExoPod Deep Dive</span>
+            <span class="text-stone-500 text-xs">PDF • 10 Therapies Explained</span>
+          </a>
+          <a href="/Expected results and timeline_ ExoPod (2) (002).pdf" download class="flex flex-col items-center gap-2 p-5 bg-stone-800 rounded-xl border border-stone-700 hover:border-brand-500 hover:bg-stone-700 transition-colors">
+            <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+            <span class="font-semibold text-cream-100 text-sm">Results Timeline</span>
+            <span class="text-stone-500 text-xs">PDF • Expected Outcomes</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 10 Therapies Accordion -->
-  <section class="py-16 bg-stone-950">
+  <section class="py-16 bg-stone-800 border-y border-stone-700">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h3 class="font-heading font-bold text-2xl text-cream-100 mb-2 text-center">
         10 Cellular Therapies. One Session.
@@ -334,7 +386,7 @@ const faqs = [
       </h3>
       <div class="space-y-2">
         {faqs.map(({ q, a }) => (
-          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-950">
+          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
             <summary class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-stone-800 transition-colors">
               <p class="font-heading font-semibold text-cream-100 text-sm">{q}</p>
               <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -358,7 +410,7 @@ const faqs = [
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- WOLFPACK SECTION                                                -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section id="wolfpack" class="scroll-mt-32 py-20 bg-stone-950 border-t-4 border-brand-700">
+  <section id="wolfpack" class="scroll-mt-32 py-20 bg-stone-900 border-t-4 border-brand-700">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>

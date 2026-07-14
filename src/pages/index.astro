@@ -9,7 +9,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="relative bg-stone-950 overflow-hidden">
+  <section class="relative bg-stone-900 overflow-hidden">
     <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
     <!-- Subtle green glow bottom-left -->
     <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
@@ -46,7 +46,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Intro Video ─────────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-950 border-b border-stone-900">
+  <section class="py-16 bg-stone-900 border-b border-stone-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="aspect-video w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-stone-800 bg-stone-900">
         <iframe
@@ -64,15 +64,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Three Pillars ─────────────────────────────────────────────── -->
-  <section class="py-14 bg-stone-900 border-y border-stone-800">
+  <section class="py-14 bg-stone-800 border-y border-stone-700">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-px bg-stone-800 rounded-xl overflow-hidden">
+      <div class="grid md:grid-cols-3 gap-px bg-stone-700 rounded-xl overflow-hidden">
         {[
           { icon: '💪', label: 'Body',   desc: 'Restore your energy, reduce pain, and reset your biology with tools that target the cellular root cause.' },
           { icon: '🧠', label: 'Mind',   desc: 'Build the mindset behind your power. Connect daily action to your deepest vision and start believing in yourself again.' },
           { icon: '✨', label: 'Spirit', desc: 'Build unshakeable faith in yourself as you transform — not just physically, but in every area of life.' },
         ].map(({ icon, label, desc }) => (
-          <div class="flex flex-col items-center text-center px-8 py-10 bg-stone-900">
+          <div class="flex flex-col items-center text-center px-8 py-10 bg-stone-800">
             <span class="text-3xl mb-3" aria-hidden="true">{icon}</span>
             <h2 class="font-heading font-bold text-2xl text-cream-100 mb-2">{label}</h2>
             <p class="text-stone-400 text-sm leading-relaxed">{desc}</p>
@@ -82,11 +82,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- ─── Gary's Story ──────────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-950">
+<!-- ─── Gary's Story ──────────────────────────────────────────────── -->
+  <section class="py-20 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
+      <div class="grid md:grid-cols-3 gap-12 items-center">
+        <div class="md:col-span-2">
           <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-3">About Gary Brandt</p>
           <h2 class="font-heading font-bold text-4xl md:text-5xl text-cream-100 mb-6 leading-tight">
             Biohacking Life Coach<br />Medical Weight Loss Coach<br />Pain & Recovery Center Owner
@@ -108,21 +108,32 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             See the 90-Day Program &rarr;
           </a>
         </div>
-        <div class="bg-stone-900 rounded-2xl p-8 border border-stone-800 relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold-500 to-brand-600 rounded-l-2xl" aria-hidden="true"></div>
-          <blockquote class="text-stone-300 text-lg italic leading-relaxed mb-6 pl-4">
-            "I've lived every failure you've lived. I've done every diet, taken every supplement,
-            believed every promise that didn't deliver. I don't teach theory — I teach what I've
-            personally used to overcome a permanently disabling injury and decades of trauma."
-          </blockquote>
-          <p class="font-heading font-semibold text-gold-500 pl-4">— Gary Brandt, Founder of EmpowerX3</p>
+        <div class="space-y-6">
+          <div class="bg-stone-800 rounded-2xl p-6 border border-stone-700 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold-500 to-brand-600 rounded-l-2xl" aria-hidden="true"></div>
+            <blockquote class="text-stone-300 text-lg italic leading-relaxed mb-4 pl-4">
+              "I've lived every failure you've lived. I've done every diet, taken every supplement,
+              believed every promise that didn't deliver. I don't teach theory — I teach what I've
+              personally used to overcome a permanently disabling injury and decades of trauma."
+            </blockquote>
+            <p class="font-heading font-semibold text-gold-500 pl-4">— Gary Brandt, Founder of EmpowerX3</p>
+          </div>
+          <div class="text-center">
+            <img src="/profile-garyhs-square.jpg" alt="Gary Brandt - Biohacking Life Coach and Medical Weight Loss Coach" class="w-40 h-40 mx-auto rounded-full border-4 border-stone-700 object-cover mb-3" loading="lazy" />
+            <p class="font-heading font-semibold text-cream-100">Gary Brandt</p>
+            <p class="text-stone-500 text-sm">Founder, EmpowerX3</p>
+          </div>
+          <div class="text-center">
+            <img src="/gary-transformation.png" alt="Gary Brandt's transformation - from disabled after car accident to biohacking coach" class="w-full max-w-xs mx-auto rounded-xl border border-stone-700" loading="lazy" />
+            <p class="text-stone-500 text-sm mt-2">Gary's transformation: Car accident → Permanent disability → Full recovery</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ─── Pain Points ───────────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900">
+  <section class="py-20 bg-stone-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <h2 class="font-heading font-bold text-4xl md:text-5xl text-cream-100 mb-3 text-center">
@@ -137,7 +148,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             'The quiet shame of being brilliant at everything except the one thing that keeps you alive',
             'Watching your friends struggle and knowing you\'re on the same path',
           ].map((item) => (
-            <li class="flex items-start gap-4 bg-stone-800 rounded-xl p-4 border border-stone-700">
+            <li class="flex items-start gap-4 bg-stone-700 rounded-xl p-4 border border-stone-600">
               <span class="text-red-500/70 shrink-0 mt-0.5 font-bold" aria-hidden="true">✗</span>
               <span class="text-stone-300">{item}</span>
             </li>
@@ -151,11 +162,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── ExoPod Intro ──────────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-950">
+  <section class="py-20 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="bg-stone-900 border border-stone-800 rounded-2xl p-10 text-center relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-br from-brand-950/60 to-stone-900" aria-hidden="true"></div>
+        <div class="bg-stone-800 border border-stone-700 rounded-2xl p-10 text-center relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-950/60 to-stone-800" aria-hidden="true"></div>
           <div class="relative">
             <span class="text-7xl block mb-4" aria-hidden="true">🛸</span>
             <h3 class="font-heading font-bold text-2xl text-cream-100 mb-1">The ExoPod</h3>
@@ -185,7 +196,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── CTA Banner ─────────────────────────────────────────────────── -->
-  <section class="relative bg-brand-900 border-y border-brand-800 py-16 overflow-hidden">
+  <section class="relative bg-brand-800 border-y border-brand-700 py-16 overflow-hidden">
     <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
     <div class="relative max-w-4xl mx-auto px-4 text-center">
       <h2 class="font-heading font-bold text-4xl md:text-5xl text-cream-100 mb-4">
