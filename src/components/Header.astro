@@ -10,13 +10,13 @@ const nav = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 bg-[#1e1915]/95 backdrop-blur-sm border-b border-stone-800">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone-200">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-24">
 
       <!-- Brand -->
       <a href="/" class="flex items-center gap-2.5 font-heading font-bold text-xl tracking-wide" aria-label="EmpowerX3 home">
-        <img src="/empower-logo-full.webp" alt="EmpowerX3" width="208" height="47" aria-hidden="true" class="shrink-0" />
+        <img src="/empower-logo-full-color.webp" alt="EmpowerX3" width="208" height="47" aria-hidden="true" class="shrink-0" />
       </a>
 
       <!-- Desktop nav -->
@@ -31,8 +31,8 @@ const currentPath = Astro.url.pathname;
                   class:list={[
                     'px-4 py-2 rounded-md text-sm font-medium tracking-wide transition-colors',
                     isActive
-                      ? 'text-gold-400 bg-stone-900'
-                      : 'text-stone-400 hover:text-cream-100 hover:bg-stone-900',
+                      ? 'text-gold-500 bg-stone-100'
+                      : 'text-charcoal hover:text-gold-500 hover:bg-stone-100',
                   ]}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -47,13 +47,13 @@ const currentPath = Astro.url.pathname;
       <!-- CTA -->
       <a
         href="/contact"
-        class="hidden md:inline-flex items-center px-5 py-2.5 rounded-lg bg-gold-500 text-stone-950 text-sm font-semibold hover:bg-gold-400 transition-colors"
+        class="hidden md:inline-flex items-center px-5 py-2.5 rounded-lg bg-gold-500 text-white text-sm font-semibold hover:bg-gold-400 transition-colors"
       >
         Book a Call
       </a>
 
       <!-- Mobile -->
-      <a href="/contact" class="md:hidden text-gold-500 font-semibold text-sm">
+      <a href="/contact" class="md:hidden text-gold-500 font-semibold text-sm hover:text-gold-400 transition-colors">
         Book a Call
       </a>
 
