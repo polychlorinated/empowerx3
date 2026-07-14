@@ -6,8 +6,20 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Terms of Service — EmpowerX3"
-  description="EmpowerX3 Terms of Service governing the use of our website and services."
+  description="EmpowerX3 Terms of Service governing the use of our website and services, including medical disclaimer, user conduct, intellectual property, and limitation of liability."
+  og={{
+    title: "Terms of Service — EmpowerX3",
+    description: "EmpowerX3 Terms of Service governing the use of our website and services.",
+    image: "https://empowerx3.com/empower-logo-full.webp",
+    type: "website"
+  }}
+  canonical="https://empowerx3.com/terms"
   noindex={true}
+  schemaPageType="home"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Terms of Service', url: 'https://empowerx3.com/terms' }
+  ]}
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->

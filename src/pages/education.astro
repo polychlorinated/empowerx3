@@ -7,6 +7,27 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 <BaseLayout
   title="Cellular & Mitochondrial Health Education — EmpowerX3"
   description="Learn how optimizing your cells and mitochondria is the foundation of every EmpowerX3 program. Why cellular health is the root of energy, recovery, and longevity."
+  og={{
+    title: "Cellular & Mitochondrial Health Education — EmpowerX3",
+    description: "Learn how optimizing your cells and mitochondria is the foundation of every EmpowerX3 program.",
+    image: "https://empowerx3.com/wellness-mountain.jpg",
+    type: "website"
+  }}
+  canonical="https://empowerx3.com/education"
+  schemaPageType="article"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Education', url: 'https://empowerx3.com/education' }
+  ]}
+  schemaArticle={{
+    headline: "First, We Clean the Car Up and Rebuild the Engine",
+    description: "Learn how optimizing your cells and mitochondria is the foundation of every EmpowerX3 program. Why cellular health is the root of energy, recovery, and longevity.",
+    image: "https://empowerx3.com/wellness-mountain.jpg",
+    author: { '@type': 'Organization', name: 'EmpowerX3', url: 'https://empowerx3.com' },
+    publisher: { '@type': 'Organization', name: 'EmpowerX3', logo: { '@type': 'ImageObject', url: 'https://empowerx3.com/empower-logo-full.webp' } },
+    datePublished: '2025-01-15',
+    dateModified: '2025-05-28'
+  }}
 >
 
 <!-- ─── Hero ─────────────────────────────────────────────────────── -->

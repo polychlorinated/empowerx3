@@ -1,25 +1,133 @@
 ---
 interface Props {
-  title: string;
-  description: string;
-  url?: string;
+  /** The specific page type for enhanced schema */
+  pageType?: 'home' | 'service' | 'program' | 'tools' | 'contact' | 'education';
+  /** Array of breadcrumbs: [{name, url}] */
+  breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
-const { title, description, url } = Astro.props;
-const resolvedUrl = url ?? new URL(Astro.url.pathname, 'https://empowerx3.com').href;
+/**
+ * Enhanced WebPage schema with page-type specific enhancements
+ */
+const { pageType = 'home', breadcrumbs = [] } = Astro.props;
+
+const siteUrl = 'https://empowerx3.com';
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+const pageTitle = Astro.props.title;
+const pageDescription = Astro.props.description;
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: title,
-  description,
-  url: resolvedUrl,
+  name: pageTitle,
+  description: pageDescription,
+  url: pageUrl,
   isPartOf: {
     '@type': 'WebSite',
     name: 'EmpowerX3',
-    url: 'https://empowerx3.com',
+    url: siteUrl,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://empowerx3.com/search?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
   },
+  publisher: {
+    '@type': 'Organization',
+    name: 'EmpowerX3',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://empowerx3.com/empower-logo-full.webp',
+    },
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Gary Brandt',
+    jobTitle: 'Biohacking Life Coach & Medical Weight Loss Coach',
+    worksFor: { '@type': 'Organization', name: 'EmpowerX3' },
+  },
+  datePublished: new Date().toISOString(),
+  dateModified: new Date().toISOString(),
+  inLanguage: 'en-US',
+  potentialAction: {
+    '@type': 'ReadAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: pageUrl,
+      actionPlatform: [
+        'http://schema.org/DesktopWebPlatform',
+        'http://schema.org/MobileWebPlatform',
+      ],
+    },
+  },
+  ...(breadcrumbs.length > 0 && {
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((b, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: b.name,
+        item: b.url.startsWith('http') ? b.url : `${siteUrl}${b.url}`,
+      })),
+    },
+  }),
+  // Page-type specific enhancements
+  ...(pageType === 'home' && {
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: 'EmpowerX3',
+      '@id': 'https://empowerx3.com/#business',
+    },
+  }),
+  ...(pageType === 'service' && {
+    mainEntity: {
+      '@type': 'Service',
+      name: 'ExoPod 10-in-1 Cellular Recovery',
+      description: 'Clinical-grade biohacking tool delivering 10 advanced cellular therapies in a single 30-minute session.',
+      provider: {
+        '@type': 'LocalBusiness',
+        name: 'EmpowerX3',
+        '@id': 'https://empowerx3.com/#business',
+      },
+      areaServed: ['Marble Falls', 'Lakeway', 'Austin', 'Westlake Hills', 'Bee Cave', 'Cedar Park'],
+      availableChannel: {
+        '@type': 'ServiceChannel',
+        serviceUrl: 'https://empowerx3.com/tools#exopod',
+        servicePhone: '+1-512-799-9765',
+      },
+    },
+  }),
+  ...(pageType === 'program' && {
+    mainEntity: {
+      '@type': 'Product',
+      name: '90-Day Biohacking Transformation',
+      description: 'Complete body-mind-spirit transformation with genetic testing, personalized protocols, weekly coaching, and ExoPod sessions.',
+      brand: { '@type': 'Brand', name: 'EmpowerX3' },
+      offers: {
+        '@type': 'Offer',
+        price: '4997.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        seller: { '@type': 'Organization', name: 'EmpowerX3' },
+      },
+    },
+  }),
+  ...(pageType === 'tools' && {
+    mainEntity: {
+      '@type': 'ItemList',
+      name: 'EmpowerX3 Biohacking Tools',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'ExoPod 10-in-1 Cellular Recovery' },
+        { '@type': 'ListItem', position: 2, name: 'Wolfpack Hill Country Hiking Group' },
+        { '@type': 'ListItem', position: 3, name: 'Genetic-Based Nutrition & Supplements' },
+      ],
+    },
+  }),
 };
+
 ---
 
 <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

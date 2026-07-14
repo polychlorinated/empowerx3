@@ -30,8 +30,21 @@ export default {
           800: '#7a5205',
           900: '#5a3a02',
         },
-        // ── Warm dark stone (backgrounds) ───────────────────────────
-        // Tailwind's built-in stone-800/900/950 cover the dark surfaces
+        // ── Warmer, lighter stone (20% lighter than default) ────────
+        stone: {
+          50:  '#fafaf9',
+          100: '#f5f5f4',
+          200: '#e7e5e4',
+          300: '#d6d3d1',
+          400: '#a8a29e',
+          500: '#8a827b',
+          600: '#716961',
+          700: '#5c534b',
+          800: '#4d463e',   // was #292524 → ~20% lighter
+          850: '#433d35',
+          900: '#3d372f',   // was #1c1917 → ~20% lighter
+          950: '#24211c',   // was #0c0a09 → ~20% lighter
+        },
         // ── Warm cream (text on dark) ───────────────────────────────
         cream: {
           50:  '#fdfcf4',

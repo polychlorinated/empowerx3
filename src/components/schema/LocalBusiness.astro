@@ -1,14 +1,15 @@
 ---
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': ['LocalBusiness', 'HealthAndBeautyBusiness', 'MedicalBusiness'],
   name: 'EmpowerX3',
   url: 'https://empowerx3.com',
-  logo: 'https://empowerx3.com/logo.png',
+  logo: 'https://empowerx3.com/empower-logo-full.webp',
+  image: 'https://empowerx3.com/og-default.jpg',
   description:
     'EmpowerX3 is a biohacking wellness center in Marble Falls, TX offering the ExoPod 10-in-1 cellular recovery system and 90-day life transformation coaching.',
-  telephone: '',
-  email: '',
+  telephone: '+1-512-799-9765',
+  email: 'gary@empowerx3.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '303 Main Street #4',
@@ -22,8 +23,71 @@ const schema = {
     latitude: 30.578,
     longitude: -98.276,
   },
-  areaServed: ['Marble Falls', 'Lakeway', 'Austin', 'Westlake Hills', 'Bee Cave', 'Cedar Park'],
-  sameAs: [],
+  areaServed: [
+    { '@type': 'City', name: 'Marble Falls' },
+    { '@type': 'City', name: 'Lakeway' },
+    { '@type': 'City', name: 'Austin' },
+    { '@type': 'City', name: 'Westlake Hills' },
+    { '@type': 'City', name: 'Bee Cave' },
+    { '@type': 'City', name: 'Cedar Park' },
+    { '@type': 'State', name: 'Texas' },
+  ],
+  priceRange: '$$',
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Monday', opens: '09:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Tuesday', opens: '09:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '09:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday', opens: '09:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '09:00', closes: '17:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '14:00' },
+  ],
+  sameAs: [
+    'https://www.facebook.com/empowerx3',
+    'https://www.instagram.com/empowerx3',
+    'https://www.linkedin.com/company/empowerx3',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'EmpowerX3 Wellness Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'ExoPod 10-in-1 Cellular Recovery Session',
+          description: '30-minute session delivering 10 advanced cellular therapies including red light, magnetic field, terahertz, and ozone therapy.',
+          provider: { '@type': 'LocalBusiness', name: 'EmpowerX3' },
+        },
+        price: '99.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: '90-Day Biohacking Transformation Program',
+          description: 'Complete body-mind-spirit transformation with genetic testing, personalized protocols, weekly coaching, and ExoPod sessions.',
+          provider: { '@type': 'LocalBusiness', name: 'EmpowerX3' },
+        },
+        price: '4997.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Discovery Call (Free)',
+          description: '30-minute consultation with Gary Brandt to assess your cellular health and map out your transformation route.',
+          provider: { '@type': 'LocalBusiness', name: 'EmpowerX3' },
+        },
+        price: '0.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+      },
+    ],
+  },
 };
 ---
 

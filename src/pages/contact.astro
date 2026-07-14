@@ -8,6 +8,18 @@ import ContactSchema from '@/components/schema/ContactSchema.astro';
 <BaseLayout
   title="Book a Discovery Call — EmpowerX3"
   description="Schedule your free 30-minute discovery call with Gary. Map out your cellular health route and learn what an EmpowerX3 program looks like for your specific goals."
+  og={{
+    title: "Book a Discovery Call — EmpowerX3",
+    description: "Schedule your free 30-minute discovery call with Gary to start your personalized cellular health journey.",
+    image: "https://empowerx3.com/empower-logo-full.webp",
+    type: "website"
+  }}
+  canonical="https://empowerx3.com/contact"
+  schemaPageType="contact"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Contact', url: 'https://empowerx3.com/contact' }
+  ]}
 >
   <!-- ContactSchema injected into the <head> via named slot — only on this page -->
   <ContactSchema slot="head" />

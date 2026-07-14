@@ -16,9 +16,13 @@ interface Props {
   };
   canonical?: string;
   noindex?: boolean;
+  /** Schema.org page type for enhanced structured data */
+  schemaPageType?: 'home' | 'service' | 'program' | 'tools' | 'contact' | 'education';
+  /** Breadcrumb items for BreadcrumbList schema */
+  schemaBreadcrumbs?: Array<{ name: string; url: string }>;
 }
 
-const { title, description, og, canonical, noindex } = Astro.props;
+const { title, description, og, canonical, noindex, schemaPageType = 'home', schemaBreadcrumbs = [] } = Astro.props;
 ---
 
 <!doctype html>
@@ -34,7 +38,7 @@ const { title, description, og, canonical, noindex } = Astro.props;
     <!-- Global schema: LocalBusiness on every page -->
     <LocalBusiness />
     <!-- Page-level schema -->
-    <WebPage title={title} description={description} />
+    <WebPage title={title} description={description} pageType={schemaPageType} breadcrumbs={schemaBreadcrumbs} />
     <!-- Optional page-specific schema (e.g. ContactSchema) -->
     <slot name="head" />
   </head>

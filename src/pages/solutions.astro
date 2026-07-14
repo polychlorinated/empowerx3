@@ -7,6 +7,36 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 <BaseLayout
   title="90-Day Biohacking Transformation Program | EmpowerX3 Marble Falls TX"
   description="EmpowerX3's 90-day transformation program uses genetic testing, personalized supplement protocols, and weekly coaching to rebuild your body, mind, and spirit. Serving Marble Falls, Lakeway, and greater Austin, TX."
+  og={{
+    title: "90-Day Biohacking Transformation Program | EmpowerX3 Marble Falls TX",
+    description: "EmpowerX3's 90-day transformation program uses genetic testing, personalized supplement protocols, and weekly coaching to rebuild your body, mind, and spirit.",
+    image: "https://empowerx3.com/gary-transformation-progress.webp",
+    type: "website"
+  }}
+  canonical="https://empowerx3.com/solutions"
+  schemaPageType="service"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Programs', url: 'https://empowerx3.com/solutions' }
+  ]}
+  schemaService={{
+    name: "90-Day Biohacking Transformation Program",
+    description: "Complete body, mind, and spirit transformation using genetic testing, personalized supplements, ExoPod cellular recovery, and weekly coaching.",
+    provider: { '@type': 'LocalBusiness', name: 'EmpowerX3', url: 'https://empowerx3.com' },
+    areaServed: ['Marble Falls', 'Lakeway', 'Austin', 'Westlake Hills', 'Bee Cave', 'Cedar Park'],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: '90-Day Program Inclusions',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Comprehensive Genetic Testing' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Natural Plant Medicine Detox Protocol' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Personalized Supplement & Diet Routine' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Weekly 1-on-1 Coaching Calls' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'ExoPod Cellular Recovery Sessions' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Wolfpack Group Hikes' } }
+      ]
+    }
+  }}
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->

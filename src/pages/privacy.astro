@@ -7,7 +7,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 <BaseLayout
   title="Privacy Policy — EmpowerX3"
   description="EmpowerX3 Privacy Policy covering data collection, cookies, comments, media, and your rights regarding personal information."
+  og={{
+    title: "Privacy Policy — EmpowerX3",
+    description: "EmpowerX3 Privacy Policy covering data collection, cookies, comments, media, and your rights regarding personal information.",
+    image: "https://empowerx3.com/empower-logo-full.webp",
+    type: "website"
+  }}
+  canonical="https://empowerx3.com/privacy"
   noindex={true}
+  schemaPageType="home"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Privacy Policy', url: 'https://empowerx3.com/privacy' }
+  ]}
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->

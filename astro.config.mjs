@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   // Static by default; individual routes opt in to SSR via `export const prerender = false`
@@ -11,7 +12,7 @@ export default defineConfig({
       enabled: true,
     },
   }),
-  integrations: [tailwind()],
+  integrations: [tailwind(), sitemap()],
   image: {
     // sharp runs at build time only — correct for Cloudflare Pages where all marketing pages are prerendered
     domains: ['wp.empowerx3.com'],
@@ -27,4 +28,5 @@ export default defineConfig({
       ],
     },
   },
+  site: 'https://empowerx3.com',
 });

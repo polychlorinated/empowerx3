@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQSchema from '@/components/schema/FAQSchema.astro';
 
 const therapies = [
   {
@@ -134,6 +135,18 @@ const faqs = [
 <BaseLayout
   title="ExoPod · Wolfpack · Nutrition — Biohacking Tools | EmpowerX3 Marble Falls TX"
   description="EmpowerX3's biohacking tools: the ExoPod 10-in-1 cellular recovery pod, Wolfpack Hill Country hiking group, and genetic-based nutrition & supplement protocols. Marble Falls, TX."
+  og={{
+    title: "ExoPod 10-in-1 Cellular Recovery | EmpowerX3 Marble Falls TX",
+    description: "Experience the ExoPod: 10 therapies in one 30-minute session. Plus Wolfpack hiking and genetic nutrition protocols.",
+    image: "https://empowerx3.com/exopod1.JPG",
+    type: "website"
+  }}
+  canonical="https://empowerx3.com/tools"
+  schemaPageType="service"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Tools', url: 'https://empowerx3.com/tools' }
+  ]}
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
@@ -196,20 +209,27 @@ const faqs = [
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- EXOPOD SECTION                                                  -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section id="exopod" class="scroll-mt-32 pt-20 pb-4 bg-stone-900">
+  <section id="exopod" class="scroll-mt-32 pt-20 pb-16 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center gap-4 mb-2">
-        <span class="text-4xl" aria-hidden="true">🛸</span>
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-stone-800 bg-stone-900">
+          <img src="/exopod1.JPG" alt="ExoPod 10-in-1 cellular recovery pod - exterior view" class="w-full h-full object-cover" loading="lazy" />
+        </div>
         <div>
-          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100">The ExoPod</h2>
-          <p class="text-gold-400 font-semibold">10 Therapies · One Session · 30 Minutes · No Downtime</p>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4">The ExoPod</h2>
+          <p class="text-gold-400 font-semibold mb-6">10 Therapies · One Session · 30 Minutes · No Downtime</p>
+          <p class="text-stone-400 max-w-3xl leading-relaxed">
+            A clinical-grade biohacking tool delivering 10 advanced cellular therapies in a single session.
+            Inflammation, slow recovery, and premature aging aren't character flaws — they're cellular problems
+            that require cellular solutions.
+          </p>
         </div>
       </div>
-      <p class="text-stone-400 max-w-3xl leading-relaxed mt-4 mb-2">
-        A clinical-grade biohacking tool delivering 10 advanced cellular therapies in a single session.
-        Inflammation, slow recovery, and premature aging aren't character flaws — they're cellular problems
-        that require cellular solutions.
-      </p>
+
+      <!-- Second ExoPod image -->
+      <div class="relative aspect-[4/3] max-w-3xl mx-auto rounded-2xl overflow-hidden border border-stone-800 bg-stone-900">
+        <img src="/exopod2.JPG" alt="ExoPod 10-in-1 cellular recovery pod - interior view" class="w-full h-full object-cover" loading="lazy" />
+      </div>
     </div>
   </section>
 
@@ -384,6 +404,11 @@ const faqs = [
       <h3 class="font-heading font-bold text-2xl text-cream-100 mb-8 text-center">
         ExoPod FAQ
       </h3>
+      <!-- FAQ Schema -->
+      <FAQSchema
+        faqs={faqs.map(({ q, a }) => ({ question: q, answer: a }))}
+        slot="head"
+      />
       <div class="space-y-2">
         {faqs.map(({ q, a }) => (
           <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">

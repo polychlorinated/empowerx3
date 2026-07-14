@@ -7,7 +7,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 <BaseLayout
   title="Page Not Found — EmpowerX3"
   description="The page you're looking for doesn't exist. Head back to EmpowerX3's homepage."
+  og={{
+    title: "Page Not Found — EmpowerX3",
+    description: "The page you're looking for doesn't exist. Head back to EmpowerX3's homepage.",
+    image: "https://empowerx3.com/empower-logo-full.webp",
+    type: "website"
+  }}
   noindex={true}
+  schemaPageType="home"
+  schemaBreadcrumbs={[{ name: 'Home', url: 'https://empowerx3.com/' }]}
 >
   <section class="py-32 text-center px-4 bg-stone-900 min-h-[60vh] flex items-center justify-center">
     <div class="max-w-md mx-auto">

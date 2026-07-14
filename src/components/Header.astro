@@ -2,7 +2,7 @@
 const nav = [
   { label: 'Home',      href: '/' },
   { label: 'Education', href: '/education' },
-  { label: 'Solutions', href: '/solutions' },
+  { label: 'Programs',  href: '/solutions' },
   { label: 'Tools',     href: '/tools' },
   { label: 'Contact',   href: '/contact' },
 ];
@@ -10,13 +10,13 @@ const nav = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-sm border-b border-stone-700">
+<header class="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-sm border-b border-stone-800">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+    <div class="flex items-center justify-between h-24">
 
       <!-- Brand -->
       <a href="/" class="flex items-center gap-2.5 font-heading font-bold text-xl tracking-wide" aria-label="EmpowerX3 home">
-        <img src="/empower-logo-full.webp" alt="EmpowerX3" width="140" height="32" aria-hidden="true" class="shrink-0" />
+        <img src="/empower-logo-full.webp" alt="EmpowerX3" width="208" height="47" aria-hidden="true" class="shrink-0" />
       </a>
 
       <!-- Desktop nav -->
@@ -29,10 +29,10 @@ const currentPath = Astro.url.pathname;
                 <a
                   href={href}
                   class:list={[
-                    'px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors',
+                    'px-4 py-2 rounded-md text-sm font-medium tracking-wide transition-colors',
                     isActive
-                      ? 'text-gold-400 bg-stone-800'
-                      : 'text-stone-400 hover:text-cream-100 hover:bg-stone-800',
+                      ? 'text-gold-400 bg-stone-900'
+                      : 'text-stone-400 hover:text-cream-100 hover:bg-stone-900',
                   ]}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -47,7 +47,7 @@ const currentPath = Astro.url.pathname;
       <!-- CTA -->
       <a
         href="/contact"
-        class="hidden md:inline-flex items-center px-4 py-2 rounded-lg bg-gold-500 text-stone-950 text-sm font-semibold hover:bg-gold-400 transition-colors"
+        class="hidden md:inline-flex items-center px-5 py-2.5 rounded-lg bg-gold-500 text-stone-950 text-sm font-semibold hover:bg-gold-400 transition-colors"
       >
         Book a Call
       </a>
