@@ -30,6 +30,20 @@ export default {
           800: '#7a5205',
           900: '#5a3a02',
         },
+        // ── Custom charcoal background ──────────────────────────────
+        charcoal: {
+          DEFAULT: '#1e1915',
+          50:  '#f5f3f2',
+          100: '#ebe7e5',
+          200: '#d7d1cd',
+          300: '#b8afaa',
+          400: '#93857d',
+          500: '#74675c',
+          600: '#5e5145',
+          700: '#4a3f31',
+          800: '#3d3328',
+          900: '#1e1915',
+        },
         // ── Warmer, lighter stone (20% lighter than default) ────────
         stone: {
           50:  '#fafaf9',

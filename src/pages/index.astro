@@ -16,15 +16,30 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   schemaBreadcrumbs={[{ name: 'Home', url: 'https://empowerx3.com/' }]}
 >
 
-  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="relative bg-stone-900 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+  <!-- ─── Hero (Video Background) ─────────────────────────────────────── -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover z-0"
+      aria-hidden="true"
+      poster="/exopod1.JPG"
+    >
+      <source src="/gary-hero.mp4" type="video/mp4" />
+    </video>
+    <!-- Dark overlay for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-charcoal/90 via-charcoal/70 to-charcoal/90 z-10" aria-hidden="true"></div>
+    <!-- Grid pattern overlay -->
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5 z-10" aria-hidden="true"></div>
     <!-- Subtle green glow bottom-left -->
-    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-900/30 rounded-full blur-3xl pointer-events-none z-10" aria-hidden="true"></div>
     <!-- Gold glow top-right -->
-    <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-900/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-900/20 rounded-full blur-3xl pointer-events-none z-10" aria-hidden="true"></div>
 
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36 z-20">
       <div class="max-w-3xl">
         <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-5">
           Marble Falls, TX · Biohacking · Medical Weight Loss · Life Coaching
@@ -191,21 +206,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           <a href="/tools" class="inline-flex items-center px-6 py-3 rounded-lg bg-brand-600 text-cream-100 font-semibold hover:bg-brand-500 transition-colors">
             See All 10 Therapies &rarr;
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── ExoPod Gallery ─────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-800 border-y border-stone-700">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="font-heading font-bold text-2xl text-cream-100 mb-10 text-center">The ExoPod Experience</h3>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-stone-800 bg-stone-900">
-          <img src="/exopod1.JPG" alt="ExoPod 10-in-1 cellular recovery pod - exterior view" class="w-full h-full object-cover" loading="lazy" />
-        </div>
-        <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-stone-800 bg-stone-900">
-          <img src="/exopod2.JPG" alt="ExoPod 10-in-1 cellular recovery pod - interior view" class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </div>
