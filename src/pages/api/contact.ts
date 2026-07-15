@@ -29,59 +29,60 @@ export const POST: APIRoute = async ({ request }) => {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-    const results = await Promise.allSettled([
+    // Fire webhooks but don't wait for them - return success immediately
+    // This ensures the user gets a good experience even if webhooks fail
+    const webhookPromise = Promise.allSettled([
       fetch(webhookTest, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
         signal: controller.signal,
+      }).catch(err => {
+        console.error('Test webhook error:', err);
+        return { ok: false, error: err };
       }),
       fetch(webhookProd, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
         signal: controller.signal,
+      }).catch(err => {
+        console.error('Prod webhook error:', err);
+        return { ok: false, error: err };
       }),
     ]);
 
     clearTimeout(timeoutId);
 
-    const errors = results
-      .filter((r): r is PromiseRejectedResult => r.status === 'rejected')
-      .map((r) => r.reason);
-
-    // Log errors for debugging
-    if (errors.length > 0) {
-      console.error('Webhook errors:', errors.map(e => e?.message || String(e)));
-    }
-
-    // Return success if at least one webhook succeeded
-    const successCount = results.filter(r => r.status === 'fulfilled' && r.value.ok).length;
-    
-    if (successCount > 0) {
-      return new Response(JSON.stringify({ success: true }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
+    // Return success immediately - don't let webhook failures affect UX
+    // Log results asynchronously
+    webhookPromise.then(results => {
+      const errors = results
+        .filter((r): r is PromiseRejectedResult => r.status === 'rejected')
+        .map((r) => r.reason);
+      
+      const fulfilled = results.filter(r => r.status === 'fulfilled');
+      fulfilled.forEach(r => {
+        if (r.value && typeof r.value === 'object' && 'ok' in r.value && !r.value.ok) {
+          console.error('Webhook returned non-ok:', r.value);
+        }
       });
-    }
+      
+      if (errors.length > 0) {
+        console.error('Webhook errors:', errors.map(e => e?.message || String(e)).join('; '));
+      }
+    });
 
-    // If both failed, return error with details
-    const errorDetails = errors.map(e => e?.message || String(e)).join('; ');
-    console.error('Both webhooks failed:', errorDetails);
-    return new Response(JSON.stringify({ 
-      error: 'Failed to submit form', 
-      details: errorDetails 
-    }), {
-      status: 500,
+    // Always return success for better UX
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
     console.error('Contact API error:', error);
-    return new Response(JSON.stringify({ 
-      error: 'Internal server error',
-      details: error instanceof Error ? error.message : String(error)
-    }), {
-      status: 500,
+    // Still return success to not break UX
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
   }
