@@ -1,6 +1,14 @@
 import type { APIRoute } from 'astro';
 
+function jsonResponse(data: unknown, status = 200) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: { 'Content-Type': 'application/json' },
+  });
+}
+
 export const POST: APIRoute = async ({ request }) => {
+  // Ensure we always return JSON, even on unexpected errors
   try {
     const formData = await request.formData();
     
@@ -16,10 +24,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Validate required fields
     if (!payload.name || !payload.email || !payload.message) {
-      return new Response(JSON.stringify({ error: 'Missing required fields' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return jsonResponse({ success: false, error: 'Missing required fields' }, 400);
     }
 
     // Use environment variables with fallbacks
@@ -30,7 +35,6 @@ export const POST: APIRoute = async ({ request }) => {
     const timeoutId = setTimeout(() => controller.abort(), 10000);
 
     // Fire webhooks but don't wait for them - return success immediately
-    // This ensures the user gets a good experience even if webhooks fail
     const webhookPromise = Promise.allSettled([
       fetch(webhookTest, {
         method: 'POST',
@@ -54,7 +58,6 @@ export const POST: APIRoute = async ({ request }) => {
 
     clearTimeout(timeoutId);
 
-    // Return success immediately - don't let webhook failures affect UX
     // Log results asynchronously
     webhookPromise.then(results => {
       const errors = results
@@ -73,17 +76,11 @@ export const POST: APIRoute = async ({ request }) => {
       }
     });
 
-    // Always return success for better UX
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    // Always return success JSON
+    return jsonResponse({ success: true });
   } catch (error) {
     console.error('Contact API error:', error);
-    // Still return success to not break UX
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    // Always return JSON, never throw
+    return jsonResponse({ success: true });
   }
 };
