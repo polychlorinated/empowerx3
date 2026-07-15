@@ -1,30 +1,11 @@
 name = "empowerx3"
 main = "dist/_worker.js/index.js"
-compatibility_date = "2024-09-23"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2026-07-15"
 
 [assets]
-directory = "dist"
-# Cache static assets for 1 year
-cache_control = "public, max-age=31536000, immutable"
+binding = "ASSETS"
+directory = "./dist"
 
-[vars]
-# These will be overridden by Cloudflare Pages environment variables
-PORTAL_PASSWORD_HASH = ""
-
-# Add bindings if needed:
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "empowerx3-db"
-# database_id = "xxx"
-
-# [[kv_namespaces]]
-# binding = "CACHE"
-# id = "xxx"
-
-# [[r2_buckets]]
-# binding = "UPLOADS"
-# bucket_name = "empowerx3-uploads"
-
-[observability]
-enabled = true
+[[kv_namespaces]]
+binding = "SESSION"
+id = "348b11815a304093b76c459b425985ae"

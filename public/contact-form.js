@@ -11,7 +11,7 @@ async function handleSubmit(event) {
   submitBtn.textContent = 'Sending...';
   
   try {
-    const response = await fetch('/api/contact', {
+    const response = await fetch('https://empowerx3.andrew-3db.workers.dev/api/contact', {
       method: 'POST',
       body: formData,
     });
