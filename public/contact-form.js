@@ -10,10 +10,25 @@ async function handleSubmit(event) {
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending...';
   
+  // Map form fields into the exact JSON object schema n8n expects
+  const payload = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    phone: formData.get('phone') || '',
+    goal: formData.get('goal') || '',
+    message: formData.get('message'),
+    timestamp: new Date().toISOString(),
+    source: 'empowerx3.com contact form'
+  };
+  
   try {
-    const response = await fetch('https://empowerx3.andrew-3db.workers.dev/api/contact', {
+    // Use relative path to eliminate CORS issues
+    const response = await fetch('/api/contact', {
       method: 'POST',
-      body: formData,
+      headers: { 
+        'Content-Type': 'application/json' 
+      },
+      body: JSON.stringify(payload),
     });
     
     const result = await response.json();
