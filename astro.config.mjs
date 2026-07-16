@@ -6,7 +6,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   output: 'server',
   adapter: cloudflare({
-    imageService: 'compile',
+    imageService: {
+      build: 'compile',
+      runtime: 'cloudflare-binding'
+    },
     platformProxy: {
       enabled: true,
     },

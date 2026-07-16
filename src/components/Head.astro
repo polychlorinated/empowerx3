@@ -26,7 +26,7 @@ const siteUrl = 'https://empowerx3.com';
 const resolvedCanonical = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogTitle = og?.title ?? title;
 const ogDesc = og?.description ?? description;
-const ogImage = og?.image ?? `${siteUrl}/og-default.jpg`;
+const ogImage = og?.image ?? `${siteUrl}/og-default.webp`;
 const ogType = og?.type ?? 'website';
 
 // Warn at build time if limits are breached (dev only)
@@ -66,6 +66,9 @@ if (import.meta.env.DEV) {
 <noscript>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
 </noscript>
+
+<!-- LCP Hero Image Preload -->
+<link rel="preload" as="image" href="/exopod1.webp" type="image/webp" fetchpriority="high" />
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
