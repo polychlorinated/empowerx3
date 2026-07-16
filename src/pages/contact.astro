@@ -191,10 +191,25 @@ import ContactSchema from '@/components/schema/ContactSchema.astro';
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
       
+      // Map form fields into the exact JSON object schema n8n expects
+      const payload = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone') || '',
+        goal: formData.get('goal') || '',
+        message: formData.get('message'),
+        timestamp: new Date().toISOString(),
+        source: 'empowerx3.com contact form'
+      };
+      
       try {
+        // Fixed: Changed to relative path to eliminate CORS completely
         const response = await fetch('/api/contact', {
           method: 'POST',
-          body: formData,
+          headers: { 
+            'Content-Type': 'application/json' 
+          },
+          body: JSON.stringify(payload),
         });
         
         const result = await response.json();

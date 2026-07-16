@@ -4,8 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  // Static by default; individual routes opt in to SSR via `export const prerender = false`
-  output: 'static',
+  output: 'server',
   adapter: cloudflare({
     imageService: 'compile',
     platformProxy: {
@@ -14,7 +13,6 @@ export default defineConfig({
   }),
   integrations: [tailwind(), sitemap()],
   image: {
-    // sharp runs at build time only — correct for Cloudflare Pages where all marketing pages are prerendered
     domains: ['wp.empowerx3.com'],
   },
   vite: {
@@ -24,7 +22,7 @@ export default defineConfig({
         'node:path', 
         'node:stream', 
         'node:util',
-        'node:crypto'  // Added for login.astro
+        'node:crypto'
       ],
     },
   },
