@@ -5,11 +5,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="90-Day Longevity Transformation Program | EmpowerX3 Marble Falls TX"
-  description="EmpowerX3's Core Program: 90-day longevity transformation with genetic testing, peptide therapy, personalized nutrition, and regular coaching. Serving Marble Falls, Lakeway, and greater Austin, TX."
+  title="90-Day Biohacking Transformation Program | EmpowerX3 Marble Falls TX"
+  description="EmpowerX3's 90-day biohacking transformation program uses genetic testing, personalized supplement protocols, and weekly coaching to rebuild your body, mind, and spirit. Serving Marble Falls, Lakeway, and greater Austin, TX."
   og={{
-    title: "90-Day Longevity Transformation Program | EmpowerX3 Marble Falls TX",
-    description: "EmpowerX3's Core Program: 90-day longevity transformation with genetic testing, peptide therapy, personalized nutrition, and regular coaching.",
+    title: "90-Day Biohacking Transformation Program | EmpowerX3 Marble Falls TX",
+    description: "EmpowerX3's 90-day transformation program uses genetic testing, personalized supplement protocols, and weekly coaching to rebuild your body, mind, and spirit. Serving Marble Falls and greater Austin, TX.",
     image: "https://empowerx3.com/gary-transformation-progress.webp",
     type: "website"
   }}
@@ -17,40 +17,45 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   schemaPageType="service"
   schemaBreadcrumbs={[
     { name: 'Home', url: 'https://empowerx3.com/' },
-    { name: 'Core Program', url: 'https://empowerx3.com/solutions' }
+    { name: 'Solutions', url: 'https://empowerx3.com/solutions' }
   ]}
   schemaService={{
-    name: "The Core Program: 90-Day Longevity Transformation",
-    description: "Personalized longevity transformation combining genetic testing, peptide therapy, biomarker optimization, and regular coaching.",
+    name: "90-Day Biohacking Transformation Program",
+    description: "EmpowerX3's 90-day transformation program uses genetic testing, personalized supplement protocols, and weekly coaching to rebuild your body, mind, and spirit. Serving Marble Falls and greater Austin, TX.",
     provider: { '@type': 'LocalBusiness', name: 'EmpowerX3', url: 'https://empowerx3.com' },
     areaServed: ['Marble Falls', 'Lakeway', 'Austin', 'Westlake Hills', 'Bee Cave', 'Cedar Park'],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Core Program Inclusions',
+      name: '90-Day Program Inclusions',
       itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'DNA Blueprint Analysis & Genetic Testing' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Comprehensive Biomarker & Lab Testing' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Peptide Therapy Protocol (Medical Supervision)' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Personalized Nutrition & Supplement Plan' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Regular 1-on-1 Longevity Coaching' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'ExoPod Cellular Recovery Sessions' } }
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Comprehensive genetic testing — how your body processes nutrients, stress, and builds muscle' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Natural plant medicine detox protocol to clear what\'s not serving you' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Personalized supplement and diet routine built from your genetic data' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Movement programming that fits your life (not a template)' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Weekly 1-on-1 coaching calls with Gary — motivation, physical activity, and spiritual growth' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Q&A calls where you can ask anything, any time' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Community of people who\'ve also tried everything and failed — no judgment, real support' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Optional ExoPod sessions at our Marble Falls facility to accelerate cellular recovery' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Access to the EmpowerX3 client portal and resource library' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Wolfpack group hikes through Hill Country to test your progress in the real world' } },
       ]
     }
   }}
 >
 
-  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+<!-- ─── Hero ─────────────────────────────────────────────────────── -->
   <section class="relative bg-stone-900 overflow-hidden">
     <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
     <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-900/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Core Program</p>
+      <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Programs</p>
       <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 max-w-3xl leading-tight text-cream-100">
-        The Core Program: 90-Day Longevity Transformation
+        The 90-Day Biohacking Transformation
       </h1>
       <p class="text-stone-300 text-xl max-w-2xl leading-relaxed">
-        A personalized longevity system combining DNA Blueprint analysis, comprehensive biomarker testing, peptide therapy under medical supervision, and regular coaching — designed for adults who want a sustainable, data-driven path to better health.
+        Give Gary 90 days and people will be asking you what the secret is — just like they did with him.
+        This is a complete system that works because it's complete: Body, Mind, and Spirit working together.
       </p>
     </div>
   </section>
@@ -59,50 +64,51 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   <section class="py-16 bg-stone-900 border-b border-stone-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-heading font-bold text-2xl text-cream-100 mb-4">
-        Why Most Longevity Programs Fail — and Why This One Doesn't
+        Why Most Programs Fail — and Why This One Doesn't
       </h2>
       <p class="text-stone-400 leading-relaxed">
-        Most programs chase symptoms — weight, fatigue, poor sleep — without measuring the underlying physiology. 
-        The Core Program starts with comprehensive data: DNA Blueprint, 50+ biomarkers, hormone panels, and metabolic markers. 
-        We build a protocol from your biology, not a template. No guesswork. No cookie-cutter plans. Just measurable outcomes.
+        You've tried keto, bought the supplements, hired the coaches and therapists. Each approach attacked
+        one leg of the stool — body, mind, or spirit — while ignoring the other two. Nothing clicked because
+        nothing was complete. The 90-Day Program works on all three simultaneously, using your own genetic
+        data to eliminate the guesswork.
       </p>
     </div>
   </section>
 
-  <!-- ─── How the Core Program Works ──────────────────────────────────────────── -->
+  <!-- ─── 90-Day Structure ──────────────────────────────────────────── -->
   <section class="py-20 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-14 text-center">
-        How the Core Program Works
+        What the 90 Days Actually Looks Like
       </h2>
       <div class="grid md:grid-cols-3 gap-8 mb-14">
-        {[
+{[
           {
             month: 'Month 1',
-            title: 'Data Collection & Foundation',
+            title: 'Detox & Genetic Testing',
             accentBorder: 'border-t-brand-600',
             accentText: 'text-brand-400',
-            body: "Comprehensive biomarker panel (50+ markers), hormone panel, metabolic assessment, and DNA Blueprint analysis. We establish your baseline while you start foundational habits: hydration, sleep hygiene, daily movement, and stress management.",
-            note: "You can't optimize what you haven't measured.",
+            body: "We stop the crisis. Natural plant medicine clears out what's not serving you. Genetic testing reveals how your body actually processes nutrients, responds to stress, and builds muscle. We get the data and get you stable.",
+            note: "You can't focus on a goal when you're in triage mode.",
           },
           {
             month: 'Months 2–3',
-            title: 'Personalized Protocol & Peptide Therapy',
+            title: 'Build Your Protocol',
             accentBorder: 'border-t-gold-500',
             accentText: 'text-gold-400',
-            body: "Using your lab data and DNA insights, we build your protocol: targeted nutrition, supplement stack, lifestyle modifications, and peptide therapy under medical supervision through our partnered licensed providers in the Impact Health Network. All prescriptions and medical decisions are handled by licensed healthcare professionals.",
-            note: 'Your protocol is built for your biology, not a template.',
+            body: "Using your own genetic data, we develop a supplement and diet routine that works for your specific body. We add movement that fits your life. And we do the real work: mindset coaching that connects your daily actions to your vision.",
+            note: 'You learn about yourself. You do the work. You believe in yourself.',
           },
           {
             month: 'Throughout',
-            title: 'Accountability Coaching & Optimization',
+            title: 'Focused Coaching',
             accentBorder: 'border-t-stone-600',
             accentText: 'text-stone-400',
-            body: "Weekly coaching calls for habit tracking, protocol adjustments, and mindset support. Monthly biomarker re-testing to track progress and refine your protocol. Access to medical wellness support through our partnered licensed providers for ongoing optimization.",
+            body: "Weekly sessions for motivation, physical activity, and spiritual growth. Q&A calls where you ask anything. A community of people who've also tried everything and failed — no judgment, just real support.",
             note: 'Gary does the program alongside you, not coaching from the sidelines.',
           },
         ].map(({ month, title, accentBorder, accentText, body, note }) => (
-          <div class={`rounded-2xl p-8 border-t-4 ${accentBorder} bg-stone-800 border border-stone-700 border-t-0`}>
+          <div class={`rounded-2xl p-8 border-t-4 ${accentBorder} bg-stone-900 border border-stone-800 border-t-0`}>
             <p class={`font-bold text-sm uppercase tracking-widest mb-1 ${accentText}`}>{month}</p>
             <h3 class="font-heading font-bold text-xl text-cream-100 mb-4">{title}</h3>
             <p class="text-stone-400 leading-relaxed text-sm mb-4">{body}</p>
@@ -116,7 +122,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           href="/contact"
           class="inline-flex items-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors"
         >
-          Start the Core Program
+          Start the 90-Day Program
         </a>
       </div>
     </div>
@@ -130,15 +136,16 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       </h2>
       <div class="grid sm:grid-cols-2 gap-3">
         {[
-          "DNA Blueprint analysis & comprehensive biomarker panel (50+ markers)",
-          "Hormone panel, metabolic markers, and nutrient status assessment",
-          "Personalized nutrition protocol built from your lab data and DNA",
-          "Peptide therapy protocol under medical supervision (Impact Health Network)",
-          "Regular 1-on-1 coaching calls — habit tracking, protocol adjustments, mindset",
-          "Access to medical wellness support through licensed providers (Impact Health Network)",
-          "Accountability coaching & habit-building framework",
-          "Recovery, sleep, and stress management protocols",
-          "Ongoing biomarker monitoring & protocol refinement",
+          "Comprehensive genetic testing — how your body processes nutrients, stress, and builds muscle",
+          "Natural plant medicine detox protocol to clear what's not serving you",
+          "Personalized supplement and diet routine built from your genetic data",
+          "Movement programming that fits your life (not a template)",
+          "Weekly 1-on-1 coaching calls with Gary — motivation, physical activity, and spiritual growth",
+          "Q&A calls where you can ask anything, any time",
+          "Community of people who've also tried everything and failed — no judgment, real support",
+          "Optional ExoPod sessions at our Marble Falls facility to accelerate cellular recovery",
+          "Access to the EmpowerX3 client portal and resource library",
+          "Wolfpack group hikes through Hill Country to test your progress in the real world",
         ].map((item) => (
           <div class="flex items-start gap-3 bg-stone-700 rounded-xl p-4 border border-stone-600">
             <span class="text-brand-400 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
@@ -149,15 +156,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     </div>
   </section>
 
-<!-- ─── Personalized Tracks ──────────────────────────────────────────────── -->
+<!-- ─── Custom Plans ──────────────────────────────────────────────── -->
   <section class="py-20 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14">
         <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4">
-          Personalized Tracks for Your Goals
+          Tailored to Your Specific Goals
         </h2>
         <p class="text-stone-400 max-w-2xl mx-auto">
-          The Core Program foundation is the same for everyone. Your track adds specialized focus based on your primary goal.
+          The 90-day foundation is the same for everyone. What changes is how we apply it to your life.
         </p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
@@ -166,19 +173,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             icon: '⚡',
             plan: 'Energy & Recovery',
             points: [
-              'Adrenal & cortisol optimization',
+              'Adrenal & cortisol assessment',
               'Anti-inflammatory nutrition protocol',
               'Sleep architecture optimization',
-              'Peptide protocols for cellular recovery',
+              'ExoPod sessions for cellular reset',
             ],
           },
           {
             icon: '🔥',
-            plan: 'Medically-Supervised Weight Loss',
+            plan: 'Medical Weight Loss',
             points: [
               'Hormonal and metabolic lab panel',
               'Genetic-based nutrition protocol',
-              'Targeted peptide & supplement stack',
+              'Targeted supplement stack',
               'ExoPod sessions for fat loss acceleration',
             ],
           },
@@ -187,9 +194,9 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             plan: 'Longevity & Peak Performance',
             points: [
               'Full longevity biomarker panel',
-              'Cognitive optimization protocol',
-              'NAD+ and cellular renewal peptides',
-              'Annual re-test & protocol adjustment',
+              'Cognitive optimization stack',
+              'NAD+ and cellular renewal protocols',
+              'Annual re-test and protocol adjustment',
             ],
           },
         ].map(({ icon, plan, points }) => (
@@ -216,8 +223,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- ─── Medical Disclaimer ────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-800 border-y border-stone-700">
+<!-- ─── Medical Disclaimer ────────────────────────────────────────────── -->
+  <section class="py-20 bg-stone-800 border-y border-stone-700">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-heading font-bold text-2xl text-cream-100 mb-6 text-center">
         Important Medical Disclaimer
@@ -226,24 +233,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         <p><strong>The Core Program is a lifestyle coaching and wellness optimization service, not a medical treatment.</strong> All peptides and prescription compounds are offered exclusively through licensed healthcare providers within the Impact Health Network.</p>
         <p>All medical evaluations, prescriptions, treatment decisions, and medical guidance are handled directly through licensed healthcare professionals and partnered medical providers. EmpowerX3 coaches do not diagnose, prescribe, or treat medical conditions.</p>
         <p>Peptide therapy and prescription compounds are only available after comprehensive medical evaluation by a licensed provider in the Impact Health Network. Eligibility is determined by medical necessity, lab results, and clinical assessment.</p>
-        <p>Results vary by individual. The Core Program is a lifestyle and wellness optimization service — not a substitute for medical care. Always consult your primary care physician before starting any new wellness protocol.</p>
-      </div>
+        <p>Results vary by individual. The Core Program is a lifestyle and wellness optimization service — not a substitute for medical care. Always consult your primary care physician before starting any new wellness protocol.</      </div>
     </div>
   </section>
 
   <!-- ─── Gary's Promise ────────────────────────────────────────────── -->
   <section class="relative bg-brand-800 border-y border-brand-700 py-20 overflow-hidden">
     <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
-    <div class="relative max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <img src="/gary-transformation-progress.webp" alt="Gary Brandt's transformation progress - from car accident disability to full recovery through longevity protocols" class="w-full max-w-2xl mx-auto rounded-2xl border border-brand-600 shadow-2xl" loading="lazy" />
-        <p class="text-stone-500 text-sm mt-3">Gary's 90-day transformation: proof the system works</p>
-      </div>
+    <div class="relative max-w-3xl mx-auto px-4 text-center">
       <p class="text-brand-200 text-lg italic leading-relaxed mb-6">
         "I've lived every failure you've lived. I've done every diet, taken every supplement, believed
         every promise that didn't deliver. I don't teach theory. I teach what I've personally used to
-        overcome a permanently disabling injury and decades of trauma. I'm the longevity coach
-        and Longevity Transformation Coach for you that I was for myself."
+        overcome a permanently disabling injury and decades of trauma. I'm the biohacking life coach
+        and medical weight loss coach for you that I was for myself."
       </p>
       <p class="font-semibold text-brand-300 mb-10">— Gary Brandt, EmpowerX3</p>
       <a
