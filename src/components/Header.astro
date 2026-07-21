@@ -12,11 +12,11 @@ const currentPath = Astro.url.pathname;
 
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone-200">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-32">
+    <div class="flex items-center justify-between h-28">
 
       <!-- Brand -->
       <a href="/" class="flex items-center gap-2.5 font-heading font-bold text-xl tracking-wide" aria-label="EmpowerX3 home">
-        <img src="/empower-logo-full-color.webp" alt="EmpowerX3" width="832" height="188" aria-hidden="true" class="shrink-0" />
+        <img src="/empower-logo-full-color.webp" alt="EmpowerX3" width="600" height="80" aria-hidden="true" class="shrink-0" />
       </a>
 
       <!-- Desktop nav -->
@@ -29,7 +29,7 @@ const currentPath = Astro.url.pathname;
                 <a
                   href={href}
                   class:list={[
-                    'px-6 py-3 rounded-md text-base font-medium tracking-wide transition-colors',
+                    'px-5 py-2.5 rounded-md text-base font-medium tracking-wide transition-colors',
                     isActive
                       ? 'text-gold-500 bg-stone-100'
                       : 'text-charcoal hover:text-gold-500 hover:bg-stone-100',
