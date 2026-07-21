@@ -11,17 +11,17 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone-200">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between gap-6 h-28">
 
       <!-- Brand -->
-      <a href="/" class="flex items-center gap-2.5 font-heading font-bold text-xl tracking-wide" aria-label="EmpowerX3 home">
-        <img src="/empower-logo-full-color.webp" alt="EmpowerX3" width="600" height="80" aria-hidden="true" class="shrink-0" />
+      <a href="/" class="flex h-[99px] w-[341px] max-w-[calc(100vw-2rem)] shrink-0 items-center justify-center" aria-label="EmpowerX3 home">
+        <img src="/empower-logo-full-color.webp" alt="EmpowerX3" width="341" height="99" aria-hidden="true" class="h-full w-full object-fill" />
       </a>
 
       <!-- Desktop nav -->
-      <nav aria-label="Primary navigation">
-        <ul class="hidden md:flex items-center gap-6" role="list">
+      <nav aria-label="Primary navigation" class="hidden xl:block min-w-0 flex-1">
+        <ul class="flex items-center justify-evenly gap-2" role="list">
           {nav.map(({ label, href }) => {
             const isActive = href === '/' ? currentPath === '/' : currentPath.startsWith(href);
             return (
@@ -29,7 +29,7 @@ const currentPath = Astro.url.pathname;
                 <a
                   href={href}
                   class:list={[
-                    'px-5 py-2.5 rounded-md text-base font-medium tracking-wide transition-colors',
+                    'whitespace-nowrap px-3 py-2.5 rounded-md text-base font-medium tracking-wide transition-colors',
                     isActive
                       ? 'text-gold-500 bg-stone-100'
                       : 'text-charcoal hover:text-gold-500 hover:bg-stone-100',
@@ -47,13 +47,13 @@ const currentPath = Astro.url.pathname;
       <!-- CTA -->
       <a
         href="/contact"
-        class="hidden md:inline-flex items-center px-6 py-3 rounded-lg bg-gold-500 text-white text-base font-semibold hover:bg-gold-400 transition-colors"
+        class="hidden xl:inline-flex shrink-0 items-center whitespace-nowrap px-6 py-3 rounded-lg bg-gold-500 text-white text-base font-semibold hover:bg-gold-400 transition-colors"
       >
         Book a Call
       </a>
 
       <!-- Mobile -->
-      <a href="/contact" class="md:hidden text-gold-500 font-semibold text-base hover:text-gold-400 transition-colors">
+      <a href="/contact" class="hidden sm:inline-flex xl:hidden text-gold-500 font-semibold text-base hover:text-gold-400 transition-colors">
         Book a Call
       </a>
 
