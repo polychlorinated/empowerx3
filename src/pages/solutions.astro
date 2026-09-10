@@ -2,6 +2,30 @@
 export const prerender = true;
 
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQSchema from '@/components/schema/FAQSchema.astro';
+
+const faqs = [
+  {
+    q: 'How much does the Core Program cost?',
+    a: "The 90-Day Longevity Transformation is $4,997 for the complete program — DNA Blueprint analysis, biomarker and hormone panels, peptide therapy under medical supervision, personalized nutrition, 1-on-1 coaching, and ExoPod cellular recovery sessions.",
+  },
+  {
+    q: 'Do I need to live in Marble Falls to join?',
+    a: "No. Coaching calls and lab reviews work remotely, so clients across Texas join the Core Program. ExoPod sessions and Wolfpack hikes are in-person at our Marble Falls Longevity Center — many remote clients schedule them as monthly visits.",
+  },
+  {
+    q: 'Is peptide therapy included in the program?',
+    a: "Yes — after a comprehensive medical evaluation. All peptides and prescription compounds are provided exclusively through licensed healthcare providers in the Impact Health Network. Eligibility is determined by medical necessity, lab results, and clinical assessment.",
+  },
+  {
+    q: 'How is this different from other coaching programs?',
+    a: "Most programs chase symptoms without measuring the underlying physiology. The Core Program starts with your DNA Blueprint and 50+ biomarkers, then builds a protocol from your biology — not a template. Gary also does the program alongside you, not from the sidelines.",
+  },
+  {
+    q: 'What if I have injuries or can\'t exercise yet?',
+    a: "The program adapts to your baseline, not the other way around. Gary personally recovered from a permanently disabling injury, so protocols scale movement, nutrition, and recovery to where your body is today — and rebuild capacity over 90 days.",
+  },
+];
 ---
 
 <BaseLayout
@@ -38,6 +62,12 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     }
   }}
 >
+
+  <!-- FAQ Schema -->
+  <FAQSchema
+    faqs={faqs.map(({ q, a }) => ({ question: q, answer: a }))}
+    slot="head"
+  />
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
   <section class="relative bg-stone-900 overflow-hidden">
@@ -226,6 +256,35 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         <p>All medical evaluations, prescriptions, treatment decisions, and medical guidance are handled directly through licensed healthcare professionals and partnered medical providers. EmpowerX3 coaches do not diagnose, prescribe, or treat medical conditions.</p>
         <p>Peptide therapy and prescription compounds are only available after comprehensive medical evaluation by a licensed provider in the Impact Health Network. Eligibility is determined by medical necessity, lab results, and clinical assessment.</p>
         <p>Results vary by individual. The Core Program is a lifestyle and wellness optimization service — not a substitute for medical care. Always consult your primary care physician before starting any new wellness protocol.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ────────────────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8 text-center">
+        Core Program FAQ
+      </h2>
+      <div class="space-y-2">
+        {faqs.map(({ q, a }) => (
+          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-800 transition-colors">
+              <p class="font-heading font-semibold text-cream-100 text-sm">{q}</p>
+              <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
+              <p class="text-stone-400 text-sm leading-relaxed">{a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/contact" class="inline-flex items-center px-6 py-3 rounded-lg bg-gold-500 text-stone-950 font-semibold hover:bg-gold-400 transition-colors">
+          Ask Gary a Question
+        </a>
       </div>
     </div>
   </section>

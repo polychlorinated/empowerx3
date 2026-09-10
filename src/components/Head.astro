@@ -12,6 +12,8 @@ interface Props {
   };
   canonical?: string;
   noindex?: boolean;
+  /** Hero/LCP image to preload on this page (omit to skip the preload) */
+  lcpImage?: string;
 }
 
 const {
@@ -20,6 +22,7 @@ const {
   og,
   canonical,
   noindex = false,
+  lcpImage,
 } = Astro.props;
 
 const siteUrl = 'https://empowerx3.com';
@@ -50,7 +53,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={resolvedCanonical} />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+{noindex
+  ? <meta name="robots" content="noindex, nofollow" />
+  : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
 
 <!-- Open Graph -->
 <meta property="og:type" content={ogType} />
@@ -75,8 +80,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
 </noscript>
 
-<!-- LCP Hero Image Preload -->
-<link rel="preload" as="image" href="/exopod1.webp" type="image/webp" fetchpriority="high" />
+<!-- LCP Hero Image Preload (per page) -->
+{lcpImage && <link rel="preload" as="image" href={lcpImage} type="image/webp" fetchpriority="high" />}
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

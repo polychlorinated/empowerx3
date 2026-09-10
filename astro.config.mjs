@@ -14,7 +14,20 @@ export default defineConfig({
       enabled: true,
     },
   }),
-  integrations: [tailwind(), sitemap()],
+  integrations: [
+    tailwind(),
+    sitemap({
+      filter: (page) =>
+        !page.startsWith('https://empowerx3.com/portal') &&
+        !page.startsWith('https://empowerx3.com/api') &&
+        !page.startsWith('https://empowerx3.com/thank-you'),
+      serialize: (item) => {
+        // Signal recency to search and AI engines
+        item.lastmod = new Date();
+        return item;
+      },
+    }),
+  ],
   image: {
     domains: ['wp.empowerx3.com'],
   },

@@ -1,15 +1,22 @@
 ---
 interface Props {
+  title: string;
+  description: string;
   /** The specific page type for enhanced schema */
-  pageType?: 'home' | 'service' | 'program' | 'tools' | 'contact' | 'education';
+  pageType?: 'home' | 'service' | 'program' | 'tools' | 'contact' | 'education' | 'article';
   /** Array of breadcrumbs: [{name, url}] */
   breadcrumbs?: Array<{ name: string; url: string }>;
+  /** Optional full Service schema (rendered as its own JSON-LD block) */
+  service?: Record<string, unknown>;
+  /** Optional full Article schema (rendered as its own JSON-LD block) */
+  article?: Record<string, unknown>;
 }
 
 /**
- * Enhanced WebPage schema with page-type specific enhancements
+ * Enhanced WebPage schema with page-type specific enhancements.
+ * Also renders standalone Service/Article JSON-LD blocks when provided.
  */
-const { pageType = 'home', breadcrumbs = [] } = Astro.props;
+const { pageType = 'home', breadcrumbs = [], service, article } = Astro.props;
 
 const siteUrl = 'https://empowerx3.com';
 const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
@@ -49,7 +56,6 @@ const schema = {
     jobTitle: 'Biohacking Life Coach & Medical Weight Loss Coach',
     worksFor: { '@type': 'Organization', name: 'EmpowerX3' },
   },
-  datePublished: new Date().toISOString(),
   dateModified: new Date().toISOString(),
   inLanguage: 'en-US',
   potentialAction: {
@@ -83,22 +89,29 @@ const schema = {
     },
   }),
   ...(pageType === 'service' && {
-    mainEntity: {
-      '@type': 'Service',
-      name: 'ExoPod 10-in-1 Cellular Recovery',
-      description: 'Clinical-grade cellular recovery tool delivering 10 advanced cellular therapies in a single 30-minute session.',
-      provider: {
-        '@type': 'LocalBusiness',
-        name: 'EmpowerX3',
-        '@id': 'https://empowerx3.com/#business',
-      },
-      areaServed: ['Marble Falls', 'Lakeway', 'Austin', 'Westlake Hills', 'Bee Cave', 'Cedar Park'],
-      availableChannel: {
-        '@type': 'ServiceChannel',
-        serviceUrl: 'https://empowerx3.com/tools#exopod',
-        servicePhone: '+1-512-799-9765',
-      },
-    },
+    mainEntity: service
+      ? {
+          '@type': 'Service',
+          name: service.name,
+          description: service.description,
+          provider: service.provider,
+        }
+      : {
+          '@type': 'Service',
+          name: 'ExoPod 10-in-1 Cellular Recovery',
+          description: 'Clinical-grade cellular recovery tool delivering 10 advanced cellular therapies in a single 30-minute session.',
+          provider: {
+            '@type': 'LocalBusiness',
+            name: 'EmpowerX3',
+            '@id': 'https://empowerx3.com/#business',
+          },
+          areaServed: ['Marble Falls', 'Lakeway', 'Austin', 'Westlake Hills', 'Bee Cave', 'Cedar Park'],
+          availableChannel: {
+            '@type': 'ServiceChannel',
+            serviceUrl: 'https://empowerx3.com/tools#exopod',
+            servicePhone: '+1-512-799-9765',
+          },
+        },
   }),
   ...(pageType === 'program' && {
     mainEntity: {
@@ -128,6 +141,17 @@ const schema = {
   }),
 };
 
+const serviceSchema = service
+  ? { '@context': 'https://schema.org', '@type': 'Service', ...service }
+  : null;
+
+const articleSchema = article
+  ? { '@context': 'https://schema.org', '@type': 'Article', ...article }
+  : null;
 ---
 
 <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+{serviceSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />}
+
+{articleSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}

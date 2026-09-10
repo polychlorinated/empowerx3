@@ -1,0 +1,369 @@
+---
+export const prerender = true;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQSchema from '@/components/schema/FAQSchema.astro';
+
+const faqs = [
+  {
+    question: 'What is methylation and why does it matter for your health?',
+    answer:
+      'Methylation is a biochemical process that happens billions of times per second in your body. It drives detoxification, mood and stress regulation, DNA expression, inflammation control, and energy production. The methylation cycle depends on nutrients from food — especially folate (B9), B12, B6, and choline — so when methylation runs poorly, fatigue, brain fog, mood imbalances, and sluggish detoxification can follow.',
+  },
+  {
+    question: 'What is the MTHFR gene variant and how does it affect your diet?',
+    answer:
+      'MTHFR is a gene that helps convert folic acid into methylfolate, the active form of folate your body can use. Common MTHFR variants reduce the efficiency of that conversion, meaning people with the variant often do better prioritizing naturally occurring folate from leafy greens, legumes, and certain fruits — plus foods rich in already-active B vitamins — rather than relying on synthetic folic acid in fortified foods.',
+  },
+  {
+    question: 'Which foods support a healthy methylation cycle?',
+    answer:
+      'Foods that support methylation are rich in natural folate, B12, B6, and choline: dark leafy greens (spinach, kale, arugula), legumes (lentils, chickpeas), eggs, salmon and other wild-caught fish, beets, asparagus, avocado, and liver. A genetics-based meal plan matches these foods to your specific variants and current bloodwork.',
+  },
+  {
+    question: 'How does EmpowerX3\'s Genetic Meal Prep service work?',
+    answer:
+      'EmpowerX3\'s Genetic Meal Prep service uses your genetic testing and bloodwork data to build a meal plan designed specifically for your body — including support for your methylation cycle — and then translates that plan into real, whole-food meals prepared by Chef David. It is food as personalized medicine: not supplements or shakes, but chef-prepared meals built from your biology.',
+  },
+  {
+    question: 'Why combine genetic testing with bloodwork for a meal plan?',
+    answer:
+      'Genetics reveal your potential — the tendencies your body was built with, such as a predisposition to lower B12 conversion. Bloodwork shows what is happening right now — for example, whether your current B12 levels are actually low. Combining the two lets a meal plan support both your long-term biology and your current health status.',
+  },
+];
+---
+
+<BaseLayout
+  title="Genetic Meal Prep & DNA-Based Nutrition | EmpowerX3"
+  description="Your genetics and methylation cycle should shape what you eat. EmpowerX3 builds chef-prepared meal plans from your DNA and bloodwork data."
+  og={{
+    title: "Genetic Meal Prep & DNA-Based Nutrition | EmpowerX3",
+    description: "Why your genetics — and your methylation cycle — should shape what you eat. Chef-prepared meals built from your DNA and bloodwork.",
+    image: "https://empowerx3.com/meals-512-square.webp",
+    type: "article"
+  }}
+  canonical="https://empowerx3.com/genetic-meal-prep"
+  schemaPageType="article"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Genetic Meal Prep', url: 'https://empowerx3.com/genetic-meal-prep' }
+  ]}
+  schemaArticle={{
+    headline: "Why Your Genetics — and Your Methylation Cycle — Should Shape What You Eat",
+    description: "Your genetics and methylation cycle should shape what you eat. EmpowerX3 builds chef-prepared meal plans from your DNA and bloodwork data.",
+    image: "https://empowerx3.com/meals-512-square.webp",
+    author: { '@type': 'Organization', name: 'EmpowerX3', url: 'https://empowerx3.com' },
+    publisher: { '@type': 'Organization', name: 'EmpowerX3', logo: { '@type': 'ImageObject', url: 'https://empowerx3.com/empower-logo-full.webp' } },
+    datePublished: '2026-09-09',
+    dateModified: '2026-09-09'
+  }}
+  lcpImage="/meals-512-square.webp"
+>
+  <FAQSchema slot="head" faqs={faqs} />
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="relative bg-stone-900 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Genetic Meal Prep</p>
+          <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6 text-cream-100 leading-tight">
+            Why Your Genetics — and Your Methylation Cycle — Should Shape What You Eat
+          </h1>
+          <p class="text-stone-300 text-lg leading-relaxed mb-4">
+            For decades, nutrition advice has come in a one-size-fits-all package: eat more vegetables,
+            cut back on sugar, watch your portions. But "healthy" doesn't mean the same thing for everyone.
+            Two people can eat the exact same meal and process it in completely different ways — because
+            their bodies are built from different genetic blueprints.
+          </p>
+          <p class="text-stone-300 text-lg leading-relaxed">
+            At the center of this is a process most people have never heard of: <strong class="text-gold-400">methylation</strong>.
+          </p>
+        </div>
+        <figure class="relative">
+          <img
+            src="/meals-512-square.webp"
+            alt="Genetic-based meal prep by EmpowerX3 — chef-prepared salmon, chicken, and beef bowls with fresh vegetables"
+            width="512"
+            height="512"
+            loading="eager"
+            fetchpriority="high"
+            class="w-full max-w-md mx-auto rounded-2xl border border-stone-700 shadow-2xl"
+          />
+          <figcaption class="text-stone-500 text-xs text-center mt-3">
+            Whole-food meals built from your DNA — prepared by Chef David
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── What Is Methylation ───────────────────────────────────────── -->
+  <section class="py-20 bg-stone-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+            What Is Methylation, and Why Does It Matter?
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Methylation is a biochemical process that happens billions of times a second in your body.
+            It's involved in nearly everything: how you detoxify, how you regulate mood and stress, how
+            your DNA is expressed, how your body manages inflammation, and how efficiently you convert
+            food into usable energy.
+          </p>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            The methylation cycle depends heavily on nutrients you get from food — particularly B vitamins
+            like folate (B9), B12, and B6, along with choline and other cofactors. When methylation runs
+            smoothly, your body is better equipped to manage stress, clear toxins, balance hormones, and
+            maintain steady energy.
+          </p>
+          <p class="text-stone-300 leading-relaxed">
+            When it doesn't run smoothly, the effects can show up as fatigue, brain fog, mood imbalances,
+            poor detoxification, or difficulty managing inflammation.
+          </p>
+        </div>
+        <figure>
+          <img
+            src="/meals-400x533-closeup.webp"
+            alt="Stuffed bell peppers with melted cheese and pasta — a folate- and B-vitamin-rich meal supporting the methylation cycle"
+            width="400"
+            height="533"
+            loading="lazy"
+            class="w-full max-w-sm mx-auto rounded-2xl border border-stone-700"
+          />
+          <figcaption class="text-stone-500 text-xs text-center mt-3">
+            Methylation-supportive meals built around natural folate and active B vitamins
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── The Genetic Piece ─────────────────────────────────────────── -->
+  <section class="py-20 bg-charcoal-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4 text-center">
+        The Genetic Piece: Why Methylation Isn't the Same for Everyone
+      </h2>
+      <p class="text-stone-400 text-center max-w-3xl mx-auto mb-10 leading-relaxed">
+        Certain genetic variations — the most well-known being variants in the <em>MTHFR</em> gene — can
+        affect how efficiently your body performs methylation. Someone with a common MTHFR variant may not
+        convert folic acid into its usable, active form as efficiently as someone without it. This doesn't
+        mean something is "wrong" with them — it means their body may benefit from a different nutritional
+        approach: prioritizing naturally occurring folate (found in leafy greens, legumes, and certain
+        fruits) or foods rich in already-active B vitamins, rather than relying on synthetic folic acid
+        found in many fortified foods.
+      </p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          ['Folate & B Vitamins', 'MTHFR variants affect how you activate folic acid — shaping whether natural folate or active B12 forms serve you better.'],
+          ['Fats & Carbohydrates', 'Genetic variants influence how your body handles dietary fat and carbohydrate metabolism — visible in your DNA, not on a nutrition label.'],
+          ['Caffeine & Histamine', 'Your genes help determine how quickly you clear caffeine and how sensitive you are to histamine-rich foods.'],
+          ['Sodium Sensitivity', 'Even your blood-pressure response to salt is partly written into your genetic code.'],
+        ].map(([term, def]) => (
+          <div class="border border-stone-700 rounded-xl p-5 bg-stone-800">
+            <h3 class="font-heading font-semibold text-gold-400 mb-2">{term}</h3>
+            <p class="text-stone-400 text-sm leading-relaxed">{def}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-stone-400 text-center max-w-3xl mx-auto mt-10 leading-relaxed">
+        This is just one example. There are many genetic variants that influence how your body handles
+        fats, carbohydrates, caffeine, histamine, and even how sensitive you are to sodium. None of this
+        is visible on a standard nutrition label — it's written into your DNA.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Why This Matters for Meal Planning ────────────────────────── -->
+  <section class="py-20 bg-stone-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <figure class="order-2 md:order-1">
+          <img
+            src="/meals-400x533-far.webp"
+            alt="A week of personalized meal prep containers — salmon with asparagus, stuffed peppers, and beef bowls designed around a genetic nutrition plan"
+            width="400"
+            height="533"
+            loading="lazy"
+            class="w-full max-w-sm mx-auto rounded-2xl border border-stone-700"
+          />
+          <figcaption class="text-stone-500 text-xs text-center mt-3">
+            A week of meals designed around one person's genetic and metabolic profile
+          </figcaption>
+        </figure>
+        <div class="order-1 md:order-2">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+            Why This Matters for Meal Planning
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Generic diet plans are built for an "average" body that doesn't actually exist. When your
+            meals are designed around your genetic and metabolic profile instead, a few things change:
+          </p>
+          <ul class="space-y-5" role="list">
+            <li class="border-l-2 border-gold-500 pl-5">
+              <h3 class="font-heading font-semibold text-cream-100 mb-1">Nutrient needs become individualized.</h3>
+              <p class="text-stone-400 leading-relaxed">
+                Instead of guessing whether you need more B vitamins, antioxidants, or specific fats, your
+                meal plan is built around what your body actually requires to support processes like methylation.
+              </p>
+            </li>
+            <li class="border-l-2 border-gold-500 pl-5">
+              <h3 class="font-heading font-semibold text-cream-100 mb-1">Food becomes a tool, not a guessing game.</h3>
+              <p class="text-stone-400 leading-relaxed">
+                Understanding how your body processes certain nutrients allows meals to be designed to work
+                <em>with</em> your biology rather than against it.
+              </p>
+            </li>
+            <li class="border-l-2 border-gold-500 pl-5">
+              <h3 class="font-heading font-semibold text-cream-100 mb-1">Root-cause patterns become easier to address.</h3>
+              <p class="text-stone-400 leading-relaxed">
+                Persistent issues like low energy, mood fluctuations, or sluggish detoxification are sometimes
+                tied to inefficient methylation — and diet is one of the most direct ways to support that pathway.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Bloodwork ─────────────────────────────────────────────────── -->
+  <section class="py-20 bg-charcoal-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+            Bloodwork: The Other Half of the Picture
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Genetics tell you your <em>potential</em> — the tendencies your body was built with. Bloodwork
+            tells you what's happening <em>right now</em>. Combining the two gives a far more complete
+            picture than either one alone.
+          </p>
+          <p class="text-stone-300 leading-relaxed">
+            For example, genetic testing might reveal a predisposition to lower B12 conversion, while
+            bloodwork confirms whether your current B12 levels are actually low. Together, they allow a
+            meal plan to be built around both your long-term biology and your current health status.
+          </p>
+        </div>
+        <figure>
+          <img
+            src="/meals-400x533-mid.webp"
+            alt="Glazed salmon with asparagus, cilantro, and lemon — a B12- and omega-3-rich meal matched to genetic and bloodwork data"
+            width="400"
+            height="533"
+            loading="lazy"
+            class="w-full max-w-sm mx-auto rounded-2xl border border-stone-700"
+          />
+          <figcaption class="text-stone-500 text-xs text-center mt-3">
+            B12-rich salmon — matched to your labs, not a template
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Food as Personalized Medicine / Chef David ────────────────── -->
+  <section class="py-20 bg-stone-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <figure class="order-2 md:order-1">
+          <img
+            src="/chef.webp"
+            alt="Chef David of EmpowerX3 prepping fresh vegetables for a genetics-based meal plan"
+            width="1600"
+            height="1200"
+            loading="lazy"
+            class="w-full rounded-2xl border border-stone-700"
+          />
+          <figcaption class="text-stone-500 text-xs text-center mt-3">
+            Chef David preparing whole-food meals for the EmpowerX3 Genetic Meal Prep service
+          </figcaption>
+        </figure>
+        <div class="order-1 md:order-2">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+            Food as Personalized Medicine
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            This is the idea behind genetics-based meal planning: rather than following a trend diet or a
+            generic macro chart, your meals are built from your actual genetic and bloodwork data, then
+            translated into real, whole-food meals — not supplements or shakes, but meals prepared with
+            the same care you'd put into cooking for your own family.
+          </p>
+          <p class="text-stone-300 leading-relaxed">
+            Knowing your genetics and how your methylation cycle functions isn't about chasing perfection.
+            It's about removing the guesswork and giving your body consistent, targeted support through
+            the food you eat every day.
+          </p>
+        </div>
+      </div>
+
+      <figure class="max-w-sm mx-auto mt-16">
+        <img
+          src="/meals-400x533-onedish.webp"
+          alt="A single chef-prepared bowl — spiced chicken, fresh salsa, avocado, and greens — from a personalized EmpowerX3 meal plan"
+          width="400"
+          height="533"
+          loading="lazy"
+          class="w-full rounded-2xl border border-stone-700"
+        />
+        <figcaption class="text-stone-500 text-xs text-center mt-3">
+          Real food, prepared fresh — no shakes, no powders, no guesswork
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ───────────────────────────────────────────────────────── -->
+  <section class="py-20 bg-charcoal-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-10 text-center">
+        Frequently Asked Questions About Genetic Nutrition &amp; Methylation
+      </h2>
+      <div class="space-y-4">
+        {faqs.map(({ question, answer }) => (
+          <details class="group border border-stone-700 rounded-xl bg-stone-800 open:border-gold-500/50">
+            <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-5 font-heading font-semibold text-cream-100 hover:text-gold-400 transition-colors">
+              {question}
+              <span class="text-gold-500 text-xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="px-5 pb-5 text-stone-400 leading-relaxed">{answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ───────────────────────────────────────────────────────── -->
+  <section class="py-20 bg-stone-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+        Curious What Your Genetics Say About Your Metabolism and Methylation?
+      </h2>
+      <p class="text-stone-300 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+        EmpowerX3's Genetic Meal Prep service uses your genetic and bloodwork data to build a meal plan
+        designed specifically for your body — prepared by Chef David.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/contact"
+          class="inline-flex items-center px-6 py-3 rounded-lg bg-gold-500 text-white font-semibold hover:bg-gold-400 transition-colors"
+        >
+          Book a Free Discovery Call
+        </a>
+        <a
+          href="mailto:gary@empowerx3.com"
+          class="inline-flex items-center px-6 py-3 rounded-lg border border-stone-600 text-cream-100 font-semibold hover:border-gold-500 hover:text-gold-400 transition-colors"
+        >
+          gary@empowerx3.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

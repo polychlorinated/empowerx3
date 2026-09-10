@@ -147,7 +147,14 @@ const faqs = [
     { name: 'Home', url: 'https://empowerx3.com/' },
     { name: 'Accelerators', url: 'https://empowerx3.com/tools' }
   ]}
+  lcpImage="/exopod1.webp"
 >
+
+  <!-- FAQ Schema -->
+  <FAQSchema
+    faqs={faqs.map(({ q, a }) => ({ question: q, answer: a }))}
+    slot="head"
+  />
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
   <section class="relative bg-stone-900 overflow-hidden">
@@ -400,11 +407,6 @@ const faqs = [
       <h3 class="font-heading font-bold text-2xl text-cream-100 mb-8 text-center">
         ExoPod FAQ
       </h3>
-      <!-- FAQ Schema -->
-      <FAQSchema
-        faqs={faqs.map(({ q, a }) => ({ question: q, answer: a }))}
-        slot="head"
-      />
       <div class="space-y-2">
         {faqs.map(({ q, a }) => (
           <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
