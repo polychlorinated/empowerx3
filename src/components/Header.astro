@@ -43,7 +43,7 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
               <a
                 href={item.href}
                 class:list={[
-                  'whitespace-nowrap px-2.5 py-1 rounded-md text-base font-medium tracking-wide transition-colors',
+                  'whitespace-nowrap px-3 py-1 rounded-full text-base font-medium tracking-wide transition-colors',
                   item.children && 'inline-flex items-center gap-1.5',
                   isActive(item.href, item.children)
                     ? 'text-gold-500 bg-stone-100'
@@ -100,8 +100,8 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
         Book a Call
       </a>
 
-      <!-- Mobile CTA (below xl) -->
-      <a href="/contact" id="mobile-cta" class="hidden sm:inline-flex xl:hidden shrink-0 text-gold-500 font-semibold text-base hover:text-gold-400 transition-colors">
+      <!-- Mobile CTA (below xl, keeps button styling) -->
+      <a href="/contact" id="mobile-cta" class="hidden sm:inline-flex xl:hidden shrink-0 items-center px-5 py-2.5 rounded-lg bg-gold-500 text-white text-sm font-semibold hover:bg-gold-400 transition-colors">
         Book a Call
       </a>
 
@@ -128,13 +128,13 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
   id="mobile-menu"
   class="hidden xl:hidden fixed inset-0 top-28 z-40 bg-charcoal/95 backdrop-blur-sm animate-fade-in overflow-y-auto"
 >
-    <nav aria-label="Mobile navigation" class="flex flex-col items-center justify-start pt-8 gap-1 px-6 pb-12">
+    <nav aria-label="Mobile navigation" class="flex flex-col items-center justify-start pt-8 gap-2 px-6 pb-12">
       {nav.map((item) => (
-        <div class="w-full">
+        <div class="w-full flex flex-col items-center">
           <a
             href={item.href}
             class:list={[
-              'w-full text-center py-3 text-lg font-medium tracking-wide rounded-lg transition-colors',
+              'px-7 py-2 text-lg font-medium tracking-wide rounded-full transition-colors text-center',
               isActive(item.href, item.children)
                 ? 'text-gold-500 bg-charcoal-800'
                 : 'text-cream-100 hover:text-gold-500 hover:bg-charcoal-800',
@@ -144,7 +144,7 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
             {item.label}
           </a>
           {item.children && (
-            <ul role="list" class="space-y-1 py-1 border-t border-stone-800">
+            <ul role="list" class="mt-1 mb-2 flex flex-col items-center gap-1">
               {item.children.map((c) => {
                 const active = currentPath === c.href || (c.href !== '/' && currentPath.startsWith(c.href));
                 return (
@@ -152,7 +152,7 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
                     <a
                       href={c.href}
                       class:list={[
-                        'w-full text-center py-2 text-base rounded-lg transition-colors',
+                        'px-5 py-1.5 text-base rounded-full transition-colors text-center',
                         active
                           ? 'text-gold-500 bg-charcoal-800'
                           : 'text-cream-100/80 hover:text-gold-500 hover:bg-charcoal-800',
@@ -169,7 +169,7 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
       ))}
       <a
         href="/contact"
-        class="mt-4 w-full text-center py-3.5 rounded-lg bg-gold-500 text-white text-lg font-semibold hover:bg-gold-400 transition-colors"
+        class="mt-4 px-10 py-3.5 rounded-full bg-gold-500 text-white text-lg font-semibold hover:bg-gold-400 transition-colors text-center"
       >
         Book a Call
       </a>
