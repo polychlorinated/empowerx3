@@ -34,8 +34,8 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
         <img src="/empower-logo-full-color.webp" alt="EmpowerX3" width="250" height="73" aria-hidden="true" class="h-full w-full object-fill" />
       </a>
 
-      <!-- Desktop nav (shown by JS when it fits; dropdown for Education) -->
-      <nav id="desktop-nav" aria-label="Primary navigation" class="hidden min-w-0 flex-1">
+      <!-- Desktop nav: visible at xl and up via pure CSS (no JS required). JS may extend it down to lg when it fits. -->
+      <nav id="desktop-nav" aria-label="Primary navigation" class="hidden xl:block min-w-0 flex-1">
         <ul class="flex items-center justify-evenly gap-2" role="list">
           {nav.map((item) => (
             <li class:list={[item.children && 'relative group']}>
@@ -90,24 +90,24 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
         </ul>
       </nav>
 
-      <!-- Desktop CTA -->
+      <!-- Desktop CTA (xl and up) -->
       <a
         href="/contact"
         id="desktop-cta"
-        class="hidden shrink-0 items-center whitespace-nowrap px-6 py-3 rounded-lg bg-gold-500 text-white text-base font-semibold hover:bg-gold-400 transition-colors"
+        class="hidden xl:inline-flex shrink-0 items-center whitespace-nowrap px-6 py-3 rounded-lg bg-gold-500 text-white text-base font-semibold hover:bg-gold-400 transition-colors"
       >
         Book a Call
       </a>
 
-      <!-- Mobile CTA -->
-      <a href="/contact" id="mobile-cta" class="hidden shrink-0 text-gold-500 font-semibold text-base hover:text-gold-400 transition-colors">
+      <!-- Mobile CTA (below xl) -->
+      <a href="/contact" id="mobile-cta" class="hidden sm:inline-flex xl:hidden shrink-0 text-gold-500 font-semibold text-base hover:text-gold-400 transition-colors">
         Book a Call
       </a>
 
-      <!-- Hamburger -->
+      <!-- Hamburger (below xl) -->
       <button
         id="mobile-menu-toggle"
-        class="flex flex-col justify-center items-center w-10 h-10 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 shrink-0"
+        class="xl:hidden flex flex-col justify-center items-center w-10 h-10 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 shrink-0"
         aria-label="Open menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -123,7 +123,7 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
   <!-- Mobile menu overlay -->
   <div
     id="mobile-menu"
-    class="hidden fixed inset-0 top-28 z-40 bg-charcoal/95 backdrop-blur-sm animate-fade-in overflow-y-auto"
+    class="hidden xl:hidden fixed inset-0 top-28 z-40 bg-charcoal/95 backdrop-blur-sm animate-fade-in overflow-y-auto"
   >
     <nav aria-label="Mobile navigation" class="flex flex-col items-center justify-start pt-8 gap-1 px-6 pb-12">
       {nav.map((item) => (
@@ -174,66 +174,119 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
   </div>
 </header>
 
+<style is:global>
+  /* JS enhancement: when the nav demonstrably fits between lg and xl,
+     override the Tailwind `hidden`/breakpoint classes. Specificity
+     (.nav-desktop #id) beats the single-class utilities. */
+  .nav-desktop #desktop-nav { display: block; }
+  .nav-desktop #desktop-cta { display: inline-flex; }
+  .nav-desktop #mobile-cta,
+  .nav-desktop #mobile-menu-toggle { display: none; }
+</style>
+
 <script>
+  const header = document.getElementById('site-header');
   const desktopNav = document.getElementById('desktop-nav');
   const desktopCta = document.getElementById('desktop-cta');
-  const mobileCta = document.getElementById('mobile-cta');
+  const logo = document.getElementById('site-logo');
   const toggle = document.getElementById('mobile-menu-toggle');
   const menu = document.getElementById('mobile-menu');
   const bar1 = document.getElementById('hamburger-bar-1');
   const bar2 = document.getElementById('hamburger-bar-2');
   const bar3 = document.getElementById('hamburger-bar-3');
 
-  if (desktopNav && desktopCta && mobileCta && toggle && menu && bar1 && bar2 && bar3) {
-    let open = false;
+  let menuOpen = false;
 
-    const setOpen = (next: boolean) => {
-      open = next;
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      menu.classList.toggle('hidden', !open);
-      bar1.classList.toggle('rotate-45', open);
-      bar1.classList.toggle('translate-y-2', open);
-      bar2.classList.toggle('opacity-0', open);
-      bar3.classList.toggle('-rotate-45', open);
-      bar3.classList.toggle('-translate-y-2', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-    };
+  const closeMenu = () => {
+    if (!menuOpen) return;
+    menuOpen = false;
+    if (toggle && menu && bar1 && bar2 && bar3) {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+      menu.classList.add('hidden');
+      bar1.classList.remove('rotate-45', 'translate-y-2');
+      bar2.classList.remove('opacity-0');
+      bar3.classList.remove('-rotate-45', '-translate-y-2');
+      document.body.style.overflow = '';
+    }
+  };
 
-    const closeMenu = () => {
-      if (open) setOpen(false);
-    };
-
-    const checkFit = () => {
-      const belowFloor = window.innerWidth < 768;
-      // Reveal the desktop controls synchronously (no paint in between) so they can be measured
-      desktopNav.classList.remove('hidden');
-      desktopCta.classList.remove('hidden');
-      const overflow = !belowFloor && desktopNav.scrollWidth > desktopNav.clientWidth;
-      const collapsed = belowFloor || overflow;
-
-      desktopNav.classList.toggle('hidden', collapsed);
-      desktopCta.classList.toggle('hidden', collapsed);
-      mobileCta.classList.toggle('hidden', !collapsed || window.innerWidth < 640);
-      toggle.classList.toggle('hidden', !collapsed);
-      if (collapsed) closeMenu();
-    };
-
-    toggle.addEventListener('click', () => setOpen(!open));
+  if (toggle && menu && bar1 && bar2 && bar3) {
+    toggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      toggle.setAttribute('aria-expanded', String(menuOpen));
+      toggle.setAttribute('aria-label', menuOpen ? 'Close menu' : 'Open menu');
+      menu.classList.toggle('hidden', !menuOpen);
+      bar1.classList.toggle('rotate-45', menuOpen);
+      bar1.classList.toggle('translate-y-2', menuOpen);
+      bar2.classList.toggle('opacity-0', menuOpen);
+      bar3.classList.toggle('-rotate-45', menuOpen);
+      bar3.classList.toggle('-translate-y-2', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+    });
 
     menu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', closeMenu);
     });
+  }
 
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeMenu();
-    });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  // Enhancement only: never hides what CSS already shows (xl and up).
+  // Between lg and xl, show the full nav when it measurably fits; otherwise
+  // leave the CSS defaults (hamburger) in place.
+  if (header && desktopNav && desktopCta && logo) {
+    const measure = (html: string, forceDisplay?: string) => {
+      const wrap = document.createElement('div');
+      wrap.style.cssText =
+        'position:absolute;visibility:hidden;top:0;left:0;width:0;overflow:visible;white-space:nowrap;pointer-events:none;';
+      wrap.innerHTML = html;
+      document.body.appendChild(wrap);
+      const el = wrap.firstElementChild as HTMLElement | null;
+      if (el && forceDisplay) el.style.display = forceDisplay;
+      const w = wrap.scrollWidth;
+      wrap.remove();
+      return w;
+    };
+
+    const fits = () => {
+      try {
+        const inner = header.firstElementChild as HTMLElement | null;
+        if (!inner) return false;
+        const styles = getComputedStyle(inner);
+        const pad = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+        const navWidth = measure(desktopNav.querySelector('ul')?.outerHTML ?? '');
+        const ctaWidth = measure(desktopCta.outerHTML, 'inline-flex');
+        const available = inner.clientWidth - pad - logo.offsetWidth - ctaWidth - 48 /* 2 × gap-6 */ - 8 /* safety */;
+        return navWidth > 0 && navWidth <= available;
+      } catch {
+        return false;
+      }
+    };
+
+    const checkFit = () => {
+      const w = window.innerWidth;
+      // CSS owns these bands; only enhance between lg and xl
+      if (w < 1024 || w >= 1280) {
+        header.classList.remove('nav-desktop');
+        return;
+      }
+      header.classList.toggle('nav-desktop', fits());
+      if (header.classList.contains('nav-desktop')) closeMenu();
+    };
 
     let raf = 0;
     window.addEventListener('resize', () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(checkFit);
     });
+
+    // Re-check once fonts settle, so measurements reflect real rendering
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(() => checkFit()).catch(() => {});
+    }
 
     checkFit();
   }
