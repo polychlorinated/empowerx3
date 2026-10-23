@@ -25,6 +25,7 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
     : currentPath.startsWith(href) || (children?.some((c) => currentPath.startsWith(c.href)) ?? false);
 ---
 
+<>
 <header id="site-header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between gap-6 h-28">
@@ -119,12 +120,14 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
 
     </div>
   </div>
+</header>
 
-  <!-- Mobile menu overlay -->
-  <div
-    id="mobile-menu"
-    class="hidden xl:hidden fixed inset-0 top-28 z-40 bg-charcoal/95 backdrop-blur-sm animate-fade-in overflow-y-auto"
-  >
+<!-- Overlay lives OUTSIDE the <header>: the header's backdrop-blur-sm creates a
+     CSS containing block, which would collapse a fixed inset-0 child to zero height. -->
+<div
+  id="mobile-menu"
+  class="hidden xl:hidden fixed inset-0 top-28 z-40 bg-charcoal/95 backdrop-blur-sm animate-fade-in overflow-y-auto"
+>
     <nav aria-label="Mobile navigation" class="flex flex-col items-center justify-start pt-8 gap-1 px-6 pb-12">
       {nav.map((item) => (
         <div class="w-full">
@@ -172,7 +175,6 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
       </a>
     </nav>
   </div>
-</header>
 
 <style is:global>
   /* JS enhancement: when the nav demonstrably fits between lg and xl,
@@ -291,3 +293,4 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
     checkFit();
   }
 </script>
+</>
