@@ -1,69 +1,113 @@
 ---
 const nav = [
-  { label: 'Home',       href: '/' },
-  { label: 'Education', href: '/education' },
-  { label: 'Gut Rebuild',  href: '/gut-rebuild' },
-  { label: 'Mold Recovery',  href: '/mold-recovery' },
-  { label: 'Core Program',  href: '/solutions' },
-  { label: 'Accelerators',    href: '/tools' },
+  { label: 'Home', href: '/' },
+  {
+    label: 'Education',
+    href: '/education',
+    children: [
+      { label: 'Solutions Library', href: '/education' },
+      { label: 'Tired & Foggy Guide', href: '/education/mystery-fatigue' },
+      { label: 'Bloated & Crashing Guide', href: '/education/digestion-energy' },
+      { label: 'Gut Rebuild', href: '/gut-rebuild' },
+      { label: 'Mold Recovery', href: '/mold-recovery' },
+    ],
+  },
+  { label: 'Core Program', href: '/solutions' },
+  { label: 'Accelerators', href: '/tools' },
   { label: 'Genetic Meal Prep', href: '/genetic-meal-prep' },
-  { label: 'Contact',   href: '/contact' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const currentPath = Astro.url.pathname;
+const isActive = (href: string, children?: Array<{ href: string }>) =>
+  href === '/'
+    ? currentPath === '/'
+    : currentPath.startsWith(href) || (children?.some((c) => currentPath.startsWith(c.href)) ?? false);
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone-200">
+<header id="site-header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between gap-6 h-28">
 
       <!-- Brand -->
-      <a href="/" class="flex h-[73px] w-[250px] max-w-[calc(100vw-2rem)] shrink-0 items-center justify-center" aria-label="EmpowerX3 home">
+      <a href="/" id="site-logo" class="flex h-[73px] w-[250px] max-w-[calc(100vw-2rem)] shrink-0 items-center justify-center" aria-label="EmpowerX3 home">
         <img src="/empower-logo-full-color.webp" alt="EmpowerX3" width="250" height="73" aria-hidden="true" class="h-full w-full object-fill" />
       </a>
 
-      <!-- Desktop nav -->
-      <nav aria-label="Primary navigation" class="hidden xl:block min-w-0 flex-1">
+      <!-- Desktop nav (shown by JS when it fits; dropdown for Education) -->
+      <nav id="desktop-nav" aria-label="Primary navigation" class="hidden min-w-0 flex-1">
         <ul class="flex items-center justify-evenly gap-2" role="list">
-          {nav.map(({ label, href }) => {
-            const isActive = href === '/' ? currentPath === '/' : currentPath.startsWith(href);
-            return (
-              <li>
-                <a
-                  href={href}
-                  class:list={[
-                    'whitespace-nowrap px-3 py-2.5 rounded-md text-base font-medium tracking-wide transition-colors',
-                    isActive
-                      ? 'text-gold-500 bg-stone-100'
-                      : 'text-charcoal hover:text-gold-500 hover:bg-stone-100',
-                  ]}
-                  aria-current={isActive ? 'page' : undefined}
-                >
-                  {label}
-                </a>
-              </li>
-            );
-          })}
+          {nav.map((item) => (
+            <li class:list={[item.children && 'relative group']}>
+              <a
+                href={item.href}
+                class:list={[
+                  'whitespace-nowrap px-3 py-2.5 rounded-md text-base font-medium tracking-wide transition-colors',
+                  item.children && 'inline-flex items-center gap-1.5',
+                  isActive(item.href, item.children)
+                    ? 'text-gold-500 bg-stone-100'
+                    : 'text-charcoal hover:text-gold-500 hover:bg-stone-100',
+                ]}
+                aria-current={isActive(item.href, item.children) ? 'page' : undefined}
+                aria-haspopup={item.children ? 'true' : undefined}
+              >
+                {item.label}
+                {item.children && (
+                  <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                )}
+              </a>
+              {item.children && (
+                <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 hidden group-hover:block group-focus-within:block z-50">
+                  <div class="bg-charcoal rounded-xl border border-stone-700 shadow-2xl py-2 overflow-hidden min-w-[15rem]">
+                    <ul role="menu" class="space-y-0.5">
+                      {item.children.map((c) => {
+                        const active = currentPath === c.href || (c.href !== '/' && currentPath.startsWith(c.href));
+                        return (
+                          <li role="none">
+                            <a
+                              href={c.href}
+                              role="menuitem"
+                              class:list={[
+                                'block px-4 py-2.5 text-sm whitespace-nowrap transition-colors',
+                                active
+                                  ? 'text-gold-500 bg-stone-800'
+                                  : 'text-cream-100 hover:bg-stone-800 hover:text-gold-400',
+                              ]}
+                            >
+                              {c.label}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
 
       <!-- Desktop CTA -->
       <a
         href="/contact"
-        class="hidden xl:inline-flex shrink-0 items-center whitespace-nowrap px-6 py-3 rounded-lg bg-gold-500 text-white text-base font-semibold hover:bg-gold-400 transition-colors"
+        id="desktop-cta"
+        class="hidden shrink-0 items-center whitespace-nowrap px-6 py-3 rounded-lg bg-gold-500 text-white text-base font-semibold hover:bg-gold-400 transition-colors"
       >
         Book a Call
       </a>
 
       <!-- Mobile CTA -->
-      <a href="/contact" class="hidden sm:inline-flex xl:hidden text-gold-500 font-semibold text-base hover:text-gold-400 transition-colors">
+      <a href="/contact" id="mobile-cta" class="hidden shrink-0 text-gold-500 font-semibold text-base hover:text-gold-400 transition-colors">
         Book a Call
       </a>
 
       <!-- Hamburger -->
       <button
         id="mobile-menu-toggle"
-        class="xl:hidden flex flex-col justify-center items-center w-10 h-10 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2"
+        class="flex flex-col justify-center items-center w-10 h-10 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 shrink-0"
         aria-label="Open menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -79,26 +123,47 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile menu overlay -->
   <div
     id="mobile-menu"
-    class="hidden xl:hidden fixed inset-0 top-28 z-40 bg-charcoal/95 backdrop-blur-sm animate-fade-in"
+    class="hidden fixed inset-0 top-28 z-40 bg-charcoal/95 backdrop-blur-sm animate-fade-in overflow-y-auto"
   >
-    <nav aria-label="Mobile navigation" class="flex flex-col items-center justify-start pt-8 gap-2 px-6">
-      {nav.map(({ label, href }) => {
-        const isActive = href === '/' ? currentPath === '/' : currentPath.startsWith(href);
-        return (
+    <nav aria-label="Mobile navigation" class="flex flex-col items-center justify-start pt-8 gap-1 px-6 pb-12">
+      {nav.map((item) => (
+        <div class="w-full">
           <a
-            href={href}
+            href={item.href}
             class:list={[
               'w-full text-center py-3 text-lg font-medium tracking-wide rounded-lg transition-colors',
-              isActive
+              isActive(item.href, item.children)
                 ? 'text-gold-500 bg-charcoal-800'
                 : 'text-cream-100 hover:text-gold-500 hover:bg-charcoal-800',
             ]}
-            aria-current={isActive ? 'page' : undefined}
+            aria-current={isActive(item.href, item.children) ? 'page' : undefined}
           >
-            {label}
+            {item.label}
           </a>
-        );
-      })}
+          {item.children && (
+            <ul role="list" class="space-y-1 py-1 border-t border-stone-800">
+              {item.children.map((c) => {
+                const active = currentPath === c.href || (c.href !== '/' && currentPath.startsWith(c.href));
+                return (
+                  <li>
+                    <a
+                      href={c.href}
+                      class:list={[
+                        'w-full text-center py-2 text-base rounded-lg transition-colors',
+                        active
+                          ? 'text-gold-500 bg-charcoal-800'
+                          : 'text-cream-100/80 hover:text-gold-500 hover:bg-charcoal-800',
+                      ]}
+                    >
+                      {c.label}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
+      ))}
       <a
         href="/contact"
         class="mt-4 w-full text-center py-3.5 rounded-lg bg-gold-500 text-white text-lg font-semibold hover:bg-gold-400 transition-colors"
@@ -110,35 +175,66 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
+  const desktopNav = document.getElementById('desktop-nav');
+  const desktopCta = document.getElementById('desktop-cta');
+  const mobileCta = document.getElementById('mobile-cta');
   const toggle = document.getElementById('mobile-menu-toggle');
   const menu = document.getElementById('mobile-menu');
   const bar1 = document.getElementById('hamburger-bar-1');
   const bar2 = document.getElementById('hamburger-bar-2');
   const bar3 = document.getElementById('hamburger-bar-3');
-  let open = false;
 
-  toggle.addEventListener('click', () => {
-    open = !open;
-    toggle.setAttribute('aria-expanded', String(open));
+  if (desktopNav && desktopCta && mobileCta && toggle && menu && bar1 && bar2 && bar3) {
+    let open = false;
 
-    if (open) {
-      menu.classList.remove('hidden');
-      bar1.classList.add('rotate-45', 'translate-y-2');
-      bar2.classList.add('opacity-0');
-      bar3.classList.add('-rotate-45', '-translate-y-2');
-      document.body.style.overflow = 'hidden';
-    } else {
-      menu.classList.add('hidden');
-      bar1.classList.remove('rotate-45', 'translate-y-2');
-      bar2.classList.remove('opacity-0');
-      bar3.classList.remove('-rotate-45', '-translate-y-2');
-      document.body.style.overflow = '';
-    }
-  });
+    const setOpen = (next: boolean) => {
+      open = next;
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menu.classList.toggle('hidden', !open);
+      bar1.classList.toggle('rotate-45', open);
+      bar1.classList.toggle('translate-y-2', open);
+      bar2.classList.toggle('opacity-0', open);
+      bar3.classList.toggle('-rotate-45', open);
+      bar3.classList.toggle('-translate-y-2', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
 
-  menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      toggle.click();
+    const closeMenu = () => {
+      if (open) setOpen(false);
+    };
+
+    const checkFit = () => {
+      const belowFloor = window.innerWidth < 768;
+      // Reveal the desktop controls synchronously (no paint in between) so they can be measured
+      desktopNav.classList.remove('hidden');
+      desktopCta.classList.remove('hidden');
+      const overflow = !belowFloor && desktopNav.scrollWidth > desktopNav.clientWidth;
+      const collapsed = belowFloor || overflow;
+
+      desktopNav.classList.toggle('hidden', collapsed);
+      desktopCta.classList.toggle('hidden', collapsed);
+      mobileCta.classList.toggle('hidden', !collapsed || window.innerWidth < 640);
+      toggle.classList.toggle('hidden', !collapsed);
+      if (collapsed) closeMenu();
+    };
+
+    toggle.addEventListener('click', () => setOpen(!open));
+
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
     });
-  });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    let raf = 0;
+    window.addEventListener('resize', () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(checkFit);
+    });
+
+    checkFit();
+  }
 </script>
