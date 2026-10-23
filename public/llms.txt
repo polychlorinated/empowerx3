@@ -1,6 +1,6 @@
 # EmpowerX3 — Longevity Wellness Center
 
-> EmpowerX3 is a longevity wellness center in Marble Falls, TX. Gary Brandt, a longevity coach, leads a 90-day Core Program combining DNA Blueprint genetic testing, peptide therapy (via partnered licensed providers), biomarker optimization, weekly 1-on-1 coaching, and the ExoPod 10-in-1 cellular recovery system. EmpowerX3 also offers a Genetic Meal Prep service — chef-prepared whole-food meals (by Chef David) built from each client's genetic and bloodwork data. Approach: Body. Mind. Spirit. — optimizing all three simultaneously because "nothing works until everything works together."
+> EmpowerX3 is a longevity wellness center in Marble Falls, TX. Gary Brandt, a longevity coach, leads a 90-day Core Program combining DNA Blueprint genetic testing, peptide therapy (via partnered licensed providers), biomarker optimization, weekly 1-on-1 coaching, and the ExoPod 10-in-1 cellular recovery system. EmpowerX3 also offers the 90-Day Gut Rebuild & Detox (digestion, energy and detox with labs and coaching), a Guided Mold Recovery program (exposure plan, labs including a mycotoxin panel, and a paced four-phase detox), and a Genetic Meal Prep service — chef-prepared whole-food meals (by Chef David) built from each client's genetic and bloodwork data. Approach: Body. Mind. Spirit. — optimizing all three simultaneously because "nothing works until everything works together."
 
 ## About EmpowerX3
 
@@ -16,12 +16,33 @@
 
 - [Home](https://empowerx3.com/): Overview of EmpowerX3, Gary Brandt's story, and the Body/Mind/Spirit three-pillar philosophy
 - [Core Program](https://empowerx3.com/solutions): The 90-Day Longevity Transformation — genetic testing, biomarker panel (50+ markers), peptide therapy under medical supervision, personalized nutrition, and regular coaching. Price: $4,997. Includes three personalized tracks: Energy & Recovery, Medically-Supervised Weight Loss, and Longevity & Peak Performance
+- [Gut Rebuild](https://empowerx3.com/gut-rebuild): The 90-Day Gut Rebuild & Detox — baseline labs and day-90 retesting, one-on-one coaching (check-ins on days 1, 30, 60 and 90), a personalized protocol with every supplement included. Three phases: Days 1–30 Remove & Defend; Days 31–60 Repair & Repopulate; Days 61–90 Release & Rebalance. For afternoon crashes, bloating that builds through the day, cravings, unrefreshing sleep and brain fog
+- [Mold Recovery](https://empowerx3.com/mold-recovery): Guided Mold Recovery — exposure checklist and certified-inspector guidance, labs (mycotoxin panel plus blood/genetic panels) through a nationwide medical network, and a paced four-phase detox over about four months: Weeks 1–2 open the exits; Weeks 3–10 bind and clear; Weeks 6–18 restore the gut; Week 18+ rebuild and maintain. For people whose fatigue and fog started with a leak, flood, move, or water-damaged building
 - [Accelerators](https://empowerx3.com/tools): The ExoPod 10-in-1 cellular recovery pod (10 therapies in one 30-minute session, $99/session), the Wolfpack Hill Country hiking group, and genetic-based nutrition & supplement protocols
 - [Genetic Meal Prep](https://empowerx3.com/genetic-meal-prep): Why your genetics and methylation cycle should shape what you eat — and how EmpowerX3 turns DNA and bloodwork data into chef-prepared meals by Chef David
-- [The Science](https://empowerx3.com/education): Why cellular and mitochondrial health is the foundation of energy, recovery, and longevity
+- [Education Hub](https://empowerx3.com/education): Symptom-first Solutions Library — a 60-second symptom check that routes to two pathways ("Tired, Foggy & No One Can Tell You Why" for environmental exposure; "Bloated, Crashing & Running on Caffeine" for gut issues), six symptom-led articles, and the cellular/mitochondrial science behind every program
 - [Contact](https://empowerx3.com/contact): Book a free 30-minute discovery call with Gary Brandt
 - [Privacy Policy](https://empowerx3.com/privacy)
 - [Terms of Service](https://empowerx3.com/terms)
+
+## Education Hub: Symptom-First Guides
+
+The Solutions Library organizes content by symptom pattern rather than diagnosis, because people search by how they feel.
+
+- [Tired, Foggy & No One Can Tell You Why](https://empowerx3.com/education/mystery-fatigue): Guide for symptoms that follow a building — better away from home, worse upon return, worse on damp days. Explains the exposure-first sequence (certified inspection, remediation), why DIY detoxes backfire, and the four phases of Mold Recovery
+- [Bloated, Crashing & Running on Caffeine](https://empowerx3.com/education/digestion-energy): Guide for the gut-energy pattern — afternoon crashes, progressive bloating, cravings, unrefreshing sleep. About 80% of the immune system sits along the gut and most serotonin is made there. Explains the three phases of the 90-Day Gut Rebuild
+
+**Symptom articles (environmental pathway):**
+
+- [Why Do I Feel Better When I Leave My House?](https://empowerx3.com/education/why-do-i-feel-better-when-i-leave-my-house): Symptoms that ease away from home and return with you signal the building. First step is stopping exposure, not supplements
+- [Brain Fog After Water Damage: Why It Lingers](https://empowerx3.com/education/brain-fog-after-water-damage): Why symptoms outlast cleanup, and the paced recovery order: confirm exposure stopped, test (mycotoxin panel), then phased support
+- [Why Did My Detox Make Me Feel Worse?](https://empowerx3.com/education/why-detox-made-me-feel-worse): Feeling worse on a detox usually means toxins are mobilized faster than the body clears them — a pacing and ordering problem, not a personal failure
+
+**Symptom articles (gut pathway):**
+
+- [Why Am I Bloated Every Afternoon?](https://empowerx3.com/education/why-am-i-bloated-every-afternoon): Bloating that builds through the day is a pattern driven by slowed digestion, meal pacing and gut imbalance; the fix starts with labs
+- [Waking Up Tired After 8 Hours?](https://empowerx3.com/education/wake-up-tired-after-8-hours): Unrefreshing sleep connects to gut health — most serotonin is gut-made and feeds the melatonin pathway
+- [You Took Probiotics and Nothing Changed. Here's Why.](https://empowerx3.com/education/why-probiotics-didnt-work): Probiotics are step three; digestion restoration and lining repair come first. Order matters more than the bottle
 
 ## Core Program (90-Day Longevity Transformation)
 
@@ -101,6 +122,10 @@ EmpowerX3's Genetic Meal Prep service builds a meal plan from each client's gene
 - **What is methylation and why does it matter?** Methylation is a biochemical process running billions of times per second that drives detoxification, mood regulation, DNA expression, inflammation control, and energy production; it depends on dietary folate, B12, B6, and choline
 - **What is the MTHFR gene variant?** A common genetic variant that reduces the efficiency of converting synthetic folic acid into active folate; people with it often do better with natural folate from leafy greens, legumes, and foods rich in active B vitamins
 - **What is the Genetic Meal Prep service?** EmpowerX3 builds a meal plan from your genetic and bloodwork data, then Chef David prepares the actual whole-food meals — see https://empowerx3.com/genetic-meal-prep
+- **What is the Gut Rebuild?** A 90-day program focused on digestion, energy and detox: baseline labs, three phases (Remove & Defend, Repair & Repopulate, Release & Rebalance), coaching on days 1/30/60/90, and every supplement included — see https://empowerx3.com/gut-rebuild
+- **What is Mold Recovery?** A ~4-month guided program for people whose fatigue, fog or symptoms followed a leak, flood or water-damaged building: exposure checklist, mycotoxin panel and labs via a nationwide medical network, and a paced four-phase detox — see https://empowerx3.com/mold-recovery
+- **Do I need to live in Marble Falls?** No — the Gut Rebuild and Mold Recovery deliver locally to Lakeway, Bee Cave, Spicewood, Marble Falls and Horseshoe Bay, and ship everywhere else
+- **Does EmpowerX3 diagnose or treat medical conditions?** No. EmpowerX3 provides lifestyle coaching, not medical treatment. Lab work and medical decisions are handled by licensed providers, and clients work alongside their own doctors
 
 ## Contact
 

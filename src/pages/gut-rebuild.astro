@@ -1,0 +1,268 @@
+---
+export const prerender = true;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQSchema from '@/components/schema/FAQSchema.astro';
+
+const faqs = [
+  {
+    q: 'Do I need to live in Marble Falls?',
+    a: 'No. Many clients work with us remotely. We deliver locally to Lakeway, Bee Cave, Spicewood, Marble Falls and Horseshoe Bay, and ship everywhere else.',
+  },
+  {
+    q: 'Will I feel worse before I feel better?',
+    a: 'Some people feel mild, temporary symptoms in the first two weeks. We pace your plan to keep that manageable and adjust with you.',
+  },
+  {
+    q: 'What does it cost?',
+    a: 'Plans are tiered, from products and protocol up to full coaching with labs. We\u2019ll recommend the right fit on your free call.',
+  },
+  {
+    q: 'How is this different from the Core Program?',
+    a: 'The Gut Rebuild focuses on digestion, energy and detox. The Core Program adds DNA analysis, peptide therapy and full longevity optimization. Many clients start here and step up.',
+  },
+];
+---
+
+<BaseLayout
+  title="90-Day Gut Rebuild & Detox Program | EmpowerX3 Marble Falls, TX"
+  description="Tired, bloated and running on caffeine? EmpowerX3's 90-day gut rebuild combines lab work, personal coaching and every product you need. Book a free call."
+  og={{
+    title: "90-Day Gut Rebuild & Detox Program | EmpowerX3 Marble Falls, TX",
+    description: "Tired, bloated and running on caffeine? EmpowerX3's 90-day gut rebuild combines lab work, personal coaching and every product you need.",
+    image: "https://empowerx3.com/og-default.webp",
+    type: "website"
+  }}
+  canonical="https://empowerx3.com/gut-rebuild"
+  schemaPageType="service"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Gut Rebuild', url: 'https://empowerx3.com/gut-rebuild' }
+  ]}
+  schemaService={{
+    name: 'The 90-Day Gut Rebuild & Detox',
+    description: 'A 90-day gut rebuild combining baseline labs, day-90 retesting, one-on-one coaching, and a personalized protocol with every supplement included.',
+    provider: { '@type': 'LocalBusiness', name: 'EmpowerX3', url: 'https://empowerx3.com' },
+    areaServed: ['Marble Falls', 'Lakeway', 'Bee Cave', 'Spicewood', 'Horseshoe Bay', 'Austin'],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Gut Rebuild Inclusions',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Baseline labs and day-90 retesting' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'One-on-one coaching with check-ins on days 1, 30, 60 and 90' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Personalized protocol with dosing and timing adjustments' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Every supplement for all 90 days' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Daily schedule and eating plan' } },
+      ]
+    }
+  }}
+>
+
+  <FAQSchema slot="head" faqs={faqs.map(({ q, a }) => ({ question: q, answer: a }))} />
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="relative bg-stone-900 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-900/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Gut Rebuild</p>
+      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 max-w-3xl leading-tight text-cream-100">
+        The 90-Day Gut Rebuild &amp; Detox
+      </h1>
+      <p class="text-stone-300 text-xl max-w-2xl leading-relaxed mb-10">
+        Your energy problem might be a gut problem. You've cut sugar, bought the probiotics and tried the
+        cleanse, and you still crash at 2 p.m. Most programs hand you a bottle and wish you luck. We start with
+        your labs, build a plan around your body and coach you through every phase.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors">
+        Book a Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Does This Sound Like You ──────────────────────────────────── -->
+  <section class="py-16 bg-stone-900 border-b border-stone-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8">Does this sound like you?</h2>
+      <ul class="space-y-3 mb-8" role="list">
+        {[
+          'You fade after lunch instead of feeling fueled.',
+          'Your stomach bloats more as the day goes on.',
+          'Sugar and carb cravings win more often than you\u2019d like.',
+          'You sleep, but don\u2019t wake up rested.',
+          'Brain fog and a short fuse have become normal.',
+        ].map((item) => (
+          <li class="flex items-start gap-3 bg-stone-800 rounded-xl p-4 border border-stone-700">
+            <span class="text-gold-500 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
+            <span class="text-stone-300">{item}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="text-stone-400 leading-relaxed">
+        If two or more sound familiar, your gut may be the bottleneck. About 80% of your immune system sits along
+        your gut, and most of your body's serotonin is made there. When digestion struggles, energy, sleep and
+        focus feel it first.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── How It Works ─────────────────────────────────────────────── -->
+  <section class="py-20 bg-stone-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-14 text-center">
+        How it works: three phases, 90 days
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            label: 'Days 1–30',
+            title: 'Remove & Defend',
+            body: 'We restore digestion, clear out what doesn\u2019t belong and calm your gut. You build up gradually, with coaching if detox symptoms show up.',
+            accentBorder: 'border-t-brand-600',
+            accentText: 'text-brand-400',
+          },
+          {
+            label: 'Days 31–60',
+            title: 'Repair & Repopulate',
+            body: 'We focus on rebuilding your gut lining and the good bacteria behind steady energy, better mood and deeper sleep.',
+            accentBorder: 'border-t-gold-500',
+            accentText: 'text-gold-400',
+          },
+          {
+            label: 'Days 61–90',
+            title: 'Release & Rebalance',
+            body: 'With your gut working again, we add a gentle detox phase and bring foods back one at a time, so you learn exactly what works for your body.',
+            accentBorder: 'border-t-stone-600',
+            accentText: 'text-stone-400',
+          },
+        ].map(({ label, title, body, accentBorder, accentText }) => (
+          <div class={`rounded-2xl p-8 border-t-4 ${accentBorder} bg-stone-800 border border-stone-700 border-t-0`}>
+            <p class={`font-bold text-sm uppercase tracking-widest mb-1 ${accentText}`}>{label}</p>
+            <h3 class="font-heading font-bold text-xl text-cream-100 mb-4">{title}</h3>
+            <p class="text-stone-400 leading-relaxed text-sm">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── What's Included ──────────────────────────────────────────── -->
+  <section class="py-20 bg-stone-800 border-y border-stone-700">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-10 text-center">
+        What's included
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {[
+          'Baseline labs and day-90 retesting. We measure where you start and prove where you finish.',
+          'One-on-one coaching with check-ins on days 1, 30, 60 and 90, plus support between calls.',
+          'A personalized protocol with dosing and timing adjusted to how your body responds.',
+          'Every supplement for all 90 days, professional-grade and delivered locally.',
+          'A simple daily schedule and eating plan so you always know what to take and when.',
+          'Progress tracking for energy, sleep, digestion and waistline, compared from day 1 to day 90.',
+        ].map((item) => (
+          <div class="flex items-start gap-3 bg-stone-700 rounded-xl p-4 border border-stone-600">
+            <span class="text-brand-400 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
+            <span class="text-stone-300 text-sm">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Why Guided ───────────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900 border-b border-stone-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-4">
+        Why guided beats doing it alone
+      </h2>
+      <p class="text-stone-400 leading-relaxed">
+        Online detox kits guess. We test. A coach keeps you moving when the first two weeks get uncomfortable —
+        that's when most people quit on their own. We also adjust your plan as you respond, so you finish the
+        program instead of abandoning it halfway.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Meal Prep Cross-Sell ─────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900 border-b border-stone-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-4">Take it further: Lab-Guided Meal Prep</h2>
+      <p class="text-stone-400 leading-relaxed mb-8">
+        Pair your protocol with chef-prepared, whole-food meals designed around your bloodwork and DNA. There's
+        no guessing what to eat while your gut rebuilds.
+      </p>
+      <a href="/genetic-meal-prep" class="inline-flex items-center px-6 py-3 rounded-lg border border-gold-600 text-gold-400 font-semibold hover:bg-gold-500 hover:text-stone-950 transition-colors">
+        Learn about Genetic Meal Prep
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Who It's For ─────────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900 border-b border-stone-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8">Who it's for</h2>
+      <ul class="space-y-3" role="list">
+        {[
+          'Busy professionals running on caffeine and willpower',
+          'Anyone with ongoing bloating, cravings or afternoon crashes',
+          'Clients preparing for the Core Program who want a strong foundation first',
+          'Anyone who has tried supplements alone and wants a plan that actually fits',
+        ].map((item) => (
+          <li class="flex items-start gap-3 bg-stone-800 rounded-xl p-4 border border-stone-700">
+            <span class="text-gold-500 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
+            <span class="text-stone-300">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ──────────────────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8 text-center">Gut Rebuild FAQ</h2>
+      <div class="space-y-2">
+        {faqs.map(({ q, a }) => (
+          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-800 transition-colors">
+              <p class="font-heading font-semibold text-cream-100 text-sm">{q}</p>
+              <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
+              <p class="text-stone-400 text-sm leading-relaxed">{a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ────────────────────────────────────────────────── -->
+  <section class="relative bg-brand-800 border-y border-brand-700 py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <div class="relative max-w-3xl mx-auto px-4 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4">
+        Ninety days from now, you could feel like yourself again.
+      </h2>
+      <p class="text-brand-300 text-lg mb-8">
+        Book a free 30-minute discovery call. Gary reads every message personally.
+      </p>
+      <a href="/contact" class="inline-flex items-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors">
+        Book a Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Disclaimer ───────────────────────────────────────────────── -->
+  <section class="py-12 bg-stone-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-stone-500 text-xs leading-relaxed space-y-3">
+      <p><strong class="text-stone-400">EmpowerX3 provides lifestyle coaching, not medical treatment.</strong> Lab work and medical decisions are handled by licensed providers.</p>
+      <p>These statements have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
+    </div>
+  </section>
+
+</BaseLayout>

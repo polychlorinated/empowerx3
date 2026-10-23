@@ -2,14 +2,16 @@
 export const prerender = true;
 
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleCTA from '@/components/education/ArticleCTA.astro';
+import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
 ---
 
 <BaseLayout
-  title="Cellular & Mitochondrial Health Education — EmpowerX3"
-  description="Learn how optimizing your cells and mitochondria is the foundation of every EmpowerX3 program. Why cellular health is the root of energy, recovery, and longevity."
+  title="What's Draining You? A Solutions Library for Fatigue, Fog & Gut Issues | EmpowerX3"
+  description="Tired, foggy, bloated or crashing — and no one can tell you why? Take the 60-second symptom check, then read the guide that matches. Root-cause answers for energy, digestion and environmental health. Free call."
   og={{
-    title: "Cellular & Mitochondrial Health Education — EmpowerX3",
-    description: "Learn how optimizing your cells and mitochondria is the foundation of every EmpowerX3 program.",
+    title: "What's Draining You? A Solutions Library for Fatigue, Fog & Gut Issues | EmpowerX3",
+    description: "Tired, foggy, bloated or crashing? Take the 60-second symptom check, then read the guide that matches. Root-cause answers for energy, digestion and environmental health.",
     image: "https://empowerx3.com/wellness-mountain.webp",
     type: "website"
   }}
@@ -17,16 +19,17 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   schemaPageType="article"
   schemaBreadcrumbs={[
     { name: 'Home', url: 'https://empowerx3.com/' },
-    { name: 'The Science', url: 'https://empowerx3.com/education' }
+    { name: 'Solutions Library', url: 'https://empowerx3.com/education' }
   ]}
   schemaArticle={{
-    headline: "First, We Clean the Car Up and Rebuild the Engine",
-    description: "Learn how optimizing your cells and mitochondria is the foundation of every EmpowerX3 program. Why cellular health is the root of energy, recovery, and longevity.",
+    headline: "What's Draining You? A Solutions Library for Fatigue, Fog & Gut Issues",
+    description: "Tired, foggy, bloated or crashing — and no one can tell you why? Take the 60-second symptom check, then read the guide that matches.",
     image: "https://empowerx3.com/wellness-mountain.webp",
-    author: { '@type': 'Organization', name: 'EmpowerX3', url: 'https://empowerx3.com' },
+    author: { '@type': 'Person', name: 'Gary Brandt', jobTitle: 'Longevity Coach, EmpowerX3', worksFor: { '@type': 'Organization', name: 'EmpowerX3' } },
     publisher: { '@type': 'Organization', name: 'EmpowerX3', logo: { '@type': 'ImageObject', url: 'https://empowerx3.com/empower-logo-full.webp' } },
     datePublished: '2025-01-15',
-    dateModified: '2025-05-28'
+    dateModified: '2026-10-23',
+    mainEntityOfPage: 'https://empowerx3.com/education'
   }}
 >
 
@@ -36,36 +39,187 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-3">The Science</p>
+      <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Solutions Library</p>
       <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 max-w-3xl text-cream-100 leading-tight">
-        First, We Clean the Car Up and Rebuild the Engine
+        What's Draining You?
       </h1>
       <p class="text-stone-300 text-xl max-w-2xl leading-relaxed">
-        Before you put high-octane fuel in a classic car, you flush out the old sludge, replace the
-        gaskets, and rebuild the engine block. In the body, that means working from the cell outward.
+        You don't need another article about health. You need an answer to one question: <em>why do I feel like
+        this?</em> Start with your symptoms — not a diagnosis — and we'll point you to the path that fits.
       </p>
     </div>
   </section>
 
-  <!-- ─── Cell 101 ──────────────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900">
+  <!-- ─── Symptom Checker ──────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900 border-b border-stone-800" id="symptom-check">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-stone-800 rounded-2xl border border-stone-700 p-6 md:p-10">
+        <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-2">60-second check</p>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-3">Which of these sound like you?</h2>
+        <p class="text-stone-400 leading-relaxed mb-8">Tick everything that's been true for weeks or months. This is a guide, not a diagnosis.</p>
+
+        <form id="symptom-checker" class="space-y-3 mb-8">
+          {[
+            { g: 'mold', t: "I've felt tired and foggy ever since a leak, a flood or a move." },
+            { g: 'mold', t: 'Headaches or stuffiness ease when I\u2019m away from home and come back when I return.' },
+            { g: 'mold', t: 'Damp days or certain buildings make me feel worse.' },
+            { g: 'mold', t: 'Smells, fragrances and chemicals bother me more than they used to.' },
+            { g: 'mold', t: 'I tried a detox on my own and felt worse instead of better.' },
+            { g: 'gut', t: 'I fade after lunch instead of feeling fueled.' },
+            { g: 'gut', t: 'My stomach bloats more as the day goes on.' },
+            { g: 'gut', t: 'Sugar and carb cravings win more often than I\u2019d like.' },
+            { g: 'gut', t: 'I sleep, but I don\u2019t wake up rested.' },
+            { g: 'gut', t: 'Brain fog and a short fuse have become normal.' },
+          ].map(({ g, t }, i) => (
+            <label class="flex items-start gap-3 bg-stone-900 rounded-xl p-4 border border-stone-800 cursor-pointer hover:border-gold-700 transition-colors">
+              <input type="checkbox" data-group={g} name={`s${i}`} class="mt-1 h-5 w-5 accent-[#bfa36b] shrink-0" />
+              <span class="text-stone-300 text-sm leading-relaxed">{t}</span>
+            </label>
+          ))}
+          <button
+            type="submit"
+            class="w-full mt-4 px-6 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors"
+          >
+            Show me my path
+          </button>
+        </form>
+
+        <div id="checker-result" class="hidden" role="status" aria-live="polite">
+          <div class="border-t-2 border-gold-600 pt-6">
+            <p id="checker-result-heading" class="font-heading font-bold text-2xl text-cream-100 mb-3"></p>
+            <p id="checker-result-body" class="text-stone-300 leading-relaxed mb-6"></p>
+            <div id="checker-result-links" class="flex flex-col sm:flex-row gap-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-stone-500 text-sm mt-6">
+        Not sure yet? <a href="/contact" class="text-gold-500 hover:text-gold-400 transition-colors">Skip the check and talk to Gary</a> — it's a free 30-minute call.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Two Pathways ─────────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4 text-center">
+        Two paths. One question answered.
+      </h2>
+      <p class="text-stone-400 text-center max-w-2xl mx-auto mb-12">
+        Most unexplained fatigue and gut trouble falls into one of two patterns. Each guide below walks the whole
+        path — from your first symptom to your last phase of recovery.
+      </p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <a href="/education/mystery-fatigue" class="group block bg-stone-800 rounded-2xl p-8 border border-stone-700 hover:border-gold-600 transition-colors">
+          <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-2">Path 1</p>
+          <h3 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mb-3 group-hover:text-gold-400 transition-colors leading-tight">
+            Tired, Foggy &amp; No One Can Tell You Why
+          </h3>
+          <p class="text-stone-400 leading-relaxed mb-4">
+            Symptoms that ease when you leave home and return when you come back. The leak is fixed, but you are
+            not. For anyone whose health story started with a building.
+          </p>
+          <span class="text-gold-500 font-semibold">Read the guide &rarr;</span>
+        </a>
+        <a href="/education/digestion-energy" class="group block bg-stone-800 rounded-2xl p-8 border border-stone-700 hover:border-gold-600 transition-colors">
+          <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-2">Path 2</p>
+          <h3 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mb-3 group-hover:text-gold-400 transition-colors leading-tight">
+            Bloated, Crashing &amp; Running on Caffeine
+          </h3>
+          <p class="text-stone-400 leading-relaxed mb-4">
+            Afternoon crashes, bloating that builds through the day, sleep that never rests. For anyone whose
+            energy problem might actually be a gut problem.
+          </p>
+          <span class="text-gold-500 font-semibold">Read the guide &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── All Articles ─────────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900 border-t border-stone-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4 text-center">
+        Start with the symptom you recognize
+      </h2>
+      <p class="text-stone-400 text-center max-w-2xl mx-auto mb-12">
+        Every article below is built around a real question people search at 2 a.m. — and ends with a clear next step.
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          {
+            href: '/education/why-do-i-feel-better-when-i-leave-my-house',
+            title: 'Why Do I Feel Better When I Leave My House?',
+            desc: 'What your symptoms are really telling you about the building — and the first thing to do about it.',
+          },
+          {
+            href: '/education/brain-fog-after-water-damage',
+            title: 'Brain Fog After Water Damage: Why It Lingers',
+            desc: 'The leak is fixed, but the fog is not. What many people experience — and the recovery path that helps.',
+          },
+          {
+            href: '/education/why-detox-made-me-feel-worse',
+            title: 'Why Did My Detox Make Me Feel Worse?',
+            desc: 'Feeling worse after a cleanse is common — and fixable. Why it happens and how pacing prevents it.',
+          },
+          {
+            href: '/education/why-am-i-bloated-every-afternoon',
+            title: 'Why Am I Bloated Every Afternoon?',
+            desc: 'Bloating that builds through the day is a pattern, not a mystery. What drives it and where to start.',
+          },
+          {
+            href: '/education/wake-up-tired-after-8-hours',
+            title: 'Waking Up Tired After 8 Hours?',
+            desc: 'You sleep, but you don\u2019t wake up rested. The gut connection most sleep advice never mentions.',
+          },
+          {
+            href: '/education/why-probiotics-didnt-work',
+            title: 'You Took Probiotics and Nothing Changed',
+            desc: 'Why order matters more than the bottle — and the three steps that come before repopulating.',
+          },
+        ].map(({ href, title, desc }) => (
+          <a href={href} class="group block bg-stone-800 rounded-2xl p-6 border border-stone-700 hover:border-gold-600 transition-colors">
+            <h3 class="font-heading font-bold text-xl text-cream-100 mb-2 group-hover:text-gold-400 transition-colors leading-snug">
+              {title}
+            </h3>
+            <p class="text-stone-400 text-sm leading-relaxed mb-3">{desc}</p>
+            <span class="text-gold-500 font-semibold text-sm">Read article &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── The Science: Cell 101 ─────────────────────────────────────── -->
+  <section class="py-20 bg-stone-900 border-t border-stone-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-3">The Science Behind Every Path</p>
+        <h2 class="font-heading font-bold text-4xl md:text-5xl text-cream-100 mb-6">
+          First, We Clean the Car Up and Rebuild the Engine
+        </h2>
+        <p class="text-stone-400 leading-relaxed">
+          Before you put high-octane fuel in a classic car, you flush out the old sludge, replace the gaskets, and
+          rebuild the engine block. In the body, that means working from the cell outward — the same order behind
+          the Gut Rebuild and Mold Recovery programs.
+        </p>
+      </div>
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
-          <h2 class="font-heading font-bold text-3xl text-cream-100 mb-6">
+          <h3 class="font-heading font-bold text-3xl text-cream-100 mb-6">
             Why Cellular Health Is the Foundation of Everything
-          </h2>
+          </h3>
           <p class="text-stone-300 leading-relaxed mb-4">
-            Your body contains roughly 37 trillion cells. Each one is a precision machine — and each one
-            runs on ATP, the fuel your mitochondria produce. When that production drops, every system
-            downstream suffers: brain fog, fatigue, slow recovery, weight gain, immune dysfunction.
+            Your body contains roughly 37 trillion cells. Each one is a precision machine — and each one runs on
+            ATP, the fuel your mitochondria produce. When that production drops, every system downstream suffers:
+            brain fog, fatigue, slow recovery, weight gain, immune dysfunction.
           </p>
           <p class="text-stone-300 leading-relaxed mb-4">
             Most people treat the symptoms. We go after the fuel system.
           </p>
           <p class="text-stone-300 leading-relaxed">
-            A classic car with a seized engine doesn't need a new paint job — it needs to be taken apart,
-            cleaned, and rebuilt with precision parts. That's what cellular optimization does for your body.
+            A classic car with a seized engine doesn't need a new paint job — it needs to be taken apart, cleaned,
+            and rebuilt with precision parts. That's what cellular optimization does for your body.
           </p>
         </div>
         <div class="space-y-3">
@@ -76,7 +230,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             ['Autophagy', "The car's self-cleaning cycle. Fasting and specific nutrients trigger cells to break down and recycle damaged components."],
           ].map(([term, def]) => (
             <div class="border border-stone-700 rounded-xl p-5 bg-stone-800">
-              <h3 class="font-heading font-semibold text-gold-400 mb-1">{term}</h3>
+              <h4 class="font-heading font-semibold text-gold-400 mb-1">{term}</h4>
               <p class="text-stone-400 text-sm leading-relaxed">{def}</p>
             </div>
           ))}
@@ -86,11 +240,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Mitochondria Deep-Dive ─────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900">
+  <section class="py-20 bg-stone-900 border-t border-stone-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4 text-center">
+      <h3 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4 text-center">
         Mitochondria: The V8 You Didn't Know You Had
-      </h2>
+      </h3>
       <p class="text-stone-400 text-center max-w-2xl mx-auto mb-14">
         A healthy cell contains hundreds to thousands of mitochondria. A degraded one has a fraction of that.
         Here's how we restore the fleet.
@@ -116,7 +270,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           <div class="bg-stone-900 rounded-2xl p-8 border border-stone-800 relative overflow-hidden">
             <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-600 to-brand-900 rounded-l-2xl" aria-hidden="true"></div>
             <p class="text-brand-700 font-heading font-bold text-5xl mb-4 pl-4" aria-hidden="true">{step}</p>
-            <h3 class="font-heading font-bold text-xl text-cream-100 mb-3 pl-4">{title}</h3>
+            <h4 class="font-heading font-bold text-xl text-cream-100 mb-3 pl-4">{title}</h4>
             <p class="text-stone-400 leading-relaxed pl-4">{body}</p>
           </div>
         ))}
@@ -125,19 +279,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── The Fuel Section ───────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900">
+  <section class="py-20 bg-stone-900 border-t border-stone-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+      <h3 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
         High-Octane Fuel for a Rebuilt Engine
-      </h2>
+      </h3>
       <p class="text-stone-300 text-lg leading-relaxed mb-6">
-        Once the engine is clean and rebuilt, what you put in the tank matters enormously. A freshly
-        restored classic car running on 87-octane regular will carbon up and knock within a few thousand
-        miles. Your rebuilt cells react the same way to processed food, chronic stress, and poor sleep.
+        Once the engine is clean and rebuilt, what you put in the tank matters enormously. A freshly restored
+        classic car running on 87-octane regular will carbon up and knock within a few thousand miles. Your
+        rebuilt cells react the same way to processed food, chronic stress, and poor sleep.
       </p>
       <p class="text-stone-300 text-lg leading-relaxed mb-10">
-        EmpowerX3's nutrition and supplementation protocols are precision-mapped to your lab work —
-        not a generic template. Premium fuel for your specific engine configuration.
+        EmpowerX3's nutrition and supplementation protocols are precision-mapped to your lab work — not a
+        generic template. Premium fuel for your specific engine configuration.
       </p>
       <a
         href="/solutions"
@@ -147,5 +301,92 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       </a>
     </div>
   </section>
+
+  <ArticleCTA
+    title="Still not sure where to start? That's what the call is for."
+    body="Book a free 30-minute discovery call. We'll listen, ask the right questions, and tell you honestly which path fits — or whether you don't need us at all."
+    primaryLabel="Book a Discovery Call"
+    secondaryLabel="Read: Tired, Foggy & No One Can Tell You Why"
+    secondaryHref="/education/mystery-fatigue"
+  />
+
+  <ComplianceFooter short />
+
+  <script>
+  const results = {
+    mold: {
+      heading: 'Your pattern points to your environment.',
+      body: "Several of your answers are the classic signature of a building-related problem: symptoms that follow the space, not the calendar. The right first step is stopping the exposure — then a paced recovery. Start with the Tired & Foggy guide.",
+      links: [
+        { label: 'Read the guide: Tired & Foggy', href: '/education/mystery-fatigue', primary: true },
+        { label: 'See the Mold Recovery program', href: '/mold-recovery', primary: false },
+      ],
+    },
+    gut: {
+      heading: 'Your pattern points to your gut.',
+      body: "Your answers match the gut-energy pattern: digestion, sleep, cravings and crashes all run through the same system. The right first step is labs — then a 90-day rebuild in the right order. Start with the Bloated & Crashing guide.",
+      links: [
+        { label: 'Read the guide: Bloated & Crashing', href: '/education/digestion-energy', primary: true },
+        { label: 'See the 90-Day Gut Rebuild', href: '/gut-rebuild', primary: false },
+      ],
+    },
+    both: {
+      heading: 'Your symptoms point in two directions.',
+      body: "You have signs of both patterns — and they are connected. Mold exposure often goes hand in hand with an unbalanced gut. The order matters: stop the exposure first, then rebuild the gut. Start with the Tired & Foggy guide.",
+      links: [
+        { label: 'Read the guide: Tired & Foggy', href: '/education/mystery-fatigue', primary: true },
+        { label: 'Book a free call to talk it through', href: '/contact', primary: false },
+      ],
+    },
+    none: {
+      heading: 'No clear pattern — and that\u2019s still an answer.',
+      body: "Your answers don't point to one of our two pathways, which usually means the picture is more general — energy, hormones, or overall biology. That's exactly what the Core Program is built to sort out, starting with DNA and 50+ biomarkers.",
+      links: [
+        { label: 'See the 90-Day Core Program', href: '/solutions', primary: true },
+        { label: 'Book a free call to talk it through', href: '/contact', primary: false },
+      ],
+    },
+  };
+
+  const form = document.getElementById('symptom-checker') as HTMLFormElement | null;
+  const resultBox = document.getElementById('checker-result');
+  if (form && resultBox) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const checked = Array.from(form.querySelectorAll<HTMLInputElement>('input[type="checkbox"]:checked'));
+      let mold = 0;
+      let gut = 0;
+      checked.forEach((input) => {
+        if (input.dataset.group === 'mold') mold += 1;
+        if (input.dataset.group === 'gut') gut += 1;
+      });
+
+      let key: keyof typeof results;
+      if (mold >= 3 && gut >= 3) key = 'both';
+      else if (mold >= 3) key = 'mold';
+      else if (gut >= 3) key = 'gut';
+      else key = 'none';
+
+      const result = results[key];
+      document.getElementById('checker-result-heading')!.textContent = result.heading;
+      document.getElementById('checker-result-body')!.textContent = result.body;
+
+      const linksBox = document.getElementById('checker-result-links')!;
+      linksBox.innerHTML = '';
+      result.links.forEach(({ label, href, primary }) => {
+        const link = document.createElement('a');
+        link.href = href;
+        link.textContent = label;
+        link.className = primary
+          ? 'inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gold-500 text-stone-950 font-bold hover:bg-gold-400 transition-colors'
+          : 'inline-flex items-center justify-center px-6 py-3 rounded-lg border border-stone-600 text-cream-100 font-semibold hover:border-gold-500 hover:text-gold-400 transition-colors';
+        linksBox.appendChild(link);
+      });
+
+      resultBox.classList.remove('hidden');
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  }
+</script>
 
 </BaseLayout>

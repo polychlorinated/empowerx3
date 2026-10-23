@@ -1,0 +1,191 @@
+---
+export const prerender = true;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQSchema from '@/components/schema/FAQSchema.astro';
+import ArticleHero from '@/components/education/ArticleHero.astro';
+import DirectAnswer from '@/components/education/DirectAnswer.astro';
+import SymptomChecklist from '@/components/education/SymptomChecklist.astro';
+import RelatedArticles from '@/components/education/RelatedArticles.astro';
+import ArticleCTA from '@/components/education/ArticleCTA.astro';
+import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
+
+const faqs = [
+  {
+    question: 'Why do I crash at 2 p.m. even when I sleep enough?',
+    answer:
+      'An afternoon crash often traces back to how your gut is handling food — swings in blood sugar, sluggish digestion and inflammation all show up as a fade after lunch. When digestion struggles, energy, sleep and focus feel it first. EmpowerX3 starts with labs to find your actual bottleneck instead of guessing at it.',
+  },
+  {
+    question: 'I already take probiotics. Why would this be different?',
+    answer:
+      'Probiotics alone rarely fix the problem because they skip the earlier steps: restoring digestion, clearing out what does not belong and repairing the gut lining before repopulating good bacteria. The 90-Day Gut Rebuild follows that order — remove, repair, then repopulate.',
+  },
+  {
+    question: 'What does the 90-Day Gut Rebuild include?',
+    answer:
+      'Baseline labs with day-90 retesting, one-on-one coaching with check-ins on days 1, 30, 60 and 90, a personalized protocol with dosing and timing adjusted to how you respond, every supplement for all 90 days, and a simple daily schedule and eating plan.',
+  },
+  {
+    question: 'Will I feel worse before I feel better?',
+    answer:
+      'Some people feel mild, temporary symptoms in the first two weeks. We pace your plan to keep that manageable and adjust with you — the first two weeks are exactly when most people quit on their own, and coaching is what carries you through them.',
+  },
+  {
+    question: 'How is this different from the Core Program?',
+    answer:
+      'The Gut Rebuild focuses on digestion, energy and detox over 90 days. The Core Program adds DNA analysis, peptide therapy and full longevity optimization. Many clients start with the Gut Rebuild and step up.',
+  },
+];
+---
+
+<BaseLayout
+  title="Bloated, Crashing & Running on Caffeine? Your Gut Might Be the Bottleneck | EmpowerX3"
+  description="Bloating that builds through the day, a 2 p.m. crash, unrefreshing sleep, cravings that win. If two or more sound familiar, your gut may be the bottleneck. Here's the 90-day fix. Free discovery call."
+  og={{
+    title: "Bloated, Crashing & Running on Caffeine? Your Gut Might Be the Bottleneck | EmpowerX3",
+    description: "Bloating that builds through the day, a 2 p.m. crash, unrefreshing sleep, cravings that win. How labs and a phased 90-day gut rebuild get energy back.",
+    image: "https://empowerx3.com/og-default.webp",
+    type: "article"
+  }}
+  canonical="https://empowerx3.com/education/digestion-energy"
+  schemaPageType="article"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Solutions Library', url: 'https://empowerx3.com/education' },
+    { name: 'Bloated & Crashing', url: 'https://empowerx3.com/education/digestion-energy' }
+  ]}
+  schemaArticle={{
+    headline: "Bloated, Crashing & Running on Caffeine",
+    description: "Bloating that builds through the day, a 2 p.m. crash, unrefreshing sleep, cravings that win. How labs and a phased 90-day gut rebuild get energy back.",
+    image: "https://empowerx3.com/og-default.webp",
+    author: { '@type': 'Person', name: 'Gary Brandt', jobTitle: 'Longevity Coach, EmpowerX3', worksFor: { '@type': 'Organization', name: 'EmpowerX3' } },
+    publisher: { '@type': 'Organization', name: 'EmpowerX3', logo: { '@type': 'ImageObject', url: 'https://empowerx3.com/empower-logo-full.webp' } },
+    datePublished: '2026-10-23',
+    dateModified: '2026-10-23',
+    mainEntityOfPage: 'https://empowerx3.com/education/digestion-energy'
+  }}
+>
+
+  <FAQSchema slot="head" faqs={faqs} />
+
+  <ArticleHero
+    eyebrow="Solutions Library · Bloated & Crashing"
+    title="Bloated, Crashing & Running on Caffeine"
+    lede="You've cut sugar, bought the probiotics and tried the cleanse — and you still crash at 2 p.m. Most programs hand you a bottle and wish you luck. Here's what actually changes the pattern."
+  />
+
+  <article class="bg-stone-900 py-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <DirectAnswer text="Digestion, energy and focus are connected at the gut. About 80% of your immune system sits along your gut, and most of your body's serotonin is made there — so when digestion struggles, energy, sleep and mood feel it first. A phased, lab-guided 90-day gut rebuild restores digestion first, then repairs the lining, then repopulates good bacteria." />
+
+      <SymptomChecklist
+        intro="If two or more of these sound familiar, your gut may be the bottleneck."
+        items={[
+          'You fade after lunch instead of feeling fueled.',
+          'Your stomach bloats more as the day goes on.',
+          'Sugar and carb cravings win more often than you would like.',
+          'You sleep, but do not wake up rested.',
+          'Brain fog and a short fuse have become normal.',
+        ]}
+        closing="These are not character flaws. They are signals — and the fastest way to decode them is labs instead of guesswork."
+      />
+
+      <div class="space-y-6 text-stone-300 leading-relaxed">
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mt-10">Why most people stay stuck</h2>
+        <p>
+          The supplement aisle treats the gut like a vending machine: insert probiotic, receive health. But order
+          matters. If digestion is down and the gut lining is inflamed, dumping in new bacteria is like repainting
+          a wall with water damage. <strong>Online detox kits guess. We test.</strong>
+        </p>
+        <p>
+          The other reason people quit: the first two weeks. When detox symptoms show up, doing it alone means
+          riding them out with nobody adjusting the plan. That is exactly the window where a coach changes the
+          outcome.
+        </p>
+
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mt-10">How the 90-Day Gut Rebuild works</h2>
+        <p>Three phases, each one building on the last:</p>
+        <div class="space-y-4 mt-4">
+          {[
+            ['Days 1–30 · Remove & Defend', 'Restore digestion, clear out what does not belong and calm your gut. You build up gradually, with coaching if detox symptoms show up.'],
+            ['Days 31–60 · Repair & Repopulate', 'Rebuild the gut lining and the good bacteria behind steady energy, better mood and deeper sleep.'],
+            ['Days 61–90 · Release & Rebalance', 'A gentle detox phase, then foods come back one at a time so you learn exactly what works for your body.'],
+          ].map(([label, body], i) => (
+            <div class="flex gap-5 bg-stone-800 rounded-xl p-6 border border-stone-700">
+              <p class="font-heading font-bold text-3xl text-brand-600 shrink-0" aria-hidden="true">{String(i + 1).padStart(2, '0')}</p>
+              <div>
+                <p class="font-heading font-semibold text-cream-100 mb-1">{label}</p>
+                <p class="text-stone-400 text-sm leading-relaxed">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p>
+          You start with baseline labs and finish with day-90 retesting — so you measure where you start and prove
+          where you finish, instead of hoping it worked.
+        </p>
+        <p class="mt-6">
+          <a href="/gut-rebuild" class="inline-flex items-center px-6 py-3 rounded-lg bg-brand-600 text-cream-100 font-semibold hover:bg-brand-500 transition-colors">
+            See the 90-Day Gut Rebuild &rarr;
+          </a>
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <section class="bg-stone-900 pb-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <RelatedArticles
+        title="Start with the article that matches your situation"
+        articles={[
+          {
+            href: '/education/why-am-i-bloated-every-afternoon',
+            title: 'Why Am I Bloated Every Afternoon?',
+            desc: 'Bloating that builds through the day is a pattern, not a mystery. What drives it and where to start.',
+          },
+          {
+            href: '/education/wake-up-tired-after-8-hours',
+            title: 'Waking Up Tired After 8 Hours?',
+            desc: 'You sleep, but you do not wake up rested. The gut connection most sleep advice never mentions.',
+          },
+          {
+            href: '/education/why-probiotics-didnt-work',
+            title: 'You Took Probiotics and Nothing Changed',
+            desc: 'Why order matters more than the bottle — and the three steps that come before repopulating.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="bg-stone-900 pb-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mb-8 text-center">
+        Frequently asked questions
+      </h2>
+      <div class="space-y-2">
+        {faqs.map(({ question, answer }) => (
+          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-800 transition-colors">
+              <p class="font-heading font-semibold text-cream-100 text-sm">{question}</p>
+              <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
+              <p class="text-stone-400 text-sm leading-relaxed">{answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ArticleCTA
+    title="Ninety days from now, you could feel like yourself again."
+    body="Book a free 30-minute discovery call. We'll hear your story, look at what you have tried, and recommend the right fit — honestly. Gary reads every message personally."
+  />
+
+  <ComplianceFooter />
+</BaseLayout>

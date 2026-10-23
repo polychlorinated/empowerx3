@@ -69,7 +69,14 @@ const faqs = [
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Genetic Meal Prep</p>
+          <img
+            src="/genetic-meal-prep-logo.svg"
+            alt="Genetic Meal Prep by Empower X3 — Healing, whole food catered just for YOU"
+            width="680"
+            height="420"
+            loading="eager"
+            class="w-56 sm:w-64 rounded-2xl bg-white shadow-xl mb-8"
+          />
           <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6 text-cream-100 leading-tight">
             Why Your Genetics — and Your Methylation Cycle — Should Shape What You Eat
           </h1>
@@ -160,14 +167,26 @@ const faqs = [
       </p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          ['Folate & B Vitamins', 'MTHFR variants affect how you activate folic acid — shaping whether natural folate or active B12 forms serve you better.'],
-          ['Fats & Carbohydrates', 'Genetic variants influence how your body handles dietary fat and carbohydrate metabolism — visible in your DNA, not on a nutrition label.'],
-          ['Caffeine & Histamine', 'Your genes help determine how quickly you clear caffeine and how sensitive you are to histamine-rich foods.'],
-          ['Sodium Sensitivity', 'Even your blood-pressure response to salt is partly written into your genetic code.'],
-        ].map(([term, def]) => (
-          <div class="border border-stone-700 rounded-xl p-5 bg-stone-800">
-            <h3 class="font-heading font-semibold text-gold-400 mb-2">{term}</h3>
-            <p class="text-stone-400 text-sm leading-relaxed">{def}</p>
+          ['Folate & B Vitamins', '/food-folate.webp', 'MTHFR variants affect how you activate folic acid — shaping whether natural folate or active B12 forms serve you better.'],
+          ['Fats & Carbohydrates', '/food-fats-carbs.webp', 'Genetic variants influence how your body handles dietary fat and carbohydrate metabolism — visible in your DNA, not on a nutrition label.'],
+          ['Caffeine & Histamine', '/food-caffeine.webp', 'Your genes help determine how quickly you clear caffeine and how sensitive you are to histamine-rich foods.'],
+          ['Sodium Sensitivity', '/food-sodium.webp', 'Even your blood-pressure response to salt is partly written into your genetic code.'],
+        ].map(([term, img, def]) => (
+          <div class="relative overflow-hidden border border-stone-700 rounded-xl bg-stone-800 min-h-[220px] flex flex-col justify-end">
+            <img
+              src={img}
+              alt=""
+              width="800"
+              height="500"
+              loading="lazy"
+              aria-hidden="true"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/75 to-charcoal-900/35" aria-hidden="true"></div>
+            <div class="relative p-5">
+              <h3 class="font-heading font-semibold text-gold-400 mb-2">{term}</h3>
+              <p class="text-stone-300 text-sm leading-relaxed">{def}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -342,6 +361,14 @@ const faqs = [
   <!-- ─── CTA ───────────────────────────────────────────────────────── -->
   <section class="py-20 bg-stone-900">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <img
+        src="/genetic-meal-prep-logo.svg"
+        alt="Genetic Meal Prep by Empower X3 — Healing, whole food catered just for YOU"
+        width="680"
+        height="420"
+        loading="lazy"
+        class="w-52 sm:w-60 mx-auto rounded-2xl bg-white shadow-xl mb-10"
+      />
       <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
         Curious What Your Genetics Say About Your Metabolism and Methylation?
       </h2>
@@ -363,6 +390,10 @@ const faqs = [
           gary@empowerx3.com
         </a>
       </div>
+      <p class="text-stone-600 text-xs mt-14">
+        Coffee photo: <a href="https://www.flickr.com/photos/60944931@N00/7417277818" target="_blank" rel="noopener noreferrer" class="underline hover:text-gold-500 transition-colors">&ldquo;coffee steam 1&rdquo; by waferboard</a>,
+        licensed <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer" class="underline hover:text-gold-500 transition-colors">CC BY 2.0</a>. All other food photography: CC0 / public domain.
+      </p>
     </div>
   </section>
 

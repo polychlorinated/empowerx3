@@ -1,0 +1,32 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  lede?: string;
+  cluster?: { name: string; href: string };
+}
+
+const { eyebrow = 'Solutions Library', title, lede, cluster } = Astro.props;
+---
+
+<section class="relative bg-stone-900 overflow-hidden border-b border-stone-800">
+  <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+  <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24">
+    {cluster && (
+      <nav aria-label="Breadcrumb" class="mb-4 text-sm">
+        <ol class="flex flex-wrap items-center gap-2 text-stone-500" role="list">
+          <li><a href="/education" class="hover:text-gold-400 transition-colors">Solutions Library</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href={cluster.href} class="hover:text-gold-400 transition-colors">{cluster.name}</a></li>
+        </ol>
+      </nav>
+    )}
+    <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-3">{eyebrow}</p>
+    <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6 leading-tight text-cream-100">
+      {title}
+    </h1>
+    {lede && <p class="text-stone-300 text-lg md:text-xl leading-relaxed">{lede}</p>}
+  </div>
+</section>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div class="bg-stone-800 border border-gold-700 rounded-2xl p-6 md:p-8 relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-1 h-full bg-gold-500 rounded-l-2xl" aria-hidden="true"></div>
+  <p class="text-brand-400 font-heading font-semibold text-xs uppercase tracking-widest mb-2 pl-4">The short answer</p>
+  <p class="text-cream-100 text-lg leading-relaxed pl-4">{text}</p>
+</div>

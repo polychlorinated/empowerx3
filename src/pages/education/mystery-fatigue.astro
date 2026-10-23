@@ -1,0 +1,192 @@
+---
+export const prerender = true;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQSchema from '@/components/schema/FAQSchema.astro';
+import ArticleHero from '@/components/education/ArticleHero.astro';
+import DirectAnswer from '@/components/education/DirectAnswer.astro';
+import SymptomChecklist from '@/components/education/SymptomChecklist.astro';
+import RelatedArticles from '@/components/education/RelatedArticles.astro';
+import ArticleCTA from '@/components/education/ArticleCTA.astro';
+import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
+
+const faqs = [
+  {
+    question: 'Can mold exposure really leave you feeling unwell after the mold is gone?',
+    answer:
+      'Many people report ongoing symptoms — like fatigue, brain fog and headaches — after spending time in a water-damaged building, even once the visible problem is fixed. EmpowerX3 does not diagnose medical conditions. What we do is help you confirm you are out of exposure, run labs (including a mycotoxin panel) through licensed providers, and give your body\u2019s own detox and gut systems the support they need to recover.',
+  },
+  {
+    question: 'How do you know if your home is the problem?',
+    answer:
+      'A strong clue is timing: symptoms that ease when you are away from the building and return when you come back. The next step is a certified inspection (not a hardware-store kit), checking for the water source, professional remediation when needed, humidity control and air filtration. EmpowerX3 gives you a clear checklist and guidance on finding a certified inspector.',
+  },
+  {
+    question: 'What is a mycotoxin panel?',
+    answer:
+      'A mycotoxin panel is a lab test most often used to check whether mold toxins are present in the body. Through our in-house, nationwide medical network, we can order and review a mycotoxin panel along with any blood or genetic testing you need, then retest so you can see your progress. Lab work is handled by licensed providers.',
+  },
+  {
+    question: 'Why do some people feel worse when they start a detox?',
+    answer:
+      'When you move toxins faster than your body can clear them, you tend to feel worse, not better. That is why EmpowerX3 paces every step: we open the exits first, add support one piece at a time, and adjust to how you respond before a rough patch turns into a setback.',
+  },
+  {
+    question: 'Do I need to live in Marble Falls?',
+    answer:
+      'No. We deliver locally to Lakeway, Bee Cave, Spicewood, Marble Falls and Horseshoe Bay, and ship everywhere else. Labs are ordered and reviewed through our nationwide medical network, so testing works even if you are not local.',
+  },
+];
+---
+
+<BaseLayout
+  title="Always Tired & Foggy? When Your Home Might Be the Problem | EmpowerX3"
+  description="Tired, foggy and no one can explain why? If symptoms ease when you leave home and return when you come back, your environment may be part of the story. Here's how to check — and what helps. Free discovery call."
+  og={{
+    title: "Always Tired & Foggy? When Your Home Might Be the Problem | EmpowerX3",
+    description: "Symptoms that ease away from home and return when you're back are a big clue. Learn how to check your environment, test, and support your body's recovery.",
+    image: "https://empowerx3.com/og-default.webp",
+    type: "article"
+  }}
+  canonical="https://empowerx3.com/education/mystery-fatigue"
+  schemaPageType="article"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Solutions Library', url: 'https://empowerx3.com/education' },
+    { name: 'Tired & Foggy', url: 'https://empowerx3.com/education/mystery-fatigue' }
+  ]}
+  schemaArticle={{
+    headline: "Tired, Foggy & No One Can Tell You Why",
+    description: "If symptoms ease when you leave home and return when you come back, your environment may be part of the story. Here's how to check — and what helps.",
+    image: "https://empowerx3.com/og-default.webp",
+    author: { '@type': 'Person', name: 'Gary Brandt', jobTitle: 'Longevity Coach, EmpowerX3', worksFor: { '@type': 'Organization', name: 'EmpowerX3' } },
+    publisher: { '@type': 'Organization', name: 'EmpowerX3', logo: { '@type': 'ImageObject', url: 'https://empowerx3.com/empower-logo-full.webp' } },
+    datePublished: '2026-10-23',
+    dateModified: '2026-10-23',
+    mainEntityOfPage: 'https://empowerx3.com/education/mystery-fatigue'
+  }}
+>
+
+  <FAQSchema slot="head" faqs={faqs} />
+
+  <ArticleHero
+    eyebrow="Solutions Library · Tired & Foggy"
+    title="Tired, Foggy & No One Can Tell You Why"
+    lede="Your bloodwork is 'normal.' You sleep enough. You eat well. And you still feel off — especially at home. When symptoms follow the building instead of the calendar, it's worth looking at your environment."
+  />
+
+  <article class="bg-stone-900 py-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <DirectAnswer text="If you feel noticeably better when you leave your home or workplace — and worse when you return — the building may be contributing to how you feel. The fix starts with stopping the exposure (a certified inspection and remediation), then testing, then a paced recovery plan that supports your body's own detox and gut systems." />
+
+      <SymptomChecklist
+        intro="Read each line honestly. If several of these have been true for weeks or months, this guide is for you."
+        items={[
+          "You've been tired and foggy ever since a leak, a flood or a move.",
+          'Headaches or stuffiness ease when you are away from home and come back when you return.',
+          'Damp days or certain buildings make you feel worse.',
+          'Smells, fragrances and chemicals bother you more than they used to.',
+          'You tried a detox on your own and felt worse instead of better.',
+        ]}
+        closing="If this sounds familiar, the next step is a conversation — not another supplement. We don't diagnose, and we work alongside your doctor. What we do is help you get out of exposure and give your body's own detox and gut systems the support they need to recover."
+      />
+
+      <div class="space-y-6 text-stone-300 leading-relaxed">
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mt-10">Why the usual fixes haven't worked</h2>
+        <p>
+          Most people attack this problem backwards. They jump to a detox kit while still spending eight hours a day
+          in the building that set things off. <strong>No supplement can out-detox a moldy building.</strong> That is
+          why every client starts with the environment, before any product.
+        </p>
+        <p>
+          Guessing is the other trap. Different exposures and different bodies need different support, and pushing
+          too hard too fast is why so many DIY detoxes end with people feeling worse — then quitting. The order
+          matters as much as the product.
+        </p>
+
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mt-10">How a guided recovery actually works</h2>
+        <p>
+          EmpowerX3's Mold Recovery program runs about four months, in four phases that move at the pace your body
+          can handle:
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4 mt-4">
+          {[
+            ['Weeks 1–2', 'Open the exits. Digestion, hydration and protein intake working before anything gets stirred up.'],
+            ['Weeks 3–10', 'Bind and clear. Support added one piece at a time, catching toxins in the gut before reabsorption.'],
+            ['Weeks 6–18', 'Restore the gut. Clear unwanted microbes and rebuild a healthy lining and good bacteria.'],
+            ['Week 18+', 'Rebuild and maintain. A small daily routine and a plan for staying protected.'],
+          ].map(([label, body]) => (
+            <div class="bg-stone-800 rounded-xl p-5 border border-stone-700">
+              <p class="font-heading font-semibold text-gold-400 mb-1">{label}</p>
+              <p class="text-stone-400 text-sm leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+        <p>
+          Every phase is measured: a mycotoxin panel and any blood or genetic panels you need, ordered and reviewed
+          through licensed providers, with retesting so you can see your progress instead of guessing at it.
+        </p>
+        <p class="mt-6">
+          <a href="/mold-recovery" class="inline-flex items-center px-6 py-3 rounded-lg bg-brand-600 text-cream-100 font-semibold hover:bg-brand-500 transition-colors">
+            See the Mold Recovery program &rarr;
+          </a>
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <section class="bg-stone-900 pb-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <RelatedArticles
+        title="Start with the article that matches your situation"
+        articles={[
+          {
+            href: '/education/why-do-i-feel-better-when-i-leave-my-house',
+            title: 'Why Do I Feel Better When I Leave My House?',
+            desc: 'What your symptoms are really telling you about the building — and the first thing to do about it.',
+          },
+          {
+            href: '/education/brain-fog-after-water-damage',
+            title: 'Brain Fog After Water Damage: Why It Lingers',
+            desc: 'The leak is fixed, but the fog is not. What many people experience — and the recovery path that helps.',
+          },
+          {
+            href: '/education/why-detox-made-me-feel-worse',
+            title: 'Why Did My Detox Make Me Feel Worse?',
+            desc: 'Feeling worse after a cleanse is common — and fixable. Here is why it happens and how pacing prevents it.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="bg-stone-900 pb-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mb-8 text-center">
+        Frequently asked questions
+      </h2>
+      <div class="space-y-2">
+        {faqs.map(({ question, answer }) => (
+          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-800 transition-colors">
+              <p class="font-heading font-semibold text-cream-100 text-sm">{question}</p>
+              <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
+              <p class="text-stone-400 text-sm leading-relaxed">{answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ArticleCTA
+    title="You've been tired long enough. Let's find out why."
+    body="Book a free 30-minute discovery call. We'll walk through your history and your home, and tell you honestly whether a program makes sense. Gary reads every message personally."
+  />
+
+  <ComplianceFooter />
+</BaseLayout>

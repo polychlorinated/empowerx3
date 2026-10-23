@@ -1,0 +1,136 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQSchema from '@/components/schema/FAQSchema.astro';
+import ArticleHero from '@/components/education/ArticleHero.astro';
+import DirectAnswer from '@/components/education/DirectAnswer.astro';
+import RelatedArticles from '@/components/education/RelatedArticles.astro';
+import ArticleCTA from '@/components/education/ArticleCTA.astro';
+import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  eyebrow?: string;
+  lede?: string;
+  directAnswer: string;
+  datePublished: string;
+  dateModified?: string;
+  ogImage?: string;
+  cluster: { name: string; href: string };
+  faqs?: Array<{ question: string; answer: string }>;
+  related: Array<{ href: string; title: string; desc: string }>;
+  cta: {
+    title: string;
+    body?: string;
+    primaryLabel?: string;
+    primaryHref?: string;
+    secondaryLabel?: string;
+    secondaryHref?: string;
+  };
+}
+
+const {
+  title,
+  description,
+  canonical,
+  eyebrow,
+  lede,
+  directAnswer,
+  datePublished,
+  dateModified = datePublished,
+  ogImage,
+  cluster,
+  faqs = [],
+  related,
+  cta,
+} = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  og={{
+    title,
+    description,
+    image: ogImage ?? 'https://empowerx3.com/og-default.webp',
+    type: 'article',
+  }}
+  canonical={canonical}
+  schemaPageType="article"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Solutions Library', url: 'https://empowerx3.com/education' },
+    { name: cluster.name, url: `https://empowerx3.com${cluster.href}` },
+    { name: title, url: canonical },
+  ]}
+  schemaArticle={{
+    headline: title,
+    description,
+    image: ogImage ?? 'https://empowerx3.com/og-default.webp',
+    author: {
+      '@type': 'Person',
+      name: 'Gary Brandt',
+      jobTitle: 'Longevity Coach, EmpowerX3',
+      worksFor: { '@type': 'Organization', name: 'EmpowerX3' },
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'EmpowerX3',
+      logo: { '@type': 'ImageObject', url: 'https://empowerx3.com/empower-logo-full.webp' },
+    },
+    datePublished,
+    dateModified,
+    mainEntityOfPage: canonical,
+  }}
+>
+
+  {faqs.length > 0 && <FAQSchema slot="head" faqs={faqs} />}
+
+  <ArticleHero eyebrow={eyebrow} title={title} lede={lede} cluster={cluster} />
+
+  <article class="bg-stone-900 py-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <DirectAnswer text={directAnswer} />
+
+      <div class="prose-invert text-stone-300 leading-relaxed space-y-6 [&_h2]:font-heading [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:text-cream-100 [&_h2]:mt-10 [&_h3]:font-heading [&_h3]:font-semibold [&_h3]:text-xl [&_h3]:text-cream-100 [&_h3]:mt-8 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2 [&_a]:text-gold-400 [&_a]:underline [&_a]:decoration-gold-600 [&_a]:underline-offset-4 [&_strong]:text-cream-100">
+        <slot />
+      </div>
+    </div>
+  </article>
+
+  {faqs.length > 0 && (
+    <section class="bg-stone-900 pb-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mb-8 text-center">
+          Frequently asked questions
+        </h2>
+        <div class="space-y-2">
+          {faqs.map(({ question, answer }) => (
+            <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
+              <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-800 transition-colors">
+                <p class="font-heading font-semibold text-cream-100 text-sm">{question}</p>
+                <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
+                <p class="text-stone-400 text-sm leading-relaxed">{answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="bg-stone-900 pb-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <RelatedArticles articles={related} />
+    </div>
+  </section>
+
+  <ArticleCTA {...cta} />
+
+  <ComplianceFooter />
+</BaseLayout>

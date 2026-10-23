@@ -1,0 +1,317 @@
+---
+export const prerender = true;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQSchema from '@/components/schema/FAQSchema.astro';
+
+const faqs = [
+  {
+    q: 'Do I need to fix my house first?',
+    a: 'Ideally, yes. Removing the source is the single most important step. If you\u2019re still working on it, we\u2019ll talk through when it makes sense to start.',
+  },
+  {
+    q: 'Can you test for mold exposure?',
+    a: 'Yes. We can order a mycotoxin panel, the test most often used to check for mold exposure, along with any blood or genetic panels you need. Everything is ordered and reviewed through our in-house, nationwide medical network, so testing works even if you\u2019re not local.',
+  },
+  {
+    q: 'Do I need a diagnosis to join?',
+    a: 'No. This is lifestyle and nutrition coaching, not medical treatment. We work alongside your doctor, and we\u2019ll tell you when something needs medical attention.',
+  },
+  {
+    q: 'Will I feel worse before I feel better?',
+    a: 'Some people feel mild, temporary symptoms as their body clears things out. Our whole approach is built to keep that manageable: we go slow, add one thing at a time and adjust with you.',
+  },
+  {
+    q: 'How long does it take?',
+    a: 'The active program runs about four months, followed by a simple maintenance routine.',
+  },
+  {
+    q: 'Do I need to live in Marble Falls?',
+    a: 'No. We deliver locally to Lakeway, Bee Cave, Spicewood, Marble Falls and Horseshoe Bay, and ship everywhere else.',
+  },
+  {
+    q: 'How is this different from the Gut Rebuild?',
+    a: 'The Gut Rebuild is a 90-day program focused on digestion and energy. Mold Recovery adds an exposure plan, binder and liver support, and a longer, more carefully paced course.',
+  },
+];
+---
+
+<BaseLayout
+  title="Guided Mold Recovery & Detox Program | EmpowerX3 Marble Falls, TX"
+  description="Dealt with mold at home or work and still don't feel like yourself? EmpowerX3's guided mold recovery program pairs labs, coaching and a phased detox plan. Book a free call."
+  og={{
+    title: "Guided Mold Recovery & Detox Program | EmpowerX3 Marble Falls, TX",
+    description: "Dealt with mold at home or work and still don't feel like yourself? EmpowerX3's guided mold recovery program pairs labs, coaching and a phased detox plan.",
+    image: "https://empowerx3.com/og-default.webp",
+    type: "website"
+  }}
+  canonical="https://empowerx3.com/mold-recovery"
+  schemaPageType="service"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Mold Recovery', url: 'https://empowerx3.com/mold-recovery' }
+  ]}
+  schemaService={{
+    name: 'Guided Mold Recovery & Detox Program',
+    description: 'A guided mold recovery program pairing labs (including a mycotoxin panel), one-on-one coaching, and a phased, paced detox plan over about four months.',
+    provider: { '@type': 'LocalBusiness', name: 'EmpowerX3', url: 'https://empowerx3.com' },
+    areaServed: ['Marble Falls', 'Lakeway', 'Bee Cave', 'Spicewood', 'Horseshoe Bay', 'Austin'],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Mold Recovery Inclusions',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Full intake: history, symptoms, exposure and supplements review' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Exposure checklist for home, car and workplace' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lab testing including a mycotoxin panel, with retesting' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'One-on-one coaching at the start and at every phase change' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Personalized, paced protocol with every supplement included' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Daily schedule, eating plan and detox-reaction plan' } },
+      ]
+    }
+  }}
+>
+
+  <FAQSchema slot="head" faqs={faqs.map(({ q, a }) => ({ question: q, answer: a }))} />
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="relative bg-stone-900 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Mold Recovery</p>
+      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 max-w-3xl leading-tight text-cream-100">
+        Guided Mold Recovery
+      </h1>
+      <p class="text-stone-300 text-xl max-w-2xl leading-relaxed mb-10">
+        The leak is fixed. So why don't you feel fixed? Mold in a home, office or car can leave you feeling off
+        long after you've moved out or cleaned up. Most online mold detoxes push you too hard, too fast. We start
+        with your environment and your labs, then walk you through a phased plan that moves at the pace your body
+        can handle.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors">
+        Book a Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Does This Sound Like You ──────────────────────────────────── -->
+  <section class="py-16 bg-stone-900 border-b border-stone-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8">Does this sound like you?</h2>
+      <ul class="space-y-3 mb-8" role="list">
+        {[
+          'You\u2019ve been tired and foggy ever since a leak, a flood or a move.',
+          'Headaches or stuffiness ease when you\u2019re away from home and come back when you return.',
+          'Damp days or certain buildings make you feel worse.',
+          'Smells, fragrances and chemicals bother you more than they used to.',
+          'You tried a detox on your own and felt worse instead of better.',
+        ].map((item) => (
+          <li class="flex items-start gap-3 bg-stone-800 rounded-xl p-4 border border-stone-700">
+            <span class="text-gold-500 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
+            <span class="text-stone-300">{item}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="text-stone-400 leading-relaxed">
+        If this sounds familiar, the next step is a conversation. We don't diagnose, and we work alongside your
+        doctor. What we do is help you get out of exposure and give your body's own detox and gut systems the
+        support they need to recover.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Step One + Labs ──────────────────────────────────────────── -->
+  <section class="py-20 bg-stone-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div class="bg-stone-800 rounded-2xl p-8 border border-stone-700">
+        <h2 class="font-heading font-bold text-2xl text-cream-100 mb-4">Step one: stop the exposure</h2>
+        <p class="text-stone-400 leading-relaxed">
+          No supplement can out-detox a moldy building, so every client starts here, before any product. We give
+          you a clear checklist: a certified inspection (not a hardware-store kit), fixing the water source,
+          professional remediation when it's needed, humidity control and air filtration. If you can't fix the
+          source yet, we plan around that together.
+        </p>
+      </div>
+      <div class="bg-stone-800 rounded-2xl p-8 border border-stone-700">
+        <h2 class="font-heading font-bold text-2xl text-cream-100 mb-4">Labs that show where you stand</h2>
+        <p class="text-stone-400 leading-relaxed">
+          Guessing is how people end up on the wrong detox. Through our in-house, nationwide medical network, we
+          can order and review any blood or genetic lab panel you need, wherever you live. For mold, that usually
+          starts with a mycotoxin panel, the test most often used to check whether mold toxins are present in
+          your body. From there, we add any blood work or genetic testing that helps us understand how well your
+          body handles detox, then retest so you can see your progress.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── How It Works ─────────────────────────────────────────────── -->
+  <section class="py-20 bg-stone-900 border-t border-stone-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-14 text-center">
+        How it works: four phases, about four months
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {[
+          {
+            label: 'Weeks 1–2',
+            title: 'Open the exits',
+            body: 'Your body clears toxins mainly through the bowels, so we make sure digestion, hydration and protein intake are working before anything gets stirred up.',
+            accentBorder: 'border-t-brand-600',
+            accentText: 'text-brand-400',
+          },
+          {
+            label: 'Weeks 3–10',
+            title: 'Bind and clear',
+            body: 'We add support one piece at a time, a few days apart, to catch toxins in the gut before they\u2019re reabsorbed and to support your liver as it processes them.',
+            accentBorder: 'border-t-gold-500',
+            accentText: 'text-gold-400',
+          },
+          {
+            label: 'Weeks 6–18',
+            title: 'Restore the gut',
+            body: 'Mold exposure often goes hand in hand with an unbalanced gut. This phase focuses on clearing unwanted microbes and rebuilding a healthy lining and good bacteria.',
+            accentBorder: 'border-t-stone-600',
+            accentText: 'text-stone-400',
+          },
+          {
+            label: 'Week 18 onward',
+            title: 'Rebuild and maintain',
+            body: 'Once you\u2019ve settled, we taper to a small daily routine and give you a plan for staying protected, including what to do if you\u2019re ever exposed again.',
+            accentBorder: 'border-t-brand-600',
+            accentText: 'text-brand-400',
+          },
+        ].map(({ label, title, body, accentBorder, accentText }) => (
+          <div class={`rounded-2xl p-8 border-t-4 ${accentBorder} bg-stone-800 border border-stone-700 border-t-0`}>
+            <p class={`font-bold text-sm uppercase tracking-widest mb-1 ${accentText}`}>{label}</p>
+            <h3 class="font-heading font-bold text-xl text-cream-100 mb-4">{title}</h3>
+            <p class="text-stone-400 leading-relaxed text-sm">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── What's Included ──────────────────────────────────────────── -->
+  <section class="py-20 bg-stone-800 border-y border-stone-700">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-10 text-center">
+        What's included
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {[
+          'A full intake that reviews your history, symptoms, exposure and every medication and supplement you take.',
+          'An exposure checklist for your home, car and workplace, with guidance on finding a certified inspector.',
+          'Lab testing ordered and reviewed for you, including a mycotoxin panel and any blood or genetic panels you need, through our in-house, nationwide medical network, with retesting to track progress.',
+          'One-on-one coaching with check-ins at the start and at every phase change, plus support between calls.',
+          'A personalized, paced protocol that adds one thing at a time and adjusts to how you respond.',
+          'Every supplement for the full program, professional-grade and delivered locally.',
+          'A daily schedule, eating plan and detox-reaction plan, so you always know what to take, what to eat and what to do if you feel off.',
+        ].map((item) => (
+          <div class="flex items-start gap-3 bg-stone-700 rounded-xl p-4 border border-stone-600">
+            <span class="text-brand-400 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
+            <span class="text-stone-300 text-sm">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Why Guided ───────────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900 border-b border-stone-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-4">
+        Why guided beats doing it alone
+      </h2>
+      <p class="text-stone-400 leading-relaxed">
+        Mold recovery is where going it alone backfires most. Move toxins faster than your body can clear them
+        and you feel worse, not better. That's why so many people quit. Timing matters too: some products need to
+        be taken hours apart from food and medication, or they don't work as intended. We pace every step, watch
+        how you respond and adjust before a rough patch turns into a setback.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Meal Prep Cross-Sell ─────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900 border-b border-stone-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-4">Take it further: Lab-Guided Meal Prep</h2>
+      <p class="text-stone-400 leading-relaxed mb-8">
+        The right food carries a big share of the load during recovery. Pair your program with chef-prepared,
+        whole-food meals designed around your bloodwork and DNA and aligned with your low-sugar recovery eating
+        plan.
+      </p>
+      <a href="/genetic-meal-prep" class="inline-flex items-center px-6 py-3 rounded-lg border border-gold-600 text-gold-400 font-semibold hover:bg-gold-500 hover:text-stone-950 transition-colors">
+        Learn about Genetic Meal Prep
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Who It's For ─────────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900 border-b border-stone-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8">Who it's for</h2>
+      <ul class="space-y-3" role="list">
+        {[
+          'Anyone who has lived or worked in a water-damaged building and hasn\u2019t felt right since',
+          'People who have already fixed their home and want help with the next step',
+          'Anyone who tried a mold detox alone and felt worse',
+          'Clients finishing the Gut Rebuild who know mold was part of their story',
+        ].map((item) => (
+          <li class="flex items-start gap-3 bg-stone-800 rounded-xl p-4 border border-stone-700">
+            <span class="text-gold-500 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
+            <span class="text-stone-300">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ──────────────────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8 text-center">Mold Recovery FAQ</h2>
+      <div class="space-y-2">
+        {faqs.map(({ q, a }) => (
+          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-800 transition-colors">
+              <p class="font-heading font-semibold text-cream-100 text-sm">{q}</p>
+              <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
+              <p class="text-stone-400 text-sm leading-relaxed">{a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ────────────────────────────────────────────────── -->
+  <section class="relative bg-brand-800 border-y border-brand-700 py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <div class="relative max-w-3xl mx-auto px-4 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4">
+        You've done the hard part by getting out of the mold. Let's help your body catch up.
+      </h2>
+      <p class="text-brand-300 text-lg mb-8">
+        Book a free 30-minute discovery call. Gary reads every message personally.
+      </p>
+      <a href="/contact" class="inline-flex items-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors">
+        Book a Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Disclaimer ───────────────────────────────────────────────── -->
+  <section class="py-12 bg-stone-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-stone-500 text-xs leading-relaxed space-y-3">
+      <p><strong class="text-stone-400">EmpowerX3 provides lifestyle coaching, not medical treatment.</strong> Lab work and medical decisions are handled by licensed providers. If you have trouble breathing, chest pain, a fever, a severe headache, fainting or confusion, seek medical care right away.</p>
+      <p>These statements have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
+    </div>
+  </section>
+
+</BaseLayout>
