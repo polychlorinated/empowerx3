@@ -43,7 +43,7 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
               <a
                 href={item.href}
                 class:list={[
-                  'whitespace-nowrap px-3 py-2.5 rounded-md text-base font-medium tracking-wide transition-colors',
+                  'whitespace-nowrap px-2.5 py-1 rounded-md text-base font-medium tracking-wide transition-colors',
                   item.children && 'inline-flex items-center gap-1.5',
                   isActive(item.href, item.children)
                     ? 'text-gold-500 bg-stone-100'
@@ -61,8 +61,8 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
               </a>
               {item.children && (
                 <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 hidden group-hover:block group-focus-within:block z-50">
-                  <div class="bg-charcoal rounded-xl border border-stone-700 shadow-2xl py-2 overflow-hidden min-w-[15rem]">
-                    <ul role="menu" class="space-y-0.5">
+                  <div class="bg-charcoal rounded-xl border border-stone-700 shadow-2xl py-1.5 overflow-hidden min-w-[13rem]">
+                    <ul role="menu" class="space-y-0">
                       {item.children.map((c) => {
                         const active = currentPath === c.href || (c.href !== '/' && currentPath.startsWith(c.href));
                         return (
@@ -71,7 +71,7 @@ const isActive = (href: string, children?: Array<{ href: string }>) =>
                               href={c.href}
                               role="menuitem"
                               class:list={[
-                                'block px-4 py-2.5 text-sm whitespace-nowrap transition-colors',
+                                'block px-3 py-1.5 text-sm whitespace-nowrap transition-colors',
                                 active
                                   ? 'text-gold-500 bg-stone-800'
                                   : 'text-cream-100 hover:bg-stone-800 hover:text-gold-400',
