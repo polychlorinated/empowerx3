@@ -1,0 +1,70 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const DISCOVERY_EMBED = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2cH5gDrt2UdOVWrTA_6MRirZry2OJOQWkg3DUrEe0GiQQRTVLeZ-_hegTX6z5tSIXGtQ057ued?gv=true';
+const DISCOVERY_LINK = 'https://calendar.app.google/uarFtanu7n3bhsJv5';
+---
+
+<BaseLayout
+  title="Book a 20-Minute Discovery Call — EmpowerX3"
+  description="Book your free 20-minute discovery call with Gary. Map out your cellular health route and learn what an EmpowerX3 program looks like for your specific goals."
+  og={{
+    title: "Book a 20-Minute Discovery Call — EmpowerX3",
+    description: "Pick a time that works for you and get an honest assessment of where your cellular health is today.",
+    image: "https://empowerx3.com/empower-logo-full.webp",
+    type: "website"
+  }}
+  canonical="https://empowerx3.com/book"
+  schemaPageType="contact"
+  schemaBreadcrumbs={[
+    { name: 'Home', url: 'https://empowerx3.com/' },
+    { name: 'Book a Discovery Call', url: 'https://empowerx3.com/book' }
+  ]}
+>
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="relative bg-stone-900 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-900/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Get Started</p>
+      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 text-cream-100 leading-tight">
+        Book Your 20-Minute Discovery Call
+      </h1>
+      <p class="text-stone-300 text-xl max-w-2xl mx-auto leading-relaxed">
+        No pressure, no sales pitch — just an honest assessment of where your cellular engine
+        is today and what the road ahead could look like.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Booking Embed ────────────────────────────────────────────── -->
+  <section class="py-16 bg-stone-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-stone-800 rounded-xl border border-stone-700 overflow-hidden shadow-2xl">
+        <iframe
+          src={DISCOVERY_EMBED}
+          title="Book a discovery call with Gary"
+          width="100%"
+          height="675"
+          style="border:0"
+          loading="lazy"
+          class="block w-full"
+        ></iframe>
+      </div>
+
+      <div class="mt-8 text-center space-y-4">
+        <p class="text-stone-400 text-sm">
+          Scheduling not loading? <a href={DISCOVERY_LINK} target="_blank" rel="noopener" class="text-gold-400 hover:text-gold-300 underline underline-offset-2 transition-colors">Open the booking page in a new tab</a>.
+        </p>
+        <p class="text-stone-400 text-sm">
+          Prefer to reach out directly? <a href="mailto:gary@empowerx3.com" class="text-gold-400 hover:text-gold-300 underline underline-offset-2 transition-colors">gary@empowerx3.com</a>
+          &nbsp;·&nbsp;
+          <a href="/contact" class="text-gold-400 hover:text-gold-300 underline underline-offset-2 transition-colors">Send a message instead</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
