@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
+const EXOPOD_EMBED = 'https://calendar.app.google/gbBP7yTHmfu9YktK9';
 const EXOPOD_LINK = 'https://calendar.app.google/gbBP7yTHmfu9YktK9';
 ---
 
@@ -39,18 +40,25 @@ const EXOPOD_LINK = 'https://calendar.app.google/gbBP7yTHmfu9YktK9';
     </div>
   </section>
 
-  <!-- ─── Booking CTA ─────────────────────────────────────────────── -->
+  <!-- ─── Booking Embed ────────────────────────────────────────────── -->
   <section class="py-16 bg-cream-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-xl border border-stone-200 shadow-lg p-10 text-center">
-        <h2 class="font-heading font-bold text-2xl text-charcoal mb-3">Ready to Reset Your Cellular Engine?</h2>
-        <p class="text-stone-600 mb-8">Pick a time on our Google calendar — ten therapies in one 30-minute session.</p>
-        <a href={EXOPOD_LINK} target="_blank" rel="noopener" class="inline-flex items-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold hover:bg-gold-400 transition-colors">
-          Book a Session &rarr;
-        </a>
+      <div class="bg-white rounded-xl border border-stone-200 overflow-hidden shadow-lg">
+        <iframe
+          src={EXOPOD_EMBED}
+          title="Book an ExoPod session"
+          width="100%"
+          height="675"
+          style="border:0"
+          loading="lazy"
+          class="block w-full bg-white"
+        ></iframe>
       </div>
 
       <div class="mt-8 text-center space-y-4">
+        <p class="text-stone-600 text-sm">
+          Scheduling not loading? <a href={EXOPOD_LINK} target="_blank" rel="noopener" class="text-gold-600 hover:text-gold-700 underline underline-offset-2 transition-colors">Open the booking page in a new tab</a>.
+        </p>
         <p class="text-stone-600 text-sm">
           Questions first? <a href="mailto:gary@empowerx3.com" class="text-gold-600 hover:text-gold-700 underline underline-offset-2 transition-colors">gary@empowerx3.com</a>
           &nbsp;·&nbsp;
