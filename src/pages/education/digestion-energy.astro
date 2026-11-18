@@ -75,7 +75,7 @@ const faqs = [
     lede="You've cut sugar, bought the probiotics and tried the cleanse — and you still crash at 2 p.m. Most programs hand you a bottle and wish you luck. Here's what actually changes the pattern."
   />
 
-  <article class="bg-stone-900 py-14">
+  <article class="bg-white py-14">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       <DirectAnswer text="Digestion, energy and focus are connected at the gut. About 80% of your immune system sits along your gut, and most of your body's serotonin is made there — so when digestion struggles, energy, sleep and mood feel it first. A phased, lab-guided 90-day gut rebuild restores digestion first, then repairs the lining, then repopulates good bacteria." />
 
@@ -91,8 +91,8 @@ const faqs = [
         closing="These are not character flaws. They are signals — and the fastest way to decode them is labs instead of guesswork."
       />
 
-      <div class="space-y-6 text-stone-300 leading-relaxed">
-        <h2 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mt-10">Why most people stay stuck</h2>
+      <div class="space-y-6 text-stone-600 leading-relaxed">
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-stone-900 mt-10">Why most people stay stuck</h2>
         <p>
           The supplement aisle treats the gut like a vending machine: insert probiotic, receive health. But order
           matters. If digestion is down and the gut lining is inflamed, dumping in new bacteria is like repainting
@@ -104,7 +104,7 @@ const faqs = [
           outcome.
         </p>
 
-        <h2 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mt-10">How the 90-Day Gut Rebuild works</h2>
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-stone-900 mt-10">How the 90-Day Gut Rebuild works</h2>
         <p>Three phases, each one building on the last:</p>
         <div class="space-y-4 mt-4">
           {[
@@ -112,11 +112,11 @@ const faqs = [
             ['Days 31–60 · Repair & Repopulate', 'Rebuild the gut lining and the good bacteria behind steady energy, better mood and deeper sleep.'],
             ['Days 61–90 · Release & Rebalance', 'A gentle detox phase, then foods come back one at a time so you learn exactly what works for your body.'],
           ].map(([label, body], i) => (
-            <div class="flex gap-5 bg-stone-800 rounded-xl p-6 border border-stone-700">
-              <p class="font-heading font-bold text-3xl text-brand-600 shrink-0" aria-hidden="true">{String(i + 1).padStart(2, '0')}</p>
+            <div class="flex gap-5 bg-stone-100 rounded-xl p-6 border border-stone-200">
+              <p class="font-heading font-bold text-3xl text-core-teal shrink-0" aria-hidden="true">{String(i + 1).padStart(2, '0')}</p>
               <div>
-                <p class="font-heading font-semibold text-cream-100 mb-1">{label}</p>
-                <p class="text-stone-400 text-sm leading-relaxed">{body}</p>
+                <p class="font-heading font-semibold text-stone-900 mb-1">{label}</p>
+                <p class="text-stone-600 text-sm leading-relaxed">{body}</p>
               </div>
             </div>
           ))}
@@ -126,7 +126,7 @@ const faqs = [
           where you finish, instead of hoping it worked.
         </p>
         <p class="mt-6">
-          <a href="/gut-rebuild" class="inline-flex items-center px-6 py-3 rounded-lg bg-brand-600 text-cream-100 font-semibold hover:bg-brand-500 transition-colors">
+          <a href="/gut-rebuild" class="inline-flex items-center px-6 py-3 rounded-lg bg-stone-900 text-white font-semibold hover:bg-stone-800 transition-colors">
             See the 90-Day Gut Rebuild &rarr;
           </a>
         </p>
@@ -134,7 +134,7 @@ const faqs = [
     </div>
   </article>
 
-  <section class="bg-stone-900 pb-16">
+  <section class="bg-white pb-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <RelatedArticles
         title="Start with the article that matches your situation"
@@ -159,22 +159,22 @@ const faqs = [
     </div>
   </section>
 
-  <section class="bg-stone-900 pb-16">
+  <section class="bg-white pb-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mb-8 text-center">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl text-stone-900 mb-8 text-center">
         Frequently asked questions
       </h2>
       <div class="space-y-2">
         {faqs.map(({ question, answer }) => (
-          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
-            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-800 transition-colors">
-              <p class="font-heading font-semibold text-cream-100 text-sm">{question}</p>
+          <details class="border border-stone-200 rounded-xl overflow-hidden bg-white">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-100 transition-colors">
+              <p class="font-heading font-semibold text-stone-900 text-sm">{question}</p>
               <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
-              <p class="text-stone-400 text-sm leading-relaxed">{answer}</p>
+            <div class="px-6 pb-5 pt-2 border-t border-stone-200 bg-stone-100/40">
+              <p class="text-stone-600 text-sm leading-relaxed">{answer}</p>
             </div>
           </details>
         ))}

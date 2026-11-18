@@ -34,16 +34,15 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
 >
 
 <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="relative bg-stone-900 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
-    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <section class="relative bg-stone-100 overflow-hidden">
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Solutions Library</p>
-      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 max-w-3xl text-cream-100 leading-tight">
+      <p class="text-core-teal font-heading font-semibold text-sm uppercase tracking-widest mb-3">Solutions Library</p>
+      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 max-w-3xl text-stone-900 leading-tight">
         What's Draining You?
       </h1>
-      <p class="text-stone-300 text-xl max-w-2xl leading-relaxed">
+      <p class="text-stone-600 text-xl max-w-2xl leading-relaxed">
         You don't need another article about health. You need an answer to one question: <em>why do I feel like
         this?</em> Start with your symptoms — not a diagnosis — and we'll point you to the path that fits.
       </p>
@@ -51,12 +50,12 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
   </section>
 
   <!-- ─── Symptom Checker ──────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-900 border-b border-stone-800" id="symptom-check">
+  <section class="py-16 bg-white border-b border-stone-200" id="symptom-check">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-stone-800 rounded-2xl border border-stone-700 p-6 md:p-10">
-        <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-2">60-second check</p>
-        <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-3">Which of these sound like you?</h2>
-        <p class="text-stone-400 leading-relaxed mb-8">Tick everything that's been true for weeks or months. This is a guide, not a diagnosis.</p>
+      <div class="bg-stone-100 rounded-2xl border border-stone-200 p-6 md:p-10">
+        <p class="text-core-teal font-heading font-semibold text-sm uppercase tracking-widest mb-2">60-second check</p>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-3">Which of these sound like you?</h2>
+        <p class="text-stone-600 leading-relaxed mb-8">Tick everything that's been true for weeks or months. This is a guide, not a diagnosis.</p>
 
         <form id="symptom-checker" class="space-y-3 mb-8">
           {[
@@ -71,9 +70,9 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
             { g: 'gut', t: 'I sleep, but I don\u2019t wake up rested.' },
             { g: 'gut', t: 'Brain fog and a short fuse have become normal.' },
           ].map(({ g, t }, i) => (
-            <label class="flex items-start gap-3 bg-stone-900 rounded-xl p-4 border border-stone-800 cursor-pointer hover:border-gold-700 transition-colors">
-              <input type="checkbox" data-group={g} name={`s${i}`} class="mt-1 h-5 w-5 accent-[#bfa36b] shrink-0" />
-              <span class="text-stone-300 text-sm leading-relaxed">{t}</span>
+            <label class="flex items-start gap-3 bg-white rounded-xl p-4 border border-stone-200 cursor-pointer hover:border-core-teal transition-colors">
+              <input type="checkbox" data-group={g} name={`s${i}`} class="mt-1 h-5 w-5 accent-[#077a62] shrink-0" />
+              <span class="text-stone-600 text-sm leading-relaxed">{t}</span>
             </label>
           ))}
           <button
@@ -86,63 +85,63 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
 
         <div id="checker-result" class="hidden" role="status" aria-live="polite">
           <div class="border-t-2 border-gold-600 pt-6">
-            <p id="checker-result-heading" class="font-heading font-bold text-2xl text-cream-100 mb-3"></p>
-            <p id="checker-result-body" class="text-stone-300 leading-relaxed mb-6"></p>
+            <p id="checker-result-heading" class="font-heading font-bold text-2xl text-stone-900 mb-3"></p>
+            <p id="checker-result-body" class="text-stone-600 leading-relaxed mb-6"></p>
             <div id="checker-result-links" class="flex flex-col sm:flex-row gap-4"></div>
           </div>
         </div>
       </div>
 
       <p class="text-center text-stone-500 text-sm mt-6">
-        Not sure yet? <a href="/book" class="text-gold-500 hover:text-gold-400 transition-colors">Skip the check and talk to Gary</a> — it's a free 20-minute call.
+        Not sure yet? <a href="/book" class="text-core-teal hover:text-stone-900 transition-colors">Skip the check and talk to Gary</a> — it's a free 20-minute call.
       </p>
     </div>
   </section>
 
   <!-- ─── Two Pathways ─────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-900">
+  <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-4 text-center">
         Two paths. One question answered.
       </h2>
-      <p class="text-stone-400 text-center max-w-2xl mx-auto mb-12">
+      <p class="text-stone-600 text-center max-w-2xl mx-auto mb-12">
         Most unexplained fatigue and gut trouble falls into one of two patterns. Each guide below walks the whole
         path — from your first symptom to your last phase of recovery.
       </p>
       <div class="grid md:grid-cols-2 gap-8">
-        <a href="/education/mystery-fatigue" class="group block bg-stone-800 rounded-2xl p-8 border border-stone-700 hover:border-gold-600 transition-colors">
-          <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-2">Path 1</p>
-          <h3 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mb-3 group-hover:text-gold-400 transition-colors leading-tight">
+        <a href="/education/mystery-fatigue" class="group block bg-stone-100 rounded-2xl p-8 border border-stone-200 hover:border-core-teal transition-colors">
+          <p class="text-core-teal font-heading font-semibold text-sm uppercase tracking-widest mb-2">Path 1</p>
+          <h3 class="font-heading font-bold text-2xl md:text-3xl text-stone-900 mb-3 group-hover:text-core-teal transition-colors leading-tight">
             Tired, Foggy &amp; No One Can Tell You Why
           </h3>
-          <p class="text-stone-400 leading-relaxed mb-4">
+          <p class="text-stone-600 leading-relaxed mb-4">
             Symptoms that ease when you leave home and return when you come back. The leak is fixed, but you are
             not. For anyone whose health story started with a building.
           </p>
-          <span class="text-gold-500 font-semibold">Read the guide &rarr;</span>
+          <span class="text-core-teal font-semibold">Read the guide &rarr;</span>
         </a>
-        <a href="/education/digestion-energy" class="group block bg-stone-800 rounded-2xl p-8 border border-stone-700 hover:border-gold-600 transition-colors">
-          <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-2">Path 2</p>
-          <h3 class="font-heading font-bold text-2xl md:text-3xl text-cream-100 mb-3 group-hover:text-gold-400 transition-colors leading-tight">
+        <a href="/education/digestion-energy" class="group block bg-stone-100 rounded-2xl p-8 border border-stone-200 hover:border-core-teal transition-colors">
+          <p class="text-core-teal font-heading font-semibold text-sm uppercase tracking-widest mb-2">Path 2</p>
+          <h3 class="font-heading font-bold text-2xl md:text-3xl text-stone-900 mb-3 group-hover:text-core-teal transition-colors leading-tight">
             Bloated, Crashing &amp; Running on Caffeine
           </h3>
-          <p class="text-stone-400 leading-relaxed mb-4">
+          <p class="text-stone-600 leading-relaxed mb-4">
             Afternoon crashes, bloating that builds through the day, sleep that never rests. For anyone whose
             energy problem might actually be a gut problem.
           </p>
-          <span class="text-gold-500 font-semibold">Read the guide &rarr;</span>
+          <span class="text-core-teal font-semibold">Read the guide &rarr;</span>
         </a>
       </div>
     </div>
   </section>
 
   <!-- ─── All Articles ─────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-900 border-t border-stone-800">
+  <section class="py-16 bg-stone-100 border-t border-stone-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-4 text-center">
         Start with the symptom you recognize
       </h2>
-      <p class="text-stone-400 text-center max-w-2xl mx-auto mb-12">
+      <p class="text-stone-600 text-center max-w-2xl mx-auto mb-12">
         Every article below is built around a real question people search at 2 a.m. — and ends with a clear next step.
       </p>
       <div class="grid md:grid-cols-2 gap-6">
@@ -178,12 +177,12 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
             desc: 'Why order matters more than the bottle — and the three steps that come before repopulating.',
           },
         ].map(({ href, title, desc }) => (
-          <a href={href} class="group block bg-stone-800 rounded-2xl p-6 border border-stone-700 hover:border-gold-600 transition-colors">
-            <h3 class="font-heading font-bold text-xl text-cream-100 mb-2 group-hover:text-gold-400 transition-colors leading-snug">
+          <a href={href} class="group block bg-white rounded-2xl p-6 border border-stone-200 hover:border-core-teal transition-colors">
+            <h3 class="font-heading font-bold text-xl text-stone-900 mb-2 group-hover:text-core-teal transition-colors leading-snug">
               {title}
             </h3>
-            <p class="text-stone-400 text-sm leading-relaxed mb-3">{desc}</p>
-            <span class="text-gold-500 font-semibold text-sm">Read article &rarr;</span>
+            <p class="text-stone-600 text-sm leading-relaxed mb-3">{desc}</p>
+            <span class="text-core-teal font-semibold text-sm">Read article &rarr;</span>
           </a>
         ))}
       </div>
@@ -191,14 +190,14 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
   </section>
 
   <!-- ─── The Science: Cell 101 ─────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900 border-t border-stone-800">
+  <section class="py-20 bg-white border-t border-stone-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center mb-12">
-        <p class="text-brand-400 font-heading font-semibold text-sm uppercase tracking-widest mb-3">The Science Behind Every Path</p>
-        <h2 class="font-heading font-bold text-4xl md:text-5xl text-cream-100 mb-6">
+        <p class="text-core-teal font-heading font-semibold text-sm uppercase tracking-widest mb-3">The Science Behind Every Path</p>
+        <h2 class="font-heading font-bold text-4xl md:text-5xl text-stone-900 mb-6">
           First, We Clean the Car Up and Rebuild the Engine
         </h2>
-        <p class="text-stone-400 leading-relaxed">
+        <p class="text-stone-600 leading-relaxed">
           Before you put high-octane fuel in a classic car, you flush out the old sludge, replace the gaskets, and
           rebuild the engine block. In the body, that means working from the cell outward — the same order behind
           the Gut Rebuild and Mold Recovery programs.
@@ -206,18 +205,18 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
       </div>
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
-          <h3 class="font-heading font-bold text-3xl text-cream-100 mb-6">
+          <h3 class="font-heading font-bold text-3xl text-stone-900 mb-6">
             Why Cellular Health Is the Foundation of Everything
           </h3>
-          <p class="text-stone-300 leading-relaxed mb-4">
+          <p class="text-stone-600 leading-relaxed mb-4">
             Your body contains roughly 37 trillion cells. Each one is a precision machine — and each one runs on
             ATP, the fuel your mitochondria produce. When that production drops, every system downstream suffers:
             brain fog, fatigue, slow recovery, weight gain, immune dysfunction.
           </p>
-          <p class="text-stone-300 leading-relaxed mb-4">
+          <p class="text-stone-600 leading-relaxed mb-4">
             Most people treat the symptoms. We go after the fuel system.
           </p>
-          <p class="text-stone-300 leading-relaxed">
+          <p class="text-stone-600 leading-relaxed">
             A classic car with a seized engine doesn't need a new paint job — it needs to be taken apart, cleaned,
             and rebuilt with precision parts. That's what cellular optimization does for your body.
           </p>
@@ -229,9 +228,9 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
             ['Inflammation', 'A stuck throttle — useful in short bursts, catastrophic when chronic. Cellular protocols reset the default setting.'],
             ['Autophagy', "The car's self-cleaning cycle. Fasting and specific nutrients trigger cells to break down and recycle damaged components."],
           ].map(([term, def]) => (
-            <div class="border border-stone-700 rounded-xl p-5 bg-stone-800">
-              <h4 class="font-heading font-semibold text-gold-400 mb-1">{term}</h4>
-              <p class="text-stone-400 text-sm leading-relaxed">{def}</p>
+            <div class="border border-stone-200 rounded-xl p-5 bg-stone-100">
+              <h4 class="font-heading font-semibold text-core-teal mb-1">{term}</h4>
+              <p class="text-stone-600 text-sm leading-relaxed">{def}</p>
             </div>
           ))}
         </div>
@@ -240,12 +239,12 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
   </section>
 
   <!-- ─── Mitochondria Deep-Dive ─────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900 border-t border-stone-800">
+  <section class="py-20 bg-stone-100 border-t border-stone-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4 text-center">
+      <h3 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-4 text-center">
         Mitochondria: The V8 You Didn't Know You Had
       </h3>
-      <p class="text-stone-400 text-center max-w-2xl mx-auto mb-14">
+      <p class="text-stone-600 text-center max-w-2xl mx-auto mb-14">
         A healthy cell contains hundreds to thousands of mitochondria. A degraded one has a fraction of that.
         Here's how we restore the fleet.
       </p>
@@ -267,11 +266,11 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
             body: 'Zone 2 cardio and resistance training signal cells to grow new mitochondria (mitochondrial biogenesis). More engines = more power output.',
           },
         ].map(({ step, title, body }) => (
-          <div class="bg-stone-900 rounded-2xl p-8 border border-stone-800 relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-600 to-brand-900 rounded-l-2xl" aria-hidden="true"></div>
-            <p class="text-brand-700 font-heading font-bold text-5xl mb-4 pl-4" aria-hidden="true">{step}</p>
-            <h4 class="font-heading font-bold text-xl text-cream-100 mb-3 pl-4">{title}</h4>
-            <p class="text-stone-400 leading-relaxed pl-4">{body}</p>
+          <div class="bg-white rounded-2xl p-8 border border-stone-200 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-core-teal to-stone-900 rounded-l-2xl" aria-hidden="true"></div>
+            <p class="text-core-teal font-heading font-bold text-5xl mb-4 pl-4" aria-hidden="true">{step}</p>
+            <h4 class="font-heading font-bold text-xl text-stone-900 mb-3 pl-4">{title}</h4>
+            <p class="text-stone-600 leading-relaxed pl-4">{body}</p>
           </div>
         ))}
       </div>
@@ -279,23 +278,23 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
   </section>
 
   <!-- ─── The Fuel Section ───────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900 border-t border-stone-800">
+  <section class="py-20 bg-white border-t border-stone-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h3 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+      <h3 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-6">
         High-Octane Fuel for a Rebuilt Engine
       </h3>
-      <p class="text-stone-300 text-lg leading-relaxed mb-6">
+      <p class="text-stone-600 text-lg leading-relaxed mb-6">
         Once the engine is clean and rebuilt, what you put in the tank matters enormously. A freshly restored
         classic car running on 87-octane regular will carbon up and knock within a few thousand miles. Your
         rebuilt cells react the same way to processed food, chronic stress, and poor sleep.
       </p>
-      <p class="text-stone-300 text-lg leading-relaxed mb-10">
+      <p class="text-stone-600 text-lg leading-relaxed mb-10">
         EmpowerX3's nutrition and supplementation protocols are precision-mapped to your lab work — not a
         generic template. Premium fuel for your specific engine configuration.
       </p>
       <a
         href="/solutions"
-        class="inline-flex items-center px-6 py-3 rounded-lg bg-brand-600 text-cream-100 font-semibold hover:bg-brand-500 transition-colors"
+        class="inline-flex items-center px-6 py-3 rounded-lg bg-stone-900 text-white font-semibold hover:bg-stone-800 transition-colors"
       >
         See the Core Program &rarr;
       </a>
@@ -379,7 +378,7 @@ import ComplianceFooter from '@/components/education/ComplianceFooter.astro';
         link.textContent = label;
         link.className = primary
           ? 'inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gold-500 text-stone-950 font-bold hover:bg-gold-400 transition-colors'
-          : 'inline-flex items-center justify-center px-6 py-3 rounded-lg border border-stone-600 text-cream-100 font-semibold hover:border-gold-500 hover:text-gold-400 transition-colors';
+          : 'inline-flex items-center justify-center px-6 py-3 rounded-lg border border-stone-300 text-stone-900 font-semibold hover:border-core-teal hover:text-core-teal transition-colors';
         linksBox.appendChild(link);
       });
 

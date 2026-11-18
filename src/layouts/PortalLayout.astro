@@ -22,7 +22,7 @@ const user = Astro.locals.user;
       noindex={true}
     />
   </head>
-  <body class="min-h-screen flex flex-col bg-stone-900 text-cream-100 antialiased">
+  <body class="min-h-screen flex flex-col bg-white text-stone-900 antialiased">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKZPN74V"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -34,10 +34,10 @@ const user = Astro.locals.user;
       Skip to main content
     </a>
 
-    <header class="bg-stone-900 border-b border-stone-800 py-4 px-6">
+    <header class="bg-white border-b border-stone-200 py-4 px-6">
       <div class="max-w-5xl mx-auto flex items-center justify-between gap-4">
-        <a href="/portal" class="font-heading font-bold text-lg text-cream-100 flex-shrink-0">
-          Empower<span class="text-gold-500">X3</span>
+        <a href="/portal" class="font-heading font-bold text-lg text-stone-900 flex-shrink-0">
+          Empower<span class="text-core-teal">X3</span>
           <span class="text-stone-500 font-normal text-sm ml-2">Portal</span>
         </a>
 
@@ -45,13 +45,13 @@ const user = Astro.locals.user;
           {user?.authenticated && (
             <>
               {user.name && (
-                <span class="text-sm text-stone-400 hidden sm:block">
-                  Signed in as <strong class="text-cream-100">{user.name}</strong>
+                <span class="text-sm text-stone-500 hidden sm:block">
+                  Signed in as <strong class="text-stone-900">{user.name}</strong>
                 </span>
               )}
               <a
                 href="/portal/logout"
-                class="text-sm text-stone-400 hover:text-gold-400 transition-colors whitespace-nowrap"
+                class="text-sm text-stone-500 hover:text-core-teal transition-colors whitespace-nowrap"
               >
                 Sign Out
               </a>

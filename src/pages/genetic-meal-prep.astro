@@ -62,9 +62,8 @@ const faqs = [
   <FAQSchema slot="head" faqs={faqs} />
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="relative bg-stone-900 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
-    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <section class="relative bg-stone-100 overflow-hidden">
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -77,17 +76,17 @@ const faqs = [
             loading="eager"
             class="w-56 sm:w-64 rounded-2xl bg-white shadow-xl mb-8"
           />
-          <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6 text-cream-100 leading-tight">
+          <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6 text-stone-900 leading-tight">
             Why Your Genetics — and Your Methylation Cycle — Should Shape What You Eat
           </h1>
-          <p class="text-stone-300 text-lg leading-relaxed mb-4">
+          <p class="text-stone-600 text-lg leading-relaxed mb-4">
             For decades, nutrition advice has come in a one-size-fits-all package: eat more vegetables,
             cut back on sugar, watch your portions. But "healthy" doesn't mean the same thing for everyone.
             Two people can eat the exact same meal and process it in completely different ways — because
             their bodies are built from different genetic blueprints.
           </p>
-          <p class="text-stone-300 text-lg leading-relaxed">
-            At the center of this is a process most people have never heard of: <strong class="text-gold-400">methylation</strong>.
+          <p class="text-stone-600 text-lg leading-relaxed">
+            At the center of this is a process most people have never heard of: <strong class="text-core-teal">methylation</strong>.
           </p>
         </div>
         <figure class="relative">
@@ -98,7 +97,7 @@ const faqs = [
             height="512"
             loading="eager"
             fetchpriority="high"
-            class="w-full max-w-md mx-auto rounded-2xl border border-stone-700 shadow-2xl"
+            class="w-full max-w-md mx-auto rounded-2xl border border-stone-200 shadow-2xl"
           />
           <figcaption class="text-stone-500 text-xs text-center mt-3">
             Whole-food meals built from your DNA — prepared by Chef David
@@ -109,26 +108,26 @@ const faqs = [
   </section>
 
   <!-- ─── What Is Methylation ───────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900">
+  <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-6">
             What Is Methylation, and Why Does It Matter?
           </h2>
-          <p class="text-stone-300 leading-relaxed mb-4">
+          <p class="text-stone-600 leading-relaxed mb-4">
             Methylation is a biochemical process that happens billions of times a second in your body.
             It's involved in nearly everything: how you detoxify, how you regulate mood and stress, how
             your DNA is expressed, how your body manages inflammation, and how efficiently you convert
             food into usable energy.
           </p>
-          <p class="text-stone-300 leading-relaxed mb-4">
+          <p class="text-stone-600 leading-relaxed mb-4">
             The methylation cycle depends heavily on nutrients you get from food — particularly B vitamins
             like folate (B9), B12, and B6, along with choline and other cofactors. When methylation runs
             smoothly, your body is better equipped to manage stress, clear toxins, balance hormones, and
             maintain steady energy.
           </p>
-          <p class="text-stone-300 leading-relaxed">
+          <p class="text-stone-600 leading-relaxed">
             When it doesn't run smoothly, the effects can show up as fatigue, brain fog, mood imbalances,
             poor detoxification, or difficulty managing inflammation.
           </p>
@@ -140,7 +139,7 @@ const faqs = [
             width="400"
             height="533"
             loading="lazy"
-            class="w-full max-w-sm mx-auto rounded-2xl border border-stone-700"
+            class="w-full max-w-sm mx-auto rounded-2xl border border-stone-200"
           />
           <figcaption class="text-stone-500 text-xs text-center mt-3">
             Methylation-supportive meals built around natural folate and active B vitamins
@@ -151,12 +150,12 @@ const faqs = [
   </section>
 
   <!-- ─── The Genetic Piece ─────────────────────────────────────────── -->
-  <section class="py-20 bg-charcoal-800">
+  <section class="py-20 bg-stone-100">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-4 text-center">
         The Genetic Piece: Why Methylation Isn't the Same for Everyone
       </h2>
-      <p class="text-stone-400 text-center max-w-3xl mx-auto mb-10 leading-relaxed">
+      <p class="text-stone-600 text-center max-w-3xl mx-auto mb-10 leading-relaxed">
         Certain genetic variations — the most well-known being variants in the <em>MTHFR</em> gene — can
         affect how efficiently your body performs methylation. Someone with a common MTHFR variant may not
         convert folic acid into its usable, active form as efficiently as someone without it. This doesn't
@@ -172,7 +171,7 @@ const faqs = [
           ['Caffeine & Histamine', '/food-caffeine.webp', 'Your genes help determine how quickly you clear caffeine and how sensitive you are to histamine-rich foods.'],
           ['Sodium Sensitivity', '/food-sodium.webp', 'Even your blood-pressure response to salt is partly written into your genetic code.'],
         ].map(([term, img, def]) => (
-          <div class="relative overflow-hidden border border-stone-700 rounded-xl bg-stone-800 min-h-[220px] flex flex-col justify-end">
+          <div class="relative overflow-hidden border border-stone-200 rounded-xl bg-stone-800 min-h-[220px] flex flex-col justify-end">
             <img
               src={img}
               alt=""
@@ -182,7 +181,7 @@ const faqs = [
               aria-hidden="true"
               class="absolute inset-0 h-full w-full object-cover"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/75 to-charcoal-900/35" aria-hidden="true"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/75 to-stone-900/35" aria-hidden="true"></div>
             <div class="relative p-5">
               <h3 class="font-heading font-semibold text-gold-400 mb-2">{term}</h3>
               <p class="text-stone-300 text-sm leading-relaxed">{def}</p>
@@ -190,7 +189,7 @@ const faqs = [
           </div>
         ))}
       </div>
-      <p class="text-stone-400 text-center max-w-3xl mx-auto mt-10 leading-relaxed">
+      <p class="text-stone-600 text-center max-w-3xl mx-auto mt-10 leading-relaxed">
         This is just one example. There are many genetic variants that influence how your body handles
         fats, carbohydrates, caffeine, histamine, and even how sensitive you are to sodium. None of this
         is visible on a standard nutrition label — it's written into your DNA.
@@ -199,7 +198,7 @@ const faqs = [
   </section>
 
   <!-- ─── Why This Matters for Meal Planning ────────────────────────── -->
-  <section class="py-20 bg-stone-900">
+  <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <figure class="order-2 md:order-1">
@@ -209,38 +208,38 @@ const faqs = [
             width="400"
             height="533"
             loading="lazy"
-            class="w-full max-w-sm mx-auto rounded-2xl border border-stone-700"
+            class="w-full max-w-sm mx-auto rounded-2xl border border-stone-200"
           />
           <figcaption class="text-stone-500 text-xs text-center mt-3">
             A week of meals designed around one person's genetic and metabolic profile
           </figcaption>
         </figure>
         <div class="order-1 md:order-2">
-          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-6">
             Why This Matters for Meal Planning
           </h2>
-          <p class="text-stone-300 leading-relaxed mb-6">
+          <p class="text-stone-600 leading-relaxed mb-6">
             Generic diet plans are built for an "average" body that doesn't actually exist. When your
             meals are designed around your genetic and metabolic profile instead, a few things change:
           </p>
           <ul class="space-y-5" role="list">
             <li class="border-l-2 border-gold-500 pl-5">
-              <h3 class="font-heading font-semibold text-cream-100 mb-1">Nutrient needs become individualized.</h3>
-              <p class="text-stone-400 leading-relaxed">
+              <h3 class="font-heading font-semibold text-stone-900 mb-1">Nutrient needs become individualized.</h3>
+              <p class="text-stone-600 leading-relaxed">
                 Instead of guessing whether you need more B vitamins, antioxidants, or specific fats, your
                 meal plan is built around what your body actually requires to support processes like methylation.
               </p>
             </li>
             <li class="border-l-2 border-gold-500 pl-5">
-              <h3 class="font-heading font-semibold text-cream-100 mb-1">Food becomes a tool, not a guessing game.</h3>
-              <p class="text-stone-400 leading-relaxed">
+              <h3 class="font-heading font-semibold text-stone-900 mb-1">Food becomes a tool, not a guessing game.</h3>
+              <p class="text-stone-600 leading-relaxed">
                 Understanding how your body processes certain nutrients allows meals to be designed to work
                 <em>with</em> your biology rather than against it.
               </p>
             </li>
             <li class="border-l-2 border-gold-500 pl-5">
-              <h3 class="font-heading font-semibold text-cream-100 mb-1">Root-cause patterns become easier to address.</h3>
-              <p class="text-stone-400 leading-relaxed">
+              <h3 class="font-heading font-semibold text-stone-900 mb-1">Root-cause patterns become easier to address.</h3>
+              <p class="text-stone-600 leading-relaxed">
                 Persistent issues like low energy, mood fluctuations, or sluggish detoxification are sometimes
                 tied to inefficient methylation — and diet is one of the most direct ways to support that pathway.
               </p>
@@ -252,19 +251,19 @@ const faqs = [
   </section>
 
   <!-- ─── Bloodwork ─────────────────────────────────────────────────── -->
-  <section class="py-20 bg-charcoal-800">
+  <section class="py-20 bg-stone-100">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-6">
             Bloodwork: The Other Half of the Picture
           </h2>
-          <p class="text-stone-300 leading-relaxed mb-4">
+          <p class="text-stone-600 leading-relaxed mb-4">
             Genetics tell you your <em>potential</em> — the tendencies your body was built with. Bloodwork
             tells you what's happening <em>right now</em>. Combining the two gives a far more complete
             picture than either one alone.
           </p>
-          <p class="text-stone-300 leading-relaxed">
+          <p class="text-stone-600 leading-relaxed">
             For example, genetic testing might reveal a predisposition to lower B12 conversion, while
             bloodwork confirms whether your current B12 levels are actually low. Together, they allow a
             meal plan to be built around both your long-term biology and your current health status.
@@ -277,7 +276,7 @@ const faqs = [
             width="400"
             height="533"
             loading="lazy"
-            class="w-full max-w-sm mx-auto rounded-2xl border border-stone-700"
+            class="w-full max-w-sm mx-auto rounded-2xl border border-stone-200"
           />
           <figcaption class="text-stone-500 text-xs text-center mt-3">
             B12-rich salmon — matched to your labs, not a template
@@ -288,7 +287,7 @@ const faqs = [
   </section>
 
   <!-- ─── Food as Personalized Medicine / Chef David ────────────────── -->
-  <section class="py-20 bg-stone-900">
+  <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <figure class="order-2 md:order-1">
@@ -298,23 +297,23 @@ const faqs = [
             width="1600"
             height="1200"
             loading="lazy"
-            class="w-full rounded-2xl border border-stone-700"
+            class="w-full rounded-2xl border border-stone-200"
           />
           <figcaption class="text-stone-500 text-xs text-center mt-3">
             Chef David preparing whole-food meals for the EmpowerX3 Genetic Meal Prep service
           </figcaption>
         </figure>
         <div class="order-1 md:order-2">
-          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-6">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-6">
             Food as Personalized Medicine
           </h2>
-          <p class="text-stone-300 leading-relaxed mb-4">
+          <p class="text-stone-600 leading-relaxed mb-4">
             This is the idea behind genetics-based meal planning: rather than following a trend diet or a
             generic macro chart, your meals are built from your actual genetic and bloodwork data, then
             translated into real, whole-food meals — not supplements or shakes, but meals prepared with
             the same care you'd put into cooking for your own family.
           </p>
-          <p class="text-stone-300 leading-relaxed">
+          <p class="text-stone-600 leading-relaxed">
             Knowing your genetics and how your methylation cycle functions isn't about chasing perfection.
             It's about removing the guesswork and giving your body consistent, targeted support through
             the food you eat every day.
@@ -329,7 +328,7 @@ const faqs = [
           width="400"
           height="533"
           loading="lazy"
-          class="w-full rounded-2xl border border-stone-700"
+          class="w-full rounded-2xl border border-stone-200"
         />
         <figcaption class="text-stone-500 text-xs text-center mt-3">
           Real food, prepared fresh — no shakes, no powders, no guesswork
@@ -339,19 +338,19 @@ const faqs = [
   </section>
 
   <!-- ─── FAQ ───────────────────────────────────────────────────────── -->
-  <section class="py-20 bg-charcoal-800">
+  <section class="py-20 bg-stone-100">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-10 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-10 text-center">
         Frequently Asked Questions About Genetic Nutrition &amp; Methylation
       </h2>
       <div class="space-y-4">
         {faqs.map(({ question, answer }) => (
-          <details class="group border border-stone-700 rounded-xl bg-stone-800 open:border-gold-500/50">
-            <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-5 font-heading font-semibold text-cream-100 hover:text-gold-400 transition-colors">
+          <details class="group border border-stone-200 rounded-xl bg-white open:border-core-teal/50">
+            <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-5 font-heading font-semibold text-stone-900 hover:text-core-teal transition-colors">
               {question}
-              <span class="text-gold-500 text-xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+              <span class="text-core-teal text-xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
             </summary>
-            <p class="px-5 pb-5 text-stone-400 leading-relaxed">{answer}</p>
+            <p class="px-5 pb-5 text-stone-600 leading-relaxed">{answer}</p>
           </details>
         ))}
       </div>
@@ -379,18 +378,18 @@ const faqs = [
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="/book"
-          class="inline-flex items-center px-6 py-3 rounded-lg bg-gold-500 text-white font-semibold hover:bg-gold-400 transition-colors"
+          class="inline-flex items-center px-6 py-3 rounded-lg bg-gold-500 text-stone-950 font-semibold hover:bg-gold-400 transition-colors"
         >
           Book a Free Discovery Call
         </a>
         <a
           href="mailto:gary@empowerx3.com"
-          class="inline-flex items-center px-6 py-3 rounded-lg border border-stone-600 text-cream-100 font-semibold hover:border-gold-500 hover:text-gold-400 transition-colors"
+          class="inline-flex items-center px-6 py-3 rounded-lg border border-stone-500 text-cream-100 font-semibold hover:border-gold-500 hover:text-gold-400 transition-colors"
         >
           gary@empowerx3.com
         </a>
       </div>
-      <p class="text-stone-600 text-xs mt-14">
+      <p class="text-stone-400 text-xs mt-14">
         Coffee photo: <a href="https://www.flickr.com/photos/60944931@N00/7417277818" target="_blank" rel="noopener noreferrer" class="underline hover:text-gold-500 transition-colors">&ldquo;coffee steam 1&rdquo; by waferboard</a>,
         licensed <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer" class="underline hover:text-gold-500 transition-colors">CC BY 2.0</a>. All other food photography: CC0 / public domain.
       </p>

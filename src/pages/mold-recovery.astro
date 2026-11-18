@@ -74,16 +74,15 @@ const faqs = [
   <FAQSchema slot="head" faqs={faqs.map(({ q, a }) => ({ question: q, answer: a }))} />
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="relative bg-stone-900 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
-    <div class="absolute -top-20 -right-20 w-72 h-72 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <section class="relative bg-stone-100 overflow-hidden">
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Mold Recovery</p>
-      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 max-w-3xl leading-tight text-cream-100">
+      <p class="text-core-teal font-heading font-semibold text-sm uppercase tracking-widest mb-3">Mold Recovery</p>
+      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 max-w-3xl leading-tight text-stone-900">
         Guided Mold Recovery
       </h1>
-      <p class="text-stone-300 text-xl max-w-2xl leading-relaxed mb-10">
+      <p class="text-stone-600 text-xl max-w-2xl leading-relaxed mb-10">
         The leak is fixed. So why don't you feel fixed? Mold in a home, office or car can leave you feeling off
         long after you've moved out or cleaned up. Most online mold detoxes push you too hard, too fast. We start
         with your environment and your labs, then walk you through a phased plan that moves at the pace your body
@@ -96,9 +95,9 @@ const faqs = [
   </section>
 
   <!-- ─── Does This Sound Like You ──────────────────────────────────── -->
-  <section class="py-16 bg-stone-900 border-b border-stone-800">
+  <section class="py-16 bg-white border-b border-stone-200">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8">Does this sound like you?</h2>
+      <h2 class="font-heading font-bold text-3xl text-stone-900 mb-8">Does this sound like you?</h2>
       <ul class="space-y-3 mb-8" role="list">
         {[
           'You\u2019ve been tired and foggy ever since a leak, a flood or a move.',
@@ -107,13 +106,13 @@ const faqs = [
           'Smells, fragrances and chemicals bother you more than they used to.',
           'You tried a detox on your own and felt worse instead of better.',
         ].map((item) => (
-          <li class="flex items-start gap-3 bg-stone-800 rounded-xl p-4 border border-stone-700">
-            <span class="text-gold-500 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
-            <span class="text-stone-300">{item}</span>
+          <li class="flex items-start gap-3 bg-stone-100 rounded-xl p-4 border border-stone-200">
+            <span class="text-core-teal shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
+            <span class="text-stone-600">{item}</span>
           </li>
         ))}
       </ul>
-      <p class="text-stone-400 leading-relaxed">
+      <p class="text-stone-600 leading-relaxed">
         If this sounds familiar, the next step is a conversation. We don't diagnose, and we work alongside your
         doctor. What we do is help you get out of exposure and give your body's own detox and gut systems the
         support they need to recover.
@@ -122,20 +121,20 @@ const faqs = [
   </section>
 
   <!-- ─── Step One + Labs ──────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900">
+  <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      <div class="bg-stone-800 rounded-2xl p-8 border border-stone-700">
-        <h2 class="font-heading font-bold text-2xl text-cream-100 mb-4">Step one: stop the exposure</h2>
-        <p class="text-stone-400 leading-relaxed">
+      <div class="bg-stone-100 rounded-2xl p-8 border border-stone-200">
+        <h2 class="font-heading font-bold text-2xl text-stone-900 mb-4">Step one: stop the exposure</h2>
+        <p class="text-stone-600 leading-relaxed">
           No supplement can out-detox a moldy building, so every client starts here, before any product. We give
           you a clear checklist: a certified inspection (not a hardware-store kit), fixing the water source,
           professional remediation when it's needed, humidity control and air filtration. If you can't fix the
           source yet, we plan around that together.
         </p>
       </div>
-      <div class="bg-stone-800 rounded-2xl p-8 border border-stone-700">
-        <h2 class="font-heading font-bold text-2xl text-cream-100 mb-4">Labs that show where you stand</h2>
-        <p class="text-stone-400 leading-relaxed">
+      <div class="bg-stone-100 rounded-2xl p-8 border border-stone-200">
+        <h2 class="font-heading font-bold text-2xl text-stone-900 mb-4">Labs that show where you stand</h2>
+        <p class="text-stone-600 leading-relaxed">
           Guessing is how people end up on the wrong detox. Through our in-house, nationwide medical network, we
           can order and review any blood or genetic lab panel you need, wherever you live. For mold, that usually
           starts with a mycotoxin panel, the test most often used to check whether mold toxins are present in
@@ -147,9 +146,9 @@ const faqs = [
   </section>
 
   <!-- ─── How It Works ─────────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900 border-t border-stone-800">
+  <section class="py-20 bg-stone-100 border-t border-stone-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-14 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-14 text-center">
         How it works: four phases, about four months
       </h2>
       <div class="grid md:grid-cols-2 gap-8">
@@ -158,35 +157,35 @@ const faqs = [
             label: 'Weeks 1–2',
             title: 'Open the exits',
             body: 'Your body clears toxins mainly through the bowels, so we make sure digestion, hydration and protein intake are working before anything gets stirred up.',
-            accentBorder: 'border-t-brand-600',
-            accentText: 'text-brand-400',
+            accentBorder: 'border-t-core-teal',
+            accentText: 'text-core-teal',
           },
           {
             label: 'Weeks 3–10',
             title: 'Bind and clear',
             body: 'We add support one piece at a time, a few days apart, to catch toxins in the gut before they\u2019re reabsorbed and to support your liver as it processes them.',
             accentBorder: 'border-t-gold-500',
-            accentText: 'text-gold-400',
+            accentText: 'text-gold-600',
           },
           {
             label: 'Weeks 6–18',
             title: 'Restore the gut',
             body: 'Mold exposure often goes hand in hand with an unbalanced gut. This phase focuses on clearing unwanted microbes and rebuilding a healthy lining and good bacteria.',
-            accentBorder: 'border-t-stone-600',
-            accentText: 'text-stone-400',
+            accentBorder: 'border-t-stone-400',
+            accentText: 'text-stone-500',
           },
           {
             label: 'Week 18 onward',
             title: 'Rebuild and maintain',
             body: 'Once you\u2019ve settled, we taper to a small daily routine and give you a plan for staying protected, including what to do if you\u2019re ever exposed again.',
-            accentBorder: 'border-t-brand-600',
-            accentText: 'text-brand-400',
+            accentBorder: 'border-t-core-teal',
+            accentText: 'text-core-teal',
           },
         ].map(({ label, title, body, accentBorder, accentText }) => (
-          <div class={`rounded-2xl p-8 border-t-4 ${accentBorder} bg-stone-800 border border-stone-700 border-t-0`}>
+          <div class={`rounded-2xl p-8 border-t-4 ${accentBorder} bg-white border border-stone-200 border-t-0`}>
             <p class={`font-bold text-sm uppercase tracking-widest mb-1 ${accentText}`}>{label}</p>
-            <h3 class="font-heading font-bold text-xl text-cream-100 mb-4">{title}</h3>
-            <p class="text-stone-400 leading-relaxed text-sm">{body}</p>
+            <h3 class="font-heading font-bold text-xl text-stone-900 mb-4">{title}</h3>
+            <p class="text-stone-600 leading-relaxed text-sm">{body}</p>
           </div>
         ))}
       </div>
@@ -194,9 +193,9 @@ const faqs = [
   </section>
 
   <!-- ─── What's Included ──────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-800 border-y border-stone-700">
+  <section class="py-20 bg-white border-y border-stone-200">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-10 text-center">
+      <h2 class="font-heading font-bold text-3xl text-stone-900 mb-10 text-center">
         What's included
       </h2>
       <div class="grid sm:grid-cols-2 gap-3">
@@ -209,9 +208,9 @@ const faqs = [
           'Every supplement for the full program, professional-grade and delivered locally.',
           'A daily schedule, eating plan and detox-reaction plan, so you always know what to take, what to eat and what to do if you feel off.',
         ].map((item) => (
-          <div class="flex items-start gap-3 bg-stone-700 rounded-xl p-4 border border-stone-600">
-            <span class="text-brand-400 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
-            <span class="text-stone-300 text-sm">{item}</span>
+          <div class="flex items-start gap-3 bg-stone-100 rounded-xl p-4 border border-stone-200">
+            <span class="text-core-teal shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
+            <span class="text-stone-600 text-sm">{item}</span>
           </div>
         ))}
       </div>
@@ -219,12 +218,12 @@ const faqs = [
   </section>
 
   <!-- ─── Why Guided ───────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-900 border-b border-stone-800">
+  <section class="py-16 bg-white border-b border-stone-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-4">
+      <h2 class="font-heading font-bold text-3xl text-stone-900 mb-4">
         Why guided beats doing it alone
       </h2>
-      <p class="text-stone-400 leading-relaxed">
+      <p class="text-stone-600 leading-relaxed">
         Mold recovery is where going it alone backfires most. Move toxins faster than your body can clear them
         and you feel worse, not better. That's why so many people quit. Timing matters too: some products need to
         be taken hours apart from food and medication, or they don't work as intended. We pace every step, watch
@@ -234,24 +233,24 @@ const faqs = [
   </section>
 
   <!-- ─── Meal Prep Cross-Sell ─────────────────────────────────────── -->
-  <section class="py-16 bg-stone-900 border-b border-stone-800">
+  <section class="py-16 bg-stone-100 border-b border-stone-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-4">Take it further: Lab-Guided Meal Prep</h2>
-      <p class="text-stone-400 leading-relaxed mb-8">
+      <h2 class="font-heading font-bold text-3xl text-stone-900 mb-4">Take it further: Lab-Guided Meal Prep</h2>
+      <p class="text-stone-600 leading-relaxed mb-8">
         The right food carries a big share of the load during recovery. Pair your program with chef-prepared,
         whole-food meals designed around your bloodwork and DNA and aligned with your low-sugar recovery eating
         plan.
       </p>
-      <a href="/genetic-meal-prep" class="inline-flex items-center px-6 py-3 rounded-lg border border-gold-600 text-gold-400 font-semibold hover:bg-gold-500 hover:text-stone-950 transition-colors">
+      <a href="/genetic-meal-prep" class="inline-flex items-center px-6 py-3 rounded-lg border border-gold-600 text-gold-700 font-semibold hover:bg-gold-500 hover:text-stone-950 transition-colors">
         Learn about Genetic Meal Prep
       </a>
     </div>
   </section>
 
   <!-- ─── Who It's For ─────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-900 border-b border-stone-800">
+  <section class="py-16 bg-white border-b border-stone-200">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8">Who it's for</h2>
+      <h2 class="font-heading font-bold text-3xl text-stone-900 mb-8">Who it's for</h2>
       <ul class="space-y-3" role="list">
         {[
           'Anyone who has lived or worked in a water-damaged building and hasn\u2019t felt right since',
@@ -259,9 +258,9 @@ const faqs = [
           'Anyone who tried a mold detox alone and felt worse',
           'Clients finishing the Gut Rebuild who know mold was part of their story',
         ].map((item) => (
-          <li class="flex items-start gap-3 bg-stone-800 rounded-xl p-4 border border-stone-700">
-            <span class="text-gold-500 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
-            <span class="text-stone-300">{item}</span>
+          <li class="flex items-start gap-3 bg-stone-100 rounded-xl p-4 border border-stone-200">
+            <span class="text-core-teal shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
+            <span class="text-stone-600">{item}</span>
           </li>
         ))}
       </ul>
@@ -269,20 +268,20 @@ const faqs = [
   </section>
 
   <!-- ─── FAQ ──────────────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-900">
+  <section class="py-16 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8 text-center">Mold Recovery FAQ</h2>
+      <h2 class="font-heading font-bold text-3xl text-stone-900 mb-8 text-center">Mold Recovery FAQ</h2>
       <div class="space-y-2">
         {faqs.map(({ q, a }) => (
-          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
-            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-800 transition-colors">
-              <p class="font-heading font-semibold text-cream-100 text-sm">{q}</p>
+          <details class="border border-stone-200 rounded-xl overflow-hidden bg-white">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-100 transition-colors">
+              <p class="font-heading font-semibold text-stone-900 text-sm">{q}</p>
               <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
-              <p class="text-stone-400 text-sm leading-relaxed">{a}</p>
+            <div class="px-6 pb-5 pt-2 border-t border-stone-200 bg-stone-100/40">
+              <p class="text-stone-600 text-sm leading-relaxed">{a}</p>
             </div>
           </details>
         ))}
@@ -307,9 +306,9 @@ const faqs = [
   </section>
 
   <!-- ─── Disclaimer ───────────────────────────────────────────────── -->
-  <section class="py-12 bg-stone-900">
+  <section class="py-12 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-stone-500 text-xs leading-relaxed space-y-3">
-      <p><strong class="text-stone-400">EmpowerX3 provides lifestyle coaching, not medical treatment.</strong> Lab work and medical decisions are handled by licensed providers. If you have trouble breathing, chest pain, a fever, a severe headache, fainting or confusion, seek medical care right away.</p>
+      <p><strong class="text-stone-600">EmpowerX3 provides lifestyle coaching, not medical treatment.</strong> Lab work and medical decisions are handled by licensed providers. If you have trouble breathing, chest pain, a fever, a severe headache, fainting or confusion, seek medical care right away.</p>
       <p>These statements have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
     </div>
   </section>

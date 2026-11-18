@@ -2,59 +2,77 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
+    colors: {
+      // Override Tailwind's default warm-gray stone with green-tinted
+      // equivalents so every existing page aligns with the Core palette.
+      stone: {
+        50:  '#f6faf9',
+        100: '#eef7f4',  // mist — light section backgrounds
+        200: '#cfe3dc',  // line — light borders
+        300: '#cfe7e0',  // mint — body text on dark
+        400: '#9fc3ba',  // gloom — muted text on dark
+        500: '#4a655e',  // mute — captions / fine print
+        600: '#2f4a44',  // deep — body text on light
+        700: '#1c443c',  // elevated dark cards / borders
+        800: '#123530',  // dark card backgrounds
+        900: '#0b2b26',  // ink — dark section backgrounds
+        950: '#071c18',
+      },
+    },
     extend: {
       colors: {
-        // ── Updated brand colors ─────────────────────────────────────
+        // ── Brand teal (Core Program accent) ───────────────────────
         brand: {
-          50:  '#eef0ee',
-          100: '#dce0dc',
-          200: '#b9c1b9',
-          300: '#96a296',
-          400: '#738373',
-          500: '#6b7767',  // primary — muted sage green
-          600: '#545e53',
-          700: '#3d453c',
-          800: '#262e27',
-          900: '#101610',
-          950: '#080b08',
+          50:  '#e6f4f0',
+          100: '#ccebe1',
+          200: '#99d7c3',
+          300: '#6fe0c0',
+          400: '#33af87',
+          500: '#0d8a6e',
+          600: '#077a62',  // primary — deep teal
+          700: '#06624f',
+          800: '#0b2b26',  // dark band background (ink)
+          900: '#071c18',
+          950: '#04231c',
         },
-        // ── Updated gold/amber ──────────────────────────────────────
+        // ── Gold/amber (Core Program CTA) ──────────────────────────
         gold: {
-          50:  '#faf8f2',
-          100: '#f5f0e4',
-          200: '#ebe1c9',
-          300: '#e1d1a8',
-          400: '#d7c187',
-          500: '#bfa36b',  // primary — warm antique gold
-          600: '#a08656',
-          700: '#816a41',
-          800: '#614f31',
-          900: '#413321',
+          50:  '#fef8ea',
+          100: '#fdf0cf',
+          200: '#fbe19e',
+          300: '#f9d26d',
+          400: '#f7c33c',
+          500: '#f5b82e',  // primary — bright gold CTA
+          600: '#b98300',  // amber — text/links on light
+          700: '#93680a',
+          800: '#6e4d0a',
+          900: '#48330a',
         },
-        // ── Charcoal background ────────────────────────────────────
+        // ── Charcoal (dark green-black) ────────────────────────────
         charcoal: {
-          DEFAULT: '#1e1915',
-          50:  '#f5f3f1',
-          100: '#ebe7e4',
-          200: '#d7d1cc',
-          300: '#b8b1ac',
-          400: '#938a81',
-          500: '#746b60',
-          600: '#5e5145',
-          700: '#4a3f31',
-          800: '#3d3328',
-          900: '#1e1915',
+          DEFAULT: '#0b2b26',
+          50:  '#f6faf9',
+          100: '#eef7f4',
+          200: '#cfe3dc',
+          300: '#cfe7e0',
+          400: '#9fc3ba',
+          500: '#6b8a81',
+          600: '#4a655e',
+          700: '#2f5b52',
+          800: '#123530',
+          900: '#0b2b26',
+          950: '#071c18',
         },
-        // ── Warm cream/light text ──────────────────────────────────
+        // ── Warm cream/light text (on dark) ────────────────────────
         cream: {
-          50:  '#fdfcf4',
-          100: '#fbfaf5',  // light text color
-          200: '#f7f4ed',
-          300: '#efe7dc',
-          400: '#d6cbbf',
-          500: '#bda996',
+          50:  '#f6faf9',
+          100: '#eaf7f3',  // heading text on dark
+          200: '#eaf7f3',
+          300: '#cfe7e0',  // body text on dark
+          400: '#9fc3ba',  // muted text on dark
+          500: '#6b8a81',  // fine print on dark
         },
-        // ── Core Program light-theme palette (from design mockup) ──
+        // ── Core Program palette (design mockup) ───────────────────
         core: {
           ink:      '#0b2b26',  // darkest green ink / dark band background
           deep:     '#2f4a44',  // body text on light backgrounds
@@ -75,12 +93,12 @@ export default {
       },
       fontFamily: {
         heading: ['Barlow Condensed', 'system-ui', 'sans-serif'],
-        sans:    ['DM Sans',          'system-ui', 'sans-serif'],
+        sans:    ['Barlow',           'DM Sans', 'system-ui', 'sans-serif'],
         body:    ['Barlow',           'DM Sans', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'gold-shimmer': 'linear-gradient(135deg, #bfa36b 0%, #d7c187 50%, #bfa36b 100%)',
-        'brand-gradient': 'linear-gradient(135deg, #6b7767 0%, #545e53 100%)',
+        'gold-shimmer': 'linear-gradient(135deg, #f5b82e 0%, #f7c33c 50%, #f5b82e 100%)',
+        'brand-gradient': 'linear-gradient(135deg, #077a62 0%, #0d8a6e 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.3s ease-out',

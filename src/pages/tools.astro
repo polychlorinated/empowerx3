@@ -157,16 +157,15 @@ const faqs = [
   />
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="relative bg-stone-900 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
-    <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-brand-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <section class="relative bg-stone-100 overflow-hidden">
+    <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <p class="text-stone-500 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Marble Falls · Lakeway · Bee Cave · Austin · Westlake Hills</p>
-      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-4 max-w-3xl leading-tight text-cream-100">
+      <p class="text-core-teal font-heading font-semibold text-sm uppercase tracking-widest mb-3">Marble Falls · Lakeway · Bee Cave · Austin · Westlake Hills</p>
+      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-4 max-w-3xl leading-tight text-stone-900">
         Cellular Recovery Tools & Programs
       </h1>
-      <p class="text-stone-300 text-lg max-w-2xl leading-relaxed">
+      <p class="text-stone-600 text-lg max-w-2xl leading-relaxed">
         Three pillars that accelerate your transformation: the ExoPod for cellular recovery,
         the Wolfpack for accountability in the field, and precision nutrition built from your own genetic data.
       </p>
@@ -174,7 +173,7 @@ const faqs = [
   </section>
 
   <!-- ─── ExoPod Intro Video ───────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-800 border-b border-stone-700">
+  <section class="py-16 bg-white border-b border-stone-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="relative max-w-4xl mx-auto">
         <div class="absolute -top-2 -left-2 z-10 h-6 w-6 border-t-2 border-l-2 border-gold-500" aria-hidden="true"></div>
@@ -198,7 +197,7 @@ const faqs = [
   </section>
 
   <!-- ─── In-Page Nav ───────────────────────────────────────────────── -->
-  <nav aria-label="Page sections" class="sticky top-16 z-40 bg-stone-900/95 backdrop-blur-sm border-b border-stone-700">
+  <nav aria-label="Page sections" class="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-stone-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <ul class="flex overflow-x-auto gap-0" role="list">
         {[
@@ -209,7 +208,7 @@ const faqs = [
           <li>
             <a
               href={href}
-              class="block px-5 py-4 text-sm font-semibold text-stone-400 hover:text-gold-400 hover:border-b-2 hover:border-gold-500 whitespace-nowrap transition-colors"
+              class="block px-5 py-4 text-sm font-semibold text-stone-500 hover:text-core-teal hover:border-b-2 hover:border-core-teal whitespace-nowrap transition-colors"
             >
               {label}
             </a>
@@ -222,16 +221,16 @@ const faqs = [
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- EXOPOD SECTION                                                  -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section id="exopod" class="scroll-mt-32 pt-20 pb-16 bg-stone-900">
+  <section id="exopod" class="scroll-mt-32 pt-20 pb-16 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-        <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-stone-800 bg-stone-900">
+        <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200 bg-stone-100">
           <img src="/exopod1.webp" alt="ExoPod 10-in-1 cellular recovery pod - exterior view" class="w-full h-full object-cover" width="800" height="600" loading="eager" fetchpriority="high" />
         </div>
         <div>
-          <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4">The ExoPod</h2>
-          <p class="text-gold-400 font-semibold mb-6">10 Therapies · One Session · 30 Minutes · No Downtime</p>
-          <p class="text-stone-400 max-w-3xl leading-relaxed mb-8">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-stone-900 mb-4">The ExoPod</h2>
+          <p class="text-gold-600 font-semibold mb-6">10 Therapies · One Session · 30 Minutes · No Downtime</p>
+          <p class="text-stone-600 max-w-3xl leading-relaxed mb-8">
             A clinical-grade cellular recovery tool delivering 10 advanced cellular therapies in a single session.
             Inflammation, slow recovery, and premature aging aren't character flaws — they're cellular problems
             that require cellular solutions.
@@ -243,7 +242,7 @@ const faqs = [
       </div>
 
       <!-- Second ExoPod image -->
-      <div class="relative aspect-[4/3] max-w-3xl mx-auto rounded-2xl overflow-hidden border border-stone-800 bg-stone-900">
+      <div class="relative aspect-[4/3] max-w-3xl mx-auto rounded-2xl overflow-hidden border border-stone-200 bg-stone-100">
         <img src="/exopod2.webp" alt="ExoPod 10-in-1 cellular recovery pod - interior view" class="w-full h-full object-cover" width="800" height="600" loading="lazy" />
       </div>
     </div>
@@ -257,9 +256,9 @@ const faqs = [
   </div>
 
   <!-- Benefits timeline -->
-  <section class="py-16 bg-stone-900">
+  <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="font-heading font-bold text-2xl text-cream-100 mb-10 text-center">What to Expect — and When</h3>
+      <h3 class="font-heading font-bold text-2xl text-stone-900 mb-10 text-center">What to Expect — and When</h3>
       <div class="grid md:grid-cols-3 gap-6">
         {[
           {
@@ -278,13 +277,13 @@ const faqs = [
             bullets: ['Comprehensive cellular renewal', 'Resilient skin and anti-aging effects', 'Optimized hormonal and nervous system balance', 'Sustainable weight management', 'Lasting vitality and body-mind alignment'],
           },
         ].map(({ phase, timeline, bullets }) => (
-          <div class="bg-stone-800 rounded-2xl p-6 border border-stone-700">
-            <p class="text-brand-400 font-bold text-xs uppercase tracking-widest mb-0.5">{phase}</p>
-            <p class="font-heading font-semibold text-cream-100 text-lg mb-4">{timeline}</p>
+          <div class="bg-stone-100 rounded-2xl p-6 border border-stone-200">
+            <p class="text-core-teal font-bold text-xs uppercase tracking-widest mb-0.5">{phase}</p>
+            <p class="font-heading font-semibold text-stone-900 text-lg mb-4">{timeline}</p>
             <ul class="space-y-2">
               {bullets.map((b) => (
-                <li class="flex items-start gap-2 text-sm text-stone-400">
-                  <span class="text-brand-400 shrink-0 mt-0.5" aria-hidden="true">✓</span>
+                <li class="flex items-start gap-2 text-sm text-stone-600">
+                  <span class="text-core-teal shrink-0 mt-0.5" aria-hidden="true">✓</span>
                   {b}
                 </li>
               ))}
@@ -296,9 +295,9 @@ const faqs = [
   </section>
 
 <!-- Case Studies -->
-  <section class="py-16 bg-stone-800 border-y border-stone-700">
+  <section class="py-16 bg-stone-100 border-y border-stone-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="font-heading font-bold text-2xl text-cream-100 mb-8 text-center">Real ExoPod Results</h3>
+      <h3 class="font-heading font-bold text-2xl text-stone-900 mb-8 text-center">Real ExoPod Results</h3>
       <div class="grid md:grid-cols-3 gap-6 mb-12">
         <!-- Ava's Transformation -->
         <article class="bg-white rounded-2xl p-6 border border-stone-200 text-center relative overflow-hidden">
@@ -357,9 +356,9 @@ const faqs = [
   </section>
 
   <!-- 10 Therapies Accordion -->
-  <section class="py-16 bg-stone-800 border-y border-stone-700">
+  <section class="py-16 bg-white border-b border-stone-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="font-heading font-bold text-2xl text-cream-100 mb-2 text-center">
+      <h3 class="font-heading font-bold text-2xl text-stone-900 mb-2 text-center">
         10 Cellular Therapies. One Session.
       </h3>
       <p class="text-stone-500 text-center text-sm mb-8">
@@ -367,29 +366,29 @@ const faqs = [
       </p>
       <div class="space-y-2">
         {therapies.map(({ name, subtitle, feel, benefits }, i) => (
-          <details class="group border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
-            <summary class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-stone-800 transition-colors">
+          <details class="group border border-stone-200 rounded-xl overflow-hidden bg-white">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-stone-100 transition-colors">
               <div class="flex items-center gap-4 min-w-0">
-                <span class="shrink-0 w-7 h-7 rounded-full bg-brand-900 text-brand-400 flex items-center justify-center font-bold text-xs">
+                <span class="shrink-0 w-7 h-7 rounded-full bg-stone-100 text-core-teal flex items-center justify-center font-bold text-xs">
                   {i + 1}
                 </span>
                 <div class="min-w-0">
-                  <p class="font-heading font-semibold text-cream-100 text-sm leading-tight">{name}</p>
-                  <p class="text-brand-500 text-xs mt-0.5 truncate">{subtitle}</p>
+                  <p class="font-heading font-semibold text-stone-900 text-sm leading-tight">{name}</p>
+                  <p class="text-stone-500 text-xs mt-0.5 truncate">{subtitle}</p>
                 </div>
               </div>
               <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="accordion-body px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/50">
+            <div class="accordion-body px-6 pb-5 pt-2 border-t border-stone-200 bg-stone-100/40">
               <p class="text-stone-500 text-sm italic mb-3">
-                <strong class="text-stone-300 not-italic">What you feel:</strong> {feel}
+                <strong class="text-stone-600 not-italic">What you feel:</strong> {feel}
               </p>
               <ul class="space-y-2">
                 {benefits.map((b) => (
-                  <li class="flex items-start gap-2 text-sm text-stone-400">
-                    <span class="text-brand-400 shrink-0 mt-0.5" aria-hidden="true">✓</span>
+                  <li class="flex items-start gap-2 text-sm text-stone-600">
+                    <span class="text-core-teal shrink-0 mt-0.5" aria-hidden="true">✓</span>
                     {b}
                   </li>
                 ))}
@@ -402,28 +401,28 @@ const faqs = [
   </section>
 
   <!-- FAQ Accordion -->
-  <section class="py-16 bg-stone-900">
+  <section class="py-16 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="font-heading font-bold text-2xl text-cream-100 mb-8 text-center">
+      <h3 class="font-heading font-bold text-2xl text-stone-900 mb-8 text-center">
         ExoPod FAQ
       </h3>
       <div class="space-y-2">
         {faqs.map(({ q, a }) => (
-          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
-            <summary class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-stone-800 transition-colors">
-              <p class="font-heading font-semibold text-cream-100 text-sm">{q}</p>
+          <details class="border border-stone-200 rounded-xl overflow-hidden bg-white">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-stone-100 transition-colors">
+              <p class="font-heading font-semibold text-stone-900 text-sm">{q}</p>
               <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="accordion-body px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
-              <p class="text-stone-400 text-sm leading-relaxed">{a}</p>
+            <div class="accordion-body px-6 pb-5 pt-2 border-t border-stone-200 bg-stone-100/40">
+              <p class="text-stone-600 text-sm leading-relaxed">{a}</p>
             </div>
           </details>
         ))}
       </div>
       <div class="text-center mt-10">
-        <a href="/book-exopod" class="inline-flex items-center px-6 py-3 rounded-lg bg-brand-600 text-cream-100 font-semibold hover:bg-brand-500 transition-colors">
+        <a href="/book-exopod" class="inline-flex items-center px-6 py-3 rounded-lg bg-stone-900 text-white font-semibold hover:bg-stone-800 transition-colors">
           Book an ExoPod Session
         </a>
       </div>
@@ -433,23 +432,23 @@ const faqs = [
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- WOLFPACK SECTION                                                -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section id="wolfpack" class="scroll-mt-32 py-20 bg-stone-900 border-t-4 border-brand-700">
+  <section id="wolfpack" class="scroll-mt-32 py-20 bg-white border-t-4 border-core-teal">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <div class="flex items-center gap-3 mb-4">
             <span class="text-4xl" aria-hidden="true">🐺</span>
             <div>
-              <h2 class="font-heading font-bold text-3xl text-cream-100">The Wolfpack</h2>
-              <p class="text-brand-400 font-semibold text-sm">Hill Country Hiking Group</p>
+              <h2 class="font-heading font-bold text-3xl text-stone-900">The Wolfpack</h2>
+              <p class="text-core-teal font-semibold text-sm">Hill Country Hiking Group</p>
             </div>
           </div>
-          <p class="text-stone-400 leading-relaxed mb-4">
+          <p class="text-stone-600 leading-relaxed mb-4">
             Want to explore Hill Country with other guys? The Wolfpack is EmpowerX3's community
             component — monthly group hikes where clients test their rebuilt bodies against real terrain
             and discover that the protocols actually work.
           </p>
-          <p class="text-stone-400 leading-relaxed mb-6">
+          <p class="text-stone-600 leading-relaxed mb-6">
             There's something that happens when you summit a trail you couldn't have walked six months ago.
             Lab numbers become lived experience. Gary organizes hikes to motivate each other as the group
             takes on new challenges together — no judgment, just real support.
@@ -461,22 +460,22 @@ const faqs = [
               'Post-hike check-ins and biometric review',
               'Private community channel for daily connection',
             ].map((item) => (
-              <li class="flex items-start gap-3 text-sm text-stone-300">
-                <span class="text-brand-400 shrink-0 mt-0.5" aria-hidden="true">✓</span>
+              <li class="flex items-start gap-3 text-sm text-stone-600">
+                <span class="text-core-teal shrink-0 mt-0.5" aria-hidden="true">✓</span>
                 {item}
               </li>
             ))}
           </ul>
-          <a href="/contact" class="inline-flex items-center px-5 py-2.5 rounded-lg bg-brand-600 text-cream-100 font-semibold hover:bg-brand-500 transition-colors">
+          <a href="/contact" class="inline-flex items-center px-5 py-2.5 rounded-lg bg-stone-900 text-white font-semibold hover:bg-stone-800 transition-colors">
             Join the Wolfpack
           </a>
         </div>
-        <div class="bg-stone-900 rounded-2xl p-10 border border-stone-800 text-center relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-600 to-brand-900 rounded-l-2xl" aria-hidden="true"></div>
+        <div class="bg-stone-100 rounded-2xl p-10 border border-stone-200 text-center relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-core-teal to-stone-900 rounded-l-2xl" aria-hidden="true"></div>
           <span class="text-8xl block mb-5" aria-hidden="true">🐺</span>
-          <p class="font-heading font-bold text-xl text-cream-100 mb-2">Next Hike</p>
+          <p class="font-heading font-bold text-xl text-stone-900 mb-2">Next Hike</p>
           <p class="text-stone-500 text-sm mb-4">Date TBD — contact Gary for details.</p>
-          <a href="/contact" class="text-brand-400 hover:text-brand-300 text-sm font-medium transition-colors">Contact Gary &rarr;</a>
+          <a href="/contact" class="text-core-teal hover:text-stone-900 text-sm font-medium transition-colors">Contact Gary &rarr;</a>
         </div>
       </div>
     </div>
@@ -485,16 +484,16 @@ const faqs = [
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- NUTRITION & SUPPLEMENTS SECTION                                 -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section id="nutrition" class="scroll-mt-32 py-20 bg-stone-900 border-t-4 border-gold-600">
+  <section id="nutrition" class="scroll-mt-32 py-20 bg-stone-100 border-t-4 border-gold-600">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-4xl" aria-hidden="true">⚗️</span>
         <div>
-          <h2 class="font-heading font-bold text-3xl text-cream-100">Nutrition & Supplements</h2>
-          <p class="text-gold-500 font-semibold text-sm">Precision Protocols Built from Your Genetic Data</p>
+          <h2 class="font-heading font-bold text-3xl text-stone-900">Nutrition & Supplements</h2>
+          <p class="text-gold-600 font-semibold text-sm">Precision Protocols Built from Your Genetic Data</p>
         </div>
       </div>
-      <p class="text-stone-400 leading-relaxed mb-10 max-w-3xl">
+      <p class="text-stone-600 leading-relaxed mb-10 max-w-3xl">
         Generic supplement stacks and one-size-fits-all diets are why most people fail. Your body
         processes nutrients, responds to stress, and builds muscle differently than anyone else's —
         because your genetics are different. Every EmpowerX3 protocol starts with genetic testing
@@ -519,15 +518,15 @@ const faqs = [
             body: "Using your genetic data and lab results, Gary builds a supplement routine specific to your deficiencies, sensitivities, and goals — no surprises, convenient home delivery.",
           },
         ].map(({ icon, title, body }) => (
-          <div class="bg-stone-800 rounded-2xl p-6 border border-stone-700">
+          <div class="bg-white rounded-2xl p-6 border border-stone-200">
             <span class="text-3xl block mb-3" aria-hidden="true">{icon}</span>
-            <h3 class="font-heading font-bold text-lg text-cream-100 mb-2">{title}</h3>
-            <p class="text-stone-400 text-sm leading-relaxed">{body}</p>
+            <h3 class="font-heading font-bold text-lg text-stone-900 mb-2">{title}</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">{body}</p>
           </div>
         ))}
       </div>
 
-      <div class="bg-stone-800 rounded-2xl p-8 border border-stone-700 max-w-3xl relative overflow-hidden">
+      <div class="bg-stone-900 rounded-2xl p-8 border border-stone-700 max-w-3xl relative overflow-hidden">
         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold-500 to-gold-800 rounded-l-2xl" aria-hidden="true"></div>
         <h3 class="font-heading font-bold text-xl text-cream-100 mb-4 pl-4">
           Why Generic Supplements Don't Work
