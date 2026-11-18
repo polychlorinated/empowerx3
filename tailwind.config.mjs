@@ -54,10 +54,29 @@ export default {
           400: '#d6cbbf',
           500: '#bda996',
         },
+        // ── Core Program light-theme palette (from design mockup) ──
+        core: {
+          ink:      '#0b2b26',  // darkest green ink / dark band background
+          deep:     '#2f4a44',  // body text on light backgrounds
+          mute:     '#4a655e',  // muted text on light backgrounds
+          mist:     '#eef7f4',  // light green section background
+          line:     '#cfe3dc',  // light borders
+          teal:     '#077a62',  // primary accent
+          gold:     '#f5b82e',  // CTA accent
+          nightline:'#2f5b52',  // borders on dark band
+          foam:     '#eaf7f3',  // heading text on dark band
+          mint:     '#cfe7e0',  // body text on dark band
+          mintbright:'#6fe0c0', // small accent on dark band
+          gloom:    '#9fc3ba',  // fine print on dark band
+          amber:    '#b98300',  // highlighted card border
+          amberbg:  '#fdf6e3',  // highlighted card background
+          ambertext:'#8f6500',  // amber card labels
+        },
       },
       fontFamily: {
         heading: ['Barlow Condensed', 'system-ui', 'sans-serif'],
         sans:    ['DM Sans',          'system-ui', 'sans-serif'],
+        body:    ['Barlow',           'DM Sans', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gold-shimmer': 'linear-gradient(135deg, #bfa36b 0%, #d7c187 50%, #bfa36b 100%)',

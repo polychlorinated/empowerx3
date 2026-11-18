@@ -6,35 +6,99 @@ import FAQSchema from '@/components/schema/FAQSchema.astro';
 
 const faqs = [
   {
-    q: 'How much does the Core Program cost?',
-    a: "The 90-Day Longevity Transformation is $4,997 for the complete program — DNA Blueprint analysis, biomarker and hormone panels, peptide therapy under medical supervision, personalized nutrition, 1-on-1 coaching, and ExoPod cellular recovery sessions.",
+    q: 'What does the $1,200 Core Analysis include?',
+    a: 'Genetic and blood work labs, a full analysis, a sit-down consultation to go over your labs, and a meal plan based on your results.',
   },
   {
-    q: 'Do I need to live in Marble Falls to join?',
-    a: "No. Coaching calls and lab reviews work remotely, so clients across Texas join the Core Program. ExoPod sessions and Wolfpack hikes are in-person at our Marble Falls Longevity Center — many remote clients schedule them as monthly visits.",
+    q: 'Do I need to live near Marble Falls?',
+    a: 'No. The Genetic Blueprint Program is available nationwide. Local clinic services such as the ExoPod are available in Marble Falls.',
   },
   {
-    q: 'Is peptide therapy included in the program?',
-    a: "Yes — after a comprehensive medical evaluation. All peptides and prescription compounds are provided exclusively through licensed healthcare providers in the Impact Health Network. Eligibility is determined by medical necessity, lab results, and clinical assessment.",
+    q: 'How do the supplement discounts work?',
+    a: 'When you purchase the genetic test, you get 25% off supplements and nutritional products for your first 90 days. After that, a subscription for your recommended supplements gets 20% off.',
   },
   {
-    q: 'How is this different from other coaching programs?',
-    a: "Most programs chase symptoms without measuring the underlying physiology. The Core Program starts with your DNA Blueprint and 50+ biomarkers, then builds a protocol from your biology — not a template. Gary also does the program alongside you, not from the sidelines.",
+    q: 'Are peptides part of the Core Analysis?',
+    a: 'No. Peptide therapy is an add-on, offered under medical supervision after an evaluation.',
+  },
+];
+
+const addOns = [
+  {
+    label: 'CLINICAL SERVICE',
+    labelClass: 'text-core-ambertext',
+    title: 'Peptide therapy',
+    body: 'Offered under medical supervision, after an evaluation confirms you are eligible.',
+    href: null,
+    linkLabel: null,
   },
   {
-    q: 'What if I have injuries or can\'t exercise yet?',
-    a: "The program adapts to your baseline, not the other way around. Gary personally recovered from a permanently disabling injury, so protocols scale movement, nutrition, and recovery to where your body is today — and rebuild capacity over 90 days.",
+    label: 'LOCAL CLINIC',
+    labelClass: 'text-core-teal',
+    title: 'ExoPod + red light',
+    body: 'Red light therapy is one of 10 therapies in our ExoPod, available at the Marble Falls clinic.',
+    href: '/tools',
+    linkLabel: 'See the ExoPod',
+  },
+  {
+    label: 'CLINICAL SERVICE',
+    labelClass: 'text-core-ambertext',
+    title: 'HRT & TRT therapy',
+    body: 'Provided by licensed providers.',
+    href: null,
+    linkLabel: null,
+  },
+  {
+    label: 'CLINICAL SERVICE',
+    labelClass: 'text-core-ambertext',
+    title: 'Medical weight loss',
+    body: 'Medically guided programs built around your results.',
+    href: null,
+    linkLabel: null,
+  },
+  {
+    label: 'CLINICAL SERVICE',
+    labelClass: 'text-core-ambertext',
+    title: 'Sexual health therapy',
+    body: 'Over-the-counter and prescription-grade options.',
+    href: null,
+    linkLabel: null,
+  },
+  {
+    label: 'CLINICAL SERVICE',
+    labelClass: 'text-core-ambertext',
+    title: 'Clinical detox',
+    body: 'Programs for parasites and for mold.',
+    href: null,
+    linkLabel: null,
+  },
+  {
+    label: 'SUPPORT',
+    labelClass: 'text-core-ambertext',
+    title: '1-on-1 coaching',
+    body: 'Regular calls for habits, protocol adjustments and mindset.',
+    href: null,
+    linkLabel: null,
+  },
+  {
+    label: 'LOCAL DELIVERY',
+    labelClass: 'text-core-ambertext',
+    title: 'Genetic meal prep',
+    body: "Chef David's whole-food meals, built from your DNA data.",
+    href: '/genetic-meal-prep',
+    linkLabel: 'See Genetic Meal Prep',
+    highlighted: true,
   },
 ];
 ---
 
 <BaseLayout
-  title="90-Day Longevity Transformation Program | EmpowerX3 Marble Falls TX"
-  description="EmpowerX3's Core Program: 90-day longevity transformation with genetic testing, peptide therapy, personalized nutrition, and regular coaching. Serving Marble Falls, Lakeway, and greater Austin, TX."
+  title="Core Program: Genetic Blueprint & Meal Plan | EmpowerX3"
+  description="EmpowerX3's Core Program maps your DNA and blood work, then builds a meal plan from your results. One-time $1,200 Core Analysis. Available nationwide."
   og={{
-    title: "90-Day Longevity Transformation Program | EmpowerX3 Marble Falls TX",
-    description: "EmpowerX3's Core Program: 90-day longevity transformation with genetic testing, peptide therapy, personalized nutrition, and regular coaching.",
-    image: "https://empowerx3.com/gary-transformation-progress.webp",
+    title: "Core Program: Genetic Blueprint & Meal Plan | EmpowerX3",
+    description: "EmpowerX3's Core Program maps your DNA and blood work, then builds a meal plan from your results. One-time $1,200 Core Analysis. Available nationwide.",
+    image: "https://empowerx3.com/core-program-hero.png",
     type: "website"
   }}
   canonical="https://empowerx3.com/solutions"
@@ -44,273 +108,329 @@ const faqs = [
     { name: 'Core Program', url: 'https://empowerx3.com/solutions' }
   ]}
   schemaService={{
-    name: "The Core Program: 90-Day Longevity Transformation",
-    description: "Personalized longevity transformation combining genetic testing, peptide therapy, biomarker optimization, and regular coaching.",
+    name: 'The Core Program: Genetic Blueprint & Meal Plan',
+    description: 'A one-time Core Analysis: genetic testing and comprehensive blood work, a full analysis of your results, a sit-down consultation, and a meal plan built from your results. Available nationwide, with in-person services in Marble Falls.',
     provider: { '@type': 'LocalBusiness', name: 'EmpowerX3', url: 'https://empowerx3.com' },
-    areaServed: ['Marble Falls', 'Lakeway', 'Austin', 'Westlake Hills', 'Bee Cave', 'Cedar Park'],
+    areaServed: ['United States', 'Marble Falls', 'Lakeway', 'Bee Cave', 'Spicewood', 'Horseshoe Bay'],
+    offers: {
+      '@type': 'Offer',
+      name: 'One-time Core Analysis',
+      price: '1200.00',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+    },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Core Program Inclusions',
+      name: 'Core Analysis Inclusions',
       itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'DNA Blueprint Analysis & Genetic Testing' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Comprehensive Biomarker & Lab Testing' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Peptide Therapy Protocol (Medical Supervision)' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Personalized Nutrition & Supplement Plan' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Regular 1-on-1 Longevity Coaching' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'ExoPod Cellular Recovery Sessions' } }
-      ]
-    }
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Genetic Testing and Blood Work Labs' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Full Analysis of Your Results' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sit-Down Consultation to Go Over Your Labs' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Meal Plan Based on Your Results' } },
+      ],
+    },
   }}
+  lcpImage="/core-program-hero.png"
 >
 
-  <!-- FAQ Schema -->
   <FAQSchema
     faqs={faqs.map(({ q, a }) => ({ question: q, answer: a }))}
     slot="head"
   />
 
-  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-  <section class="relative bg-stone-900 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
-    <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-900/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="bg-white text-core-ink font-body antialiased">
 
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <p class="text-gold-500 font-heading font-semibold text-sm uppercase tracking-widest mb-3">Core Program</p>
-      <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 max-w-3xl leading-tight text-cream-100">
-        The Core Program: 90-Day Longevity Transformation
-      </h1>
-      <p class="text-stone-300 text-xl max-w-2xl leading-relaxed">
-        A personalized longevity system combining DNA Blueprint analysis, comprehensive biomarker testing, peptide therapy under medical supervision, and regular coaching — designed for adults who want a sustainable, data-driven path to better health.
-      </p>
-    </div>
-  </section>
-
-  <!-- ─── Why This Works ───────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-900 border-b border-stone-800">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-heading font-bold text-2xl text-cream-100 mb-4">
-        Why Most Longevity Programs Fail — and Why This One Doesn't
-      </h2>
-      <p class="text-stone-400 leading-relaxed">
-        Most programs chase symptoms — weight, fatigue, poor sleep — without measuring the underlying physiology. 
-        The Core Program starts with comprehensive data: DNA Blueprint, 50+ biomarkers, hormone panels, and metabolic markers. 
-        We build a protocol from your biology, not a template. No guesswork. No cookie-cutter plans. Just measurable outcomes.
-      </p>
-    </div>
-  </section>
-
-  <!-- ─── How the Core Program Works ──────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-14 text-center">
-        How the Core Program Works
-      </h2>
-      <div class="grid md:grid-cols-3 gap-8 mb-14">
-        {[
-          {
-            month: 'Month 1',
-            title: 'Data Collection & Foundation',
-            accentBorder: 'border-t-brand-600',
-            accentText: 'text-brand-400',
-            body: "Comprehensive biomarker panel (50+ markers), hormone panel, metabolic assessment, and DNA Blueprint analysis. We establish your baseline while you start foundational habits: hydration, sleep hygiene, daily movement, and stress management.",
-            note: "You can't optimize what you haven't measured.",
-          },
-          {
-            month: 'Months 2–3',
-            title: 'Personalized Protocol & Peptide Therapy',
-            accentBorder: 'border-t-gold-500',
-            accentText: 'text-gold-400',
-            body: "Using your lab data and DNA insights, we build your protocol: targeted nutrition, supplement stack, lifestyle modifications, and peptide therapy under medical supervision through our partnered licensed providers in the Impact Health Network. All prescriptions and medical decisions are handled by licensed healthcare professionals.",
-            note: 'Your protocol is built for your biology, not a template.',
-          },
-          {
-            month: 'Throughout',
-            title: 'Accountability & Optimization',
-            accentBorder: 'border-t-stone-600',
-            accentText: 'text-stone-400',
-            body: "Consistent coaching calls for habit tracking, protocol adjustments, and mindset support. Ongoing progress monitoring to refine your protocol. Access to medical wellness support through our partnered licensed providers for ongoing optimization.",
-            note: 'Gary does the program alongside you, not coaching from the sidelines.',
-          },
-        ].map(({ month, title, accentBorder, accentText, body, note }) => (
-          <div class={`rounded-2xl p-8 border-t-4 ${accentBorder} bg-stone-800 border border-stone-700 border-t-0`}>
-            <p class={`font-bold text-sm uppercase tracking-widest mb-1 ${accentText}`}>{month}</p>
-            <h3 class="font-heading font-bold text-xl text-cream-100 mb-4">{title}</h3>
-            <p class="text-stone-400 leading-relaxed text-sm mb-4">{body}</p>
-            <p class="text-stone-500 text-xs italic">{note}</p>
+    <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+    <section id="top" class="bg-core-mist">
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-8 py-14 md:py-[72px] flex flex-wrap items-center gap-12">
+        <div class="flex-1 min-w-0 basis-[520px] flex flex-col gap-6">
+          <p class="text-[15px] font-semibold tracking-[.16em] text-core-teal">THE CORE PROGRAM</p>
+          <h1 class="m-0 font-heading font-bold text-[44px] sm:text-[56px] lg:text-[72px] xl:text-[84px] leading-[.96] uppercase text-core-ink [text-wrap:balance]">
+            Your DNA blueprint, <span class="text-core-teal">mapped.</span> Your meal plan, built from your results.
+          </h1>
+          <p class="m-0 text-xl leading-[1.55] max-w-[560px] text-core-deep">
+            Told your labs are "normal," but you still don't feel like yourself? The Genetic Blueprint Program helps you find out why.
+          </p>
+          <div class="flex flex-wrap gap-3.5 items-center">
+            <a href="/book" class="bg-core-gold text-core-ink font-semibold text-lg px-7 py-4 rounded-md hover:opacity-85 transition-opacity">
+              Book a free 20-minute discovery call
+            </a>
+            <a href="#included" class="font-semibold text-lg text-core-teal px-2 py-4 border-b-2 border-core-teal hover:opacity-85 transition-opacity">
+              See what's included
+            </a>
           </div>
-        ))}
+        </div>
+        <div class="flex-1 min-w-0 basis-[380px] flex flex-col gap-2.5 items-center">
+          <img
+            src="/core-program-hero.png"
+            alt="Before and after, connected by a glowing DNA strand"
+            width="1200"
+            height="1200"
+            fetchpriority="high"
+            class="w-full max-w-[520px] aspect-square object-cover rounded-[18px] border-4 border-core-teal block"
+          />
+          <p class="text-sm tracking-[.18em] text-core-mute">GARY'S PERSONAL RESULTS</p>
+        </div>
       </div>
+    </section>
 
-      <div class="text-center">
-        <a
-          href="/contact"
-          class="inline-flex items-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors"
-        >
-          Start the Core Program
+    <!-- ─── Discovery Call Strip ─────────────────────────────────────── -->
+    <section id="book" class="bg-core-ink text-core-foam">
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-8 py-9 flex flex-wrap items-center justify-between gap-6">
+        <div class="flex-1 min-w-0 basis-[520px]">
+          <p class="font-heading font-bold text-[28px] md:text-[34px] uppercase text-core-gold">Start with a free 20-minute discovery call</p>
+          <p class="mt-2 text-lg leading-[1.5] text-core-mint">
+            We explain what the genetic blueprint is and walk you through the programs available. That's all, no pressure.
+          </p>
+        </div>
+        <a href="/book" class="bg-core-gold text-core-ink font-semibold text-lg px-7 py-4 rounded-md hover:opacity-85 transition-opacity">
+          Book a call
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-<!-- ─── What's Included ───────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-800 border-y border-stone-700">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-10 text-center">
-        Everything Included in the Core Program
-      </h2>
-      <div class="grid sm:grid-cols-2 gap-3">
-        {[
-          "DNA Blueprint analysis & comprehensive biomarker panel (50+ markers)",
-          "Hormone panel, metabolic markers, and nutrient status assessment",
-          "Personalized nutrition protocol built from your lab data and DNA",
-          "Peptide therapy protocol under medical supervision (Impact Health Network)",
-          "Regular 1-on-1 coaching calls — habit tracking, protocol adjustments, mindset",
-          "Access to medical wellness support through licensed providers (Impact Health Network)",
-          "Accountability & habit-building framework",
-          "Recovery, sleep, and stress management protocols"
-        ].map((item) => (
-          <div class="flex items-start gap-3 bg-stone-700 rounded-xl p-4 border border-stone-600">
-            <span class="text-brand-400 shrink-0 mt-0.5 font-bold" aria-hidden="true">✓</span>
-            <span class="text-stone-300 text-sm">{item}</span>
+    <!-- ─── Genetic Blueprint Program ────────────────────────────────── -->
+    <section class="bg-white">
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-8 pt-14 md:pt-[88px] pb-6 flex flex-wrap gap-14 items-start">
+        <div class="flex-1 min-w-0 basis-[560px] flex flex-col gap-6">
+          <p class="text-[15px] font-semibold tracking-[.16em] text-core-teal">THE GENETIC BLUEPRINT PROGRAM</p>
+          <h2 class="m-0 font-heading font-bold text-[36px] md:text-[48px] xl:text-[56px] leading-none uppercase text-core-ink">
+            We look at two things together
+          </h2>
+          <div class="flex flex-wrap gap-5">
+            <div class="flex-1 min-w-0 basis-[260px] bg-core-mist rounded-xl p-7 flex flex-col gap-2.5">
+              <h3 class="font-heading font-bold text-[28px] uppercase text-core-teal">Your genetics</h3>
+              <p class="m-0 text-[17px] leading-[1.55] text-core-deep">
+                How your body was built to run, including where it may need extra support with things like using certain vitamins, processing fats and carbs, and handling inflammation and detox.
+              </p>
+            </div>
+            <div class="flex-1 min-w-0 basis-[260px] bg-core-mist rounded-xl p-7 flex flex-col gap-2.5">
+              <h3 class="font-heading font-bold text-[28px] uppercase text-core-teal">Your current blood work</h3>
+              <p class="m-0 text-[17px] leading-[1.55] text-core-deep">
+                How your body is actually doing right now.
+              </p>
+            </div>
           </div>
-        ))}
+          <p class="m-0 text-xl leading-[1.55] text-core-ink max-w-[640px]">
+            Putting the two side by side shows where your body is struggling and why. That lets us get to the root cause instead of chasing symptoms one at a time.
+          </p>
+        </div>
+        <div class="flex-1 min-w-0 basis-[380px] border-2 border-core-teal rounded-2xl p-9 flex flex-col gap-5">
+          <h3 class="font-heading font-bold text-[30px] leading-[1.05] uppercase text-core-ink">
+            It can help if you're dealing with
+          </h3>
+          <ul class="m-0 p-0 list-none flex flex-col gap-3.5 text-lg leading-[1.4]" role="list">
+            {[
+              "Low energy or fatigue that sleep doesn't fix",
+              'Brain fog or trouble focusing',
+              "Weight that's hard to explain or manage",
+              "Feeling \u201Coff\u201D despite normal lab results",
+              'Trying supplements and diets without knowing what your body actually needs',
+            ].map((item) => (
+              <li class="flex gap-3 items-start">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#077a62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="flex-none mt-0.5"><path d="M4 12l5 5L20 6"></path></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-<!-- ─── Personalized Tracks ──────────────────────────────────────────────── -->
-  <section class="py-20 bg-stone-900">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
-        <h2 class="font-heading font-bold text-3xl md:text-4xl text-cream-100 mb-4">
-          Personalized Tracks for Your Goals
+    <!-- ─── What You Get ─────────────────────────────────────────────── -->
+    <section class="bg-white">
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-8 pt-14 md:pt-[88px] pb-14 md:pb-[72px]">
+        <p class="text-[15px] font-semibold tracking-[.16em] text-core-teal">WHAT YOU GET</p>
+        <h2 class="mt-2.5 mb-10 font-heading font-bold text-[36px] md:text-[48px] xl:text-[56px] leading-none uppercase text-core-ink">
+          Your Blueprint, start to finish
         </h2>
-        <p class="text-stone-400 max-w-2xl mx-auto">
-          The Core Program begins with a common foundation. Your track adds specialized focus based on your primary goal and unique biology.
+        <div class="flex flex-wrap gap-6">
+          {[
+            {
+              title: 'Test',
+              body: "A genetic test and a comprehensive blood panel. Your DNA shows how your body was built to run; your labs show how it is doing right now.",
+            },
+            {
+              title: 'Consultation',
+              body: 'A sit-down consultation to walk through your results together.',
+            },
+            {
+              title: 'Meal plan',
+              body: 'A meal plan based on your results, with a personalized supplement plan available afterward.',
+            },
+            {
+              title: 'Retesting',
+              body: 'Retesting over time to make sure your plan is working.',
+            },
+          ].map(({ title, body }) => (
+            <div class="flex-1 min-w-0 basis-[300px] border border-core-line rounded-xl p-8 flex flex-col gap-3">
+              <h3 class="font-heading font-bold text-[26px] uppercase text-core-teal">{title}</h3>
+              <p class="m-0 text-lg leading-[1.55] text-core-deep">{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Core Analysis Price Card ─────────────────────────────────── -->
+    <section id="core" class="bg-core-mist">
+      <div id="included" class="max-w-[1240px] mx-auto px-5 sm:px-8 py-14 md:py-20 flex flex-wrap gap-12 items-stretch">
+        <div class="flex-1 min-w-0 basis-[440px] flex flex-col gap-5 justify-center">
+          <p class="text-[15px] font-semibold tracking-[.16em] text-core-teal">WHAT'S INCLUDED</p>
+          <h2 class="m-0 font-heading font-bold text-[36px] md:text-[48px] xl:text-[56px] leading-none uppercase text-core-ink">
+            The Core Analysis
+          </h2>
+          <p class="m-0 text-[19px] leading-[1.6] text-core-deep max-w-[520px]">
+            One focused starting point. You leave knowing what your body needs and how to eat for it. Everything else is optional and built on top.
+          </p>
+        </div>
+        <div class="flex-1 min-w-0 basis-[440px] bg-white border-2 border-core-teal rounded-2xl p-10 flex flex-col gap-6">
+          <div class="flex items-baseline gap-3 flex-wrap">
+            <p class="font-heading font-bold text-[64px] md:text-[80px] leading-none text-core-ink">$1,200</p>
+            <p class="text-base text-core-mute">one-time core analysis</p>
+          </div>
+          <div class="h-px bg-core-line" aria-hidden="true"></div>
+          <ul class="m-0 p-0 list-none flex flex-col gap-3.5 text-lg leading-[1.4]" role="list">
+            {[
+              'Genetic testing and blood work labs',
+              'Full analysis of your results',
+              'Sit-down consultation to go over your labs',
+              'A meal plan based on your results',
+            ].map((item) => (
+              <li class="flex gap-3 items-start">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#077a62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="flex-none mt-0.5"><path d="M4 12l5 5L20 6"></path></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <a href="/book" class="bg-core-ink text-white font-semibold text-lg px-7 py-4 rounded-md text-center hover:opacity-85 transition-opacity">
+            Start with a discovery call
+          </a>
+          <p class="text-sm leading-[1.5] text-core-mute">
+            Your genetic test is done once and is yours for life. The program is available nationwide, with in-person services at our clinic in Marble Falls.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Supplements ──────────────────────────────────────────────── -->
+    <section class="bg-core-ink text-core-foam">
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-8 py-14 md:py-20 flex flex-col gap-9">
+        <div class="max-w-[720px] flex flex-col gap-3.5">
+          <p class="text-[15px] font-semibold tracking-[.16em] text-core-gold">IN-HOUSE SUPPLEMENTS</p>
+          <h2 class="m-0 font-heading font-bold text-[36px] md:text-[48px] xl:text-[56px] leading-none uppercase">
+            Your routine, from clinical-grade supplements
+          </h2>
+          <p class="m-0 text-[19px] leading-[1.6] text-core-mint">
+            Based on your results, we can provide a supplement routine with our in-house supplements. Buy the genetic test and your savings start right away.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-6">
+          <div class="flex-1 min-w-0 basis-[360px] border-2 border-core-gold rounded-[14px] p-8 flex flex-col gap-2.5">
+            <p class="text-[15px] font-semibold tracking-[.14em] text-core-gold">FIRST 90 DAYS</p>
+            <p class="font-heading font-bold text-[56px] md:text-[72px] leading-none text-white">25% off</p>
+            <p class="m-0 text-lg leading-[1.5] text-core-mint">
+              All supplements and nutritional products, when you purchase the genetic test.
+            </p>
+          </div>
+          <div class="flex-1 min-w-0 basis-[360px] border border-core-nightline rounded-[14px] p-8 flex flex-col gap-2.5">
+            <p class="text-[15px] font-semibold tracking-[.14em] text-core-mintbright">AFTER DAY 90</p>
+            <p class="font-heading font-bold text-[56px] md:text-[72px] leading-none text-white">20% off</p>
+            <p class="m-0 text-lg leading-[1.5] text-core-mint">
+              With a subscription for your recommended supplements.
+            </p>
+          </div>
+        </div>
+        <p class="text-sm text-core-gloom">
+          Discount applies to supplements and nutritional items only, not to services or add-ons.
         </p>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            icon: '⚡',
-            plan: 'Energy & Recovery',
-            points: [
-              'Adrenal & cortisol optimization',
-              'Anti-inflammatory nutrition protocol',
-              'Sleep architecture optimization',
-              'Peptide protocols for cellular recovery',
-            ],
-          },
-          {
-            icon: '🔥',
-            plan: 'Medically-Supervised Weight Loss',
-            points: [
-              'Hormonal and metabolic lab panel',
-              'Genetic-based nutrition protocol',
-              'Targeted peptide & supplement stack',
-              'ExoPod sessions for fat loss acceleration (Local to Marble Falls)',
-            ],
-          },
-          {
-            icon: '🏔️',
-            plan: 'Longevity & Peak Performance',
-            points: [
-              'Full longevity biomarker panel',
-              'Cognitive optimization protocol',
-              'NAD+ and cellular renewal peptides',
-              'Annual re-test & protocol adjustment',
-            ],
-          },
-        ].map(({ icon, plan, points }) => (
-          <article class="bg-stone-800 rounded-2xl p-8 border border-stone-700">
-            <span class="text-4xl block mb-3" aria-hidden="true">{icon}</span>
-            <h3 class="font-heading font-bold text-xl text-cream-100 mb-4">{plan}</h3>
-            <ul class="space-y-2 mb-6">
-              {points.map((p) => (
-                <li class="flex items-start gap-2 text-sm text-stone-400">
-                  <span class="text-brand-400 shrink-0 mt-0.5" aria-hidden="true">✓</span>
-                  {p}
-                </li>
-              ))}
-            </ul>
-            <a
-              href="/book"
-              class="block text-center py-2.5 rounded-lg border border-gold-600 text-gold-400 font-semibold text-sm hover:bg-gold-500 hover:text-stone-950 transition-colors"
+    </section>
+
+    <!-- ─── Add-Ons ──────────────────────────────────────────────────── -->
+    <section id="addons" class="bg-white">
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-8 py-14 md:py-[88px] flex flex-col gap-10">
+        <div class="max-w-[720px] flex flex-col gap-3.5">
+          <p class="text-[15px] font-semibold tracking-[.16em] text-core-teal">ADD TO YOUR BLUEPRINT</p>
+          <h2 class="m-0 font-heading font-bold text-[36px] md:text-[48px] xl:text-[56px] leading-none uppercase">
+            Build on your results with add-ons
+          </h2>
+          <p class="m-0 text-[19px] leading-[1.6] text-core-deep">
+            Once you know what your body needs, choose the support that fits. We'll talk through options and pricing on your discovery call.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-5">
+          {addOns.map(({ label, labelClass, title, body, href, linkLabel, highlighted }) => (
+            <div
+              class:list={[
+                'flex-1 min-w-0 basis-[340px] rounded-xl p-7 flex flex-col gap-2.5',
+                highlighted ? 'border-2 border-core-amber bg-core-amberbg' : 'border border-core-line',
+              ]}
             >
-              Discuss This Track
-            </a>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Medical Disclaimer ────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-800 border-y border-stone-700">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-2xl text-cream-100 mb-6 text-center">
-        Important Medical Disclaimer
-      </h2>
-      <div class="space-y-4 text-stone-400 text-sm leading-relaxed">
-        <p><strong>The Core Program is a lifestyle coaching and wellness optimization service, not a medical treatment.</strong> All peptides and prescription compounds are offered exclusively through licensed healthcare providers within the Impact Health Network.</p>
-        <p>All medical evaluations, prescriptions, treatment decisions, and medical guidance are handled directly through licensed healthcare professionals and partnered medical providers. EmpowerX3 coaches do not diagnose, prescribe, or treat medical conditions.</p>
-        <p>Peptide therapy and prescription compounds are only available after comprehensive medical evaluation by a licensed provider in the Impact Health Network. Eligibility is determined by medical necessity, lab results, and clinical assessment.</p>
-        <p>Results vary by individual. The Core Program is a lifestyle and wellness optimization service — not a substitute for medical care. Always consult your primary care physician before starting any new wellness protocol.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── FAQ ────────────────────────────────────────────────────── -->
-  <section class="py-16 bg-stone-900">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl text-cream-100 mb-8 text-center">
-        Core Program FAQ
-      </h2>
-      <div class="space-y-2">
-        {faqs.map(({ q, a }) => (
-          <details class="border border-stone-800 rounded-xl overflow-hidden bg-stone-900">
-            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer hover:bg-stone-800 transition-colors">
-              <p class="font-heading font-semibold text-cream-100 text-sm">{q}</p>
-              <svg class="chevron shrink-0 w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <div class="px-6 pb-5 pt-2 border-t border-stone-800 bg-stone-900/30">
-              <p class="text-stone-400 text-sm leading-relaxed">{a}</p>
+              <p class:list={['text-[13px] font-semibold tracking-[.14em]', labelClass]}>{label}</p>
+              <h3 class="font-heading font-bold text-[28px] uppercase text-core-ink">{title}</h3>
+              <p class="m-0 text-[17px] leading-[1.5] text-core-deep">{body}</p>
+              {href && linkLabel && (
+                <a href={href} class="mt-1 font-semibold text-core-teal hover:opacity-85 transition-opacity">
+                  {linkLabel} &rarr;
+                </a>
+              )}
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Gary ─────────────────────────────────────────────────────── -->
+    <section class="bg-core-mist">
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-8 py-14 md:py-[72px] flex flex-wrap gap-10 items-center">
+        <div class="flex-1 min-w-0 basis-[520px] flex flex-col gap-4">
+          <p class="text-[15px] font-semibold tracking-[.16em] text-core-teal">YOUR COACH</p>
+          <h2 class="m-0 font-heading font-bold text-[36px] md:text-[48px] leading-none uppercase">
+            Gary Brandt, Longevity Coach
+          </h2>
+          <p class="m-0 text-[19px] leading-[1.6] text-core-deep max-w-[620px]">
+            I empower people to become the CEO of their health. Take charge of your health with the power of genetics and faith in yourself.
+          </p>
+          <p class="m-0 text-[19px] leading-[1.6] text-core-deep max-w-[620px]">
+            After a car accident left me permanently disabled, doctors told me I'd never get my life back.
+            I rebuilt my health by measuring what mattered and acting on the results — the same approach
+            I use with every client. Everything I teach, I've personally done.
+          </p>
+        </div>
+        <div class="flex-1 min-w-0 basis-[320px] border-[3px] border-core-teal rounded-xl p-7 text-center text-lg tracking-[.14em] leading-[1.6] text-core-ink">
+          WITH THE POWER OF GENETICS AND FAITH IN YOURSELF
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ──────────────────────────────────────────────────────── -->
+    <section class="bg-white">
+      <div class="max-w-[900px] mx-auto px-5 sm:px-8 py-14 md:py-20 flex flex-col gap-3">
+        <h2 class="m-0 mb-5 font-heading font-bold text-[36px] md:text-[48px] leading-none uppercase">Questions</h2>
+
+        {faqs.map(({ q, a }) => (
+          <details class="core-faq group border-b border-core-line py-[18px]">
+            <summary class="flex justify-between gap-4 text-xl font-semibold">
+              <span>{q}</span>
+              <span class="text-[26px] leading-none text-core-teal transition-transform duration-200 group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-3 text-lg leading-[1.6] text-core-deep">{a}</p>
           </details>
         ))}
       </div>
-      <div class="text-center mt-10">
-        <a href="/contact" class="inline-flex items-center px-6 py-3 rounded-lg bg-gold-500 text-stone-950 font-semibold hover:bg-gold-400 transition-colors">
-          Ask Gary a Question
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ─── Gary's Promise ────────────────────────────────────────────── -->
-  <section class="relative bg-brand-800 border-y border-brand-700 py-20 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5" aria-hidden="true"></div>
-    <div class="relative max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <img src="/gary-transformation-progress.webp" alt="Gary Brandt's transformation progress - from car accident disability to full recovery through longevity protocols" class="w-full max-w-2xl mx-auto rounded-2xl border border-brand-600 shadow-2xl" loading="lazy" />
-        <p class="text-stone-500 text-sm mt-3">Gary's 90-day transformation: proof the system works</p>
-      </div>
-      <p class="text-brand-200 text-lg italic leading-relaxed mb-6">
-        "I've lived every failure you've lived. I've done every diet, taken every supplement, believed
-        every promise that didn't deliver. I don't teach theory. I teach what I've personally used to
-        overcome a permanently disabling injury and decades of trauma. I'm the longevity coach
-        and Longevity Transformation Coach for you that I was for myself."
-      </p>
-      <p class="font-semibold text-brand-300 mb-10">— Gary Brandt, EmpowerX3</p>
-      <a
-        href="/contact"
-        class="inline-flex items-center px-8 py-4 rounded-lg bg-gold-500 text-stone-950 font-bold text-lg hover:bg-gold-400 transition-colors"
-      >
-        Start Your Transformation!
-      </a>
-    </div>
-  </section>
+  </div>
 
 </BaseLayout>
+
+<style>
+  .core-faq summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .core-faq summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
